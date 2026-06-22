@@ -18,7 +18,17 @@ const STRIPE_LINKS = {
 function ReadyForm() {
   const params = useSearchParams();
   const from = params.get('from') || 'general';
-  const [form, setForm] = useState({ name: '', email: '', looking: '', discord: '' });
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    age: '',
+    gender: '',
+    heightFt: '',
+    heightIn: '',
+    weight: '',
+    looking: '',
+    discord: '',
+  });
   const [done, setDone] = useState(false);
   const [sending, setSending] = useState(false);
 
@@ -34,11 +44,25 @@ function ReadyForm() {
       window.open(stripeLink, '_blank', 'noopener');
     }
 
+    const height = form.heightFt
+      ? `${form.heightFt}ft ${form.heightIn || '0'}in`
+      : '';
+
     try {
       await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, product: from }),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          age: form.age,
+          gender: form.gender,
+          height,
+          weight: form.weight ? `${form.weight} lbs` : '',
+          looking: form.looking,
+          discord: form.discord,
+          product: from,
+        }),
       });
     } catch {
       // email failed silently — stripe already opened, don't block the user
@@ -57,6 +81,7 @@ function ReadyForm() {
       <h1>ready</h1>
       <div className="price-line">{from}</div>
       <form className="form" onSubmit={submit}>
+
         <div className="field">
           <label htmlFor="name">name</label>
           <input
@@ -67,6 +92,7 @@ function ReadyForm() {
             onChange={(e) => update('name', e.target.value)}
           />
         </div>
+
         <div className="field">
           <label htmlFor="email">email</label>
           <input
@@ -77,6 +103,83 @@ function ReadyForm() {
             onChange={(e) => update('email', e.target.value)}
           />
         </div>
+
+        <div className="field">
+          <label htmlFor="age">age</label>
+          <input
+            id="age"
+            type="number"
+            required
+            min="13"
+            max="99"
+            placeholder="25"
+            value={form.age}
+            onChange={(e) => update('age', e.target.value)}
+          />
+        </div>
+
+        <div className="field">
+          <label htmlFor="gender">gender</label>
+          <select
+            id="gender"
+            required
+            value={form.gender}
+            onChange={(e) => update('gender', e.target.value)}
+          >
+            <option value="" disabled>select</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+        <div className="field">
+          <label>height</label>
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
+            <div style={{ flex: 1 }}>
+              <input
+                type="number"
+                required
+                min="4"
+                max="7"
+                placeholder="5"
+                value={form.heightFt}
+                onChange={(e) => update('heightFt', e.target.value)}
+                aria-label="feet"
+                style={{ width: '100%' }}
+              />
+              <span style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'var(--dim)', marginTop: '4px', display: 'block' }}>ft</span>
+            </div>
+            <div style={{ flex: 1 }}>
+              <input
+                type="number"
+                min="0"
+                max="11"
+                placeholder="10"
+                value={form.heightIn}
+                onChange={(e) => update('heightIn', e.target.value)}
+                aria-label="inches"
+                style={{ width: '100%' }}
+              />
+              <span style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'var(--dim)', marginTop: '4px', display: 'block' }}>in</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="field">
+          <label htmlFor="weight">weight (lbs)</label>
+          <input
+            id="weight"
+            type="number"
+            required
+            min="80"
+            max="500"
+            placeholder="175"
+            value={form.weight}
+            onChange={(e) => update('weight', e.target.value)}
+          />
+        </div>
+
         <div className="field">
           <label htmlFor="looking">what you&apos;re looking for</label>
           <textarea
@@ -87,6 +190,7 @@ function ReadyForm() {
             onChange={(e) => update('looking', e.target.value)}
           />
         </div>
+
         <div className="field">
           <label htmlFor="discord">discord (optional)</label>
           <input
@@ -97,6 +201,7 @@ function ReadyForm() {
             onChange={(e) => update('discord', e.target.value)}
           />
         </div>
+
         <button type="submit" className="submit-btn" disabled={sending}>
           {sending ? 'sending…' : 'send'}
         </button>

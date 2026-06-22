@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 export async function POST(req) {
   try {
-    const { name, email, looking, discord, product } = await req.json();
+    const { name, email, age, gender, height, weight, looking, discord, product } = await req.json();
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -11,10 +11,14 @@ export async function POST(req) {
       to: 'ncortezwilliams@gmail.com',
       subject: `[vveritas*] ready — ${product} — ${name}`,
       text: [
-        `product: ${product}`,
-        `name: ${name}`,
-        `email: ${email}`,
-        `discord: ${discord || '—'}`,
+        `product:  ${product}`,
+        `name:     ${name}`,
+        `email:    ${email}`,
+        `age:      ${age || '—'}`,
+        `gender:   ${gender || '—'}`,
+        `height:   ${height || '—'}`,
+        `weight:   ${weight || '—'}`,
+        `discord:  ${discord || '—'}`,
         '',
         'what they\'re looking for:',
         looking,
