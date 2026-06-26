@@ -38,10 +38,15 @@ function ReadyForm() {
     e.preventDefault();
     setSending(true);
 
-    // open stripe BEFORE any await so the popup isn't blocked
+    // open stripe BEFORE any await so the popup isn't blocked.
+    // prefilled_email keeps the checkout email matching the intake email — the
+    // backend links a payment to its intake by email.
     const stripeLink = STRIPE_LINKS[from];
     if (stripeLink) {
-      window.open(stripeLink, '_blank', 'noopener');
+      const url = form.email
+        ? `${stripeLink}?prefilled_email=${encodeURIComponent(form.email)}`
+        : stripeLink;
+      window.open(url, '_blank', 'noopener');
     }
 
     const height = form.heightFt

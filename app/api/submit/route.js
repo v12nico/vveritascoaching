@@ -25,6 +25,26 @@ export async function POST(req) {
       ].join('\n'),
     });
 
+    // forward the intake to the fulfillment backend so the program is built and
+    // emailed automatically once stripe confirms payment. a failure here must not
+    // block the inquiry — stripe already opened on the client.
+    if (process.env.BACKEND_URL) {
+      try {
+        await fetch(`${process.env.BACKEND_URL}/intake`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Intake-Token': process.env.INTAKE_SHARED_SECRET || '',
+          },
+          body: JSON.stringify({
+            name, email, age, gender, height, weight, looking, discord, product,
+          }),
+        });
+      } catch (e) {
+        console.error('intake push failed:', e);
+      }
+    }
+
     return Response.json({ ok: true });
   } catch (err) {
     console.error('submit error:', err);
