@@ -145,20 +145,88 @@ const SLIDES = [
     notes: 'This is the premium experience. You\'re not just showing up to count reps — you\'re building the entire system around him. The in-person sessions are supported by everything else. That\'s what makes this different.',
   },
   {
-    type: 'included',
-    label: 'what you get',
-    headline: 'everything in one place.',
+    type: 'packages-intro',
+    label: 'coaching options',
+    headline: 'choose your\nlevel of coaching.',
+    body: 'three ways to work together. every option includes the full vveritas* dashboard, personalized programming, and real accountability.',
+    notes: 'This is the transition from "here\'s what the system looks like" to "here\'s how you invest in yourself." Let the portal demo land first — then come back here. Don\'t rush.',
+  },
+  {
+    type: 'package',
+    tier: '01 — remote',
+    headline: 'remote coaching.',
+    for: 'best for self-motivated people who want guidance and accountability from anywhere.',
+    badge: null,
     items: [
-      'in-person sessions at merritt clubs',
-      'personalized workout plan — updated as you progress',
-      'daily nutrition standards + grocery list',
-      'daily mission + task tracking',
-      'progress tracking — weight, photos, strength',
-      'daily check-ins',
+      'personalized fitness program',
+      'personalized nutrition plan',
+      'full vveritas* dashboard',
+      'weekly accountability call',
       'unlimited messaging',
-      'weekly review calls',
+      'grocery lists',
+      'habit tracking',
+      'progress tracking',
+      'monthly program updates',
+      'exercise video library',
+      'form review via video',
     ],
-    notes: 'Let this list breathe. Don\'t rush through it. Every item is something a person would normally pay for separately — or not have at all. The value is obvious when you see it laid out.',
+    investment: '$497 – $697 / month',
+    notes: 'Don\'t rush through this list. Pause on "unlimited messaging" — most trainers don\'t offer that. Every item here is something someone would normally pay extra for, or not have at all.',
+  },
+  {
+    type: 'package',
+    tier: '02 — hybrid',
+    headline: 'hybrid coaching.',
+    for: 'for clients who want in-person coaching and ongoing accountability.',
+    badge: 'recommended',
+    items: [
+      'everything in remote coaching',
+      '1 in-person session each week',
+      'technique coaching every session',
+      'form corrections in real time',
+      'progressive overload tracked in person',
+      'exercise adjustments on the spot',
+    ],
+    investment: '$997 – $1,297 / month',
+    notes: 'This is Ron\'s package. Point to it. Say: "this is what we\'ve been looking at today." The portal, the grocery list, the check-ins — all of that is here. Plus you show up once a week and coach him in person.',
+  },
+  {
+    type: 'package',
+    tier: '03 — elite',
+    headline: 'elite transformation.',
+    for: 'maximum hands-on coaching. three sessions a week plus the full system.',
+    badge: null,
+    items: [
+      'everything in hybrid coaching',
+      '3 in-person sessions every week',
+      'customized training adjustments weekly',
+      'customized nutrition updates weekly',
+      'weekly strategy calls',
+      'recovery optimization',
+      'priority support',
+    ],
+    investment: '$1,800 – $2,500+ / month',
+    notes: 'Don\'t push this one unless they ask about it. Just let them see it exists. Some clients want full immersion — three sessions a week plus everything else. That option is here.',
+  },
+  {
+    type: 'comparison',
+    label: 'the difference',
+    headline: 'this is not\npersonal training.',
+    col1: { label: 'traditional personal training', items: ['workout sessions', 'basic exercise instruction'] },
+    col2: { label: 'vveritas* coaching', items: ['personalized strength program', 'nutrition guidance', 'habit coaching', 'accountability', 'weekly reviews', 'progress tracking', 'messaging support', 'exercise instruction', 'lifestyle coaching', 'personalized dashboard', 'progress analytics'] },
+    notes: 'Don\'t say anything negative about other trainers. Just let the contrast speak. Two items vs eleven. They\'ll do the math. Say: "you\'re not paying for time in the gym. you\'re investing in a complete system."',
+  },
+  {
+    type: 'payment',
+    label: 'payment options',
+    headline: 'flexible payment options.',
+    items: [
+      { label: 'pay in full', desc: 'one payment. no recurring charges.' },
+      { label: 'monthly subscription', desc: 'pay month to month where applicable.' },
+      { label: 'installment plans', desc: 'available for eligible packages.' },
+    ],
+    body: 'we\'ll find a structure that fits your situation before getting started.',
+    notes: 'Price is not the obstacle — uncertainty is. When you give them payment options, you remove the last reason to say "let me think about it." Say: "whatever structure works best for you, we can make it work."',
   },
   {
     type: 'cta',
@@ -361,6 +429,111 @@ function Slide({ slide }) {
             </div>
           ))}
         </div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'packages-intro') {
+    return (
+      <div className="ws-slide" style={{ justifyContent: 'center', maxWidth: '70vw', margin: '0 auto', padding: '5vw 8vw' }}>
+        <div className="ws-label">{slide.label}</div>
+        <h1 className="ws-headline" style={{ whiteSpace: 'pre-line', marginBottom: '1.5rem' }}>{slide.headline}</h1>
+        <p className="ws-body ws-body-spaced">{slide.body}</p>
+      </div>
+    );
+  }
+
+  if (slide.type === 'package') {
+    return (
+      <div className="ws-slide">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+          <div className="ws-label" style={{ margin: 0 }}>{slide.tier}</div>
+          {slide.badge && (
+            <span style={{
+              fontFamily: 'ui-monospace, monospace',
+              fontSize: '0.48rem',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              color: '#4a8c6a',
+              border: '1px solid #4a8c6a',
+              padding: '0.25em 0.6em',
+              borderRadius: '1px',
+            }}>
+              {slide.badge}
+            </span>
+          )}
+        </div>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '0.5rem' }}>{slide.headline}</h1>
+        <p style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.88rem)', color: '#5A5A5A', marginBottom: '1.8rem', fontStyle: 'italic' }}>{slide.for}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem 4vw', maxWidth: '640px', marginBottom: '2.5rem' }}>
+          {slide.items.map((item, i) => (
+            <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.6rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
+              <span style={{ fontSize: 'clamp(0.78rem, 1.2vw, 0.95rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '1.5rem', display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+          <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#3A3A3A' }}>investment</span>
+          <span style={{ fontSize: 'clamp(1.2rem, 2.2vw, 1.8rem)', fontWeight: 200, letterSpacing: '-0.02em', color: '#EDEDE8' }}>{slide.investment}</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'comparison') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">{slide.label}</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '2.5rem' }}>{slide.headline}</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4vw', maxWidth: '700px' }}>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1.2rem', color: '#3A3A3A' }}>{slide.col1.label}</div>
+            <ul className="ws-bullets ws-bullets-dim">
+              {slide.col1.items.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1.2rem', color: '#4a8c6a' }}>{slide.col2.label}</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              {slide.col2.items.map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.55rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
+                  <span style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.9rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'payment') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">{slide.label}</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2.5rem' }}>{slide.headline}</h1>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '480px', marginBottom: '2.5rem' }}>
+          {slide.items.map((item, i) => (
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '2.5rem 1fr', gap: '1rem', alignItems: 'start' }}>
+              <span style={{
+                fontFamily: 'ui-monospace, monospace',
+                fontSize: '0.52rem',
+                letterSpacing: '0.2em',
+                color: '#3A3A3A',
+                paddingTop: '0.15rem',
+              }}>
+                0{i + 1}
+              </span>
+              <div>
+                <div style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1.05rem)', color: '#EDEDE8', marginBottom: '0.2rem' }}>{item.label}</div>
+                <div style={{ fontSize: 'clamp(0.72rem, 1vw, 0.85rem)', color: '#5A5A5A' }}>{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="ws-body" style={{ color: '#5A5A5A', fontStyle: 'italic' }}>{slide.body}</p>
       </div>
     );
   }

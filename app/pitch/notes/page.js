@@ -79,11 +79,36 @@ const NOTES = [
   },
   {
     n: 16,
-    title: 'everything in one place.',
-    note: 'Let this list breathe. Don\'t rush through it. Every item is something a person would normally pay for separately — or not have at all. The value is obvious when you see it laid out.',
+    title: 'choose your level of coaching.',
+    note: 'This is the transition from "here\'s what the system looks like" to "here\'s how you invest in yourself." Let the portal demo land first — then come back here. Don\'t rush.',
   },
   {
     n: 17,
+    title: 'remote coaching.',
+    note: 'Don\'t rush through this list. Pause on "unlimited messaging" — most trainers don\'t offer that. Every item here is something someone would normally pay extra for, or not have at all.',
+  },
+  {
+    n: 18,
+    title: 'hybrid coaching. (recommended)',
+    note: 'This is Ron\'s package. Point to it. Say: "this is what we\'ve been looking at today." The portal, the grocery list, the check-ins — all of that is here. Plus you show up once a week and coach him in person.',
+  },
+  {
+    n: 19,
+    title: 'elite transformation.',
+    note: 'Don\'t push this one unless they ask about it. Just let them see it exists. Some clients want full immersion — three sessions a week plus everything else. That option is here.',
+  },
+  {
+    n: 20,
+    title: 'this is not personal training.',
+    note: 'Don\'t say anything negative about other trainers. Just let the contrast speak. Two items vs eleven. They\'ll do the math. Say: "you\'re not paying for time in the gym. you\'re investing in a complete system."',
+  },
+  {
+    n: 21,
+    title: 'flexible payment options.',
+    note: 'Price is not the obstacle — uncertainty is. When you give them payment options, you remove the last reason to say "let me think about it." Say: "whatever structure works best for you, we can make it work."',
+  },
+  {
+    n: 22,
     title: 'the only thing left is the decision.',
     note: 'Do not pitch. Do not oversell. Ask that question and then go silent. Let Ron talk. Whatever he says next is your close. If he asks about price — you\'re ready. If he has objections — address them. If he says "let\'s do it" — great.',
   },
