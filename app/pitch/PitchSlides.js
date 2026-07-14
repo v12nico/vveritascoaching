@@ -1,6 +1,12 @@
 'use client';
 import { useState, useEffect } from 'react';
 
+const STRIPE_LINKS = {
+  elite:  { 4: process.env.NEXT_PUBLIC_STRIPE_ELITE_4W,  8: process.env.NEXT_PUBLIC_STRIPE_ELITE_8W,  12: process.env.NEXT_PUBLIC_STRIPE_ELITE_12W  },
+  hybrid: { 4: process.env.NEXT_PUBLIC_STRIPE_HYBRID_4W, 8: process.env.NEXT_PUBLIC_STRIPE_HYBRID_8W, 12: process.env.NEXT_PUBLIC_STRIPE_HYBRID_12W },
+  remote: { 4: process.env.NEXT_PUBLIC_STRIPE_REMOTE_4W, 8: process.env.NEXT_PUBLIC_STRIPE_REMOTE_8W, 12: process.env.NEXT_PUBLIC_STRIPE_REMOTE_12W },
+};
+
 const SLIDES = [
   {
     type: 'hero',
@@ -470,16 +476,17 @@ function EnrollmentSlide({ slide }) {
   };
 
   if (step === 2 && pkg && dur) {
+    const stripeUrl = STRIPE_LINKS[pkg.id]?.[dur.weeks];
+
     return (
       <div className="ws-slide ws-cta-slide">
         <div className="ws-label">your transformation plan</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '480px', marginBottom: '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', maxWidth: '480px', marginBottom: '2rem' }}>
           {[
             { label: 'package', val: pkg.name },
             { label: 'length', val: `${dur.weeks} weeks` },
             { label: 'investment', val: `$${dur.price.toLocaleString()}` },
-            { label: 'sessions', val: dur.sessions || 'fully remote' },
-            { label: 'payment preference', val: 'to be selected' },
+            ...(dur.sessions ? [{ label: 'sessions', val: dur.sessions }] : []),
           ].map(({ label, val }) => (
             <div key={label} style={{ display: 'grid', gridTemplateColumns: '10rem 1fr', alignItems: 'baseline', borderBottom: '1px solid #0f0f0f', paddingBottom: '0.8rem' }}>
               <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#3A3A3A' }}>{label}</span>
@@ -487,13 +494,26 @@ function EnrollmentSlide({ slide }) {
             </div>
           ))}
         </div>
+
+        {stripeUrl ? (
+          <button
+            onClick={() => window.open(stripeUrl, '_blank')}
+            style={{ ...btnBase, padding: '1rem 2rem', fontSize: 'clamp(0.82rem, 1.2vw, 1rem)', border: '1px solid #EDEDE8', color: '#EDEDE8', marginBottom: '1rem', letterSpacing: '0.01em' }}
+          >
+            continue to payment →
+          </button>
+        ) : (
+          <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.15em', color: '#3A3A3A', marginBottom: '1rem' }}>
+            payment link not yet configured
+          </div>
+        )}
+
         <button
           onClick={() => { setStep(0); setSelPkg(null); setSelDur(null); }}
-          style={{ ...btnBase, padding: '0.8rem 1.5rem', fontSize: 'clamp(0.72rem, 1vw, 0.85rem)', border: '1px solid #3A3A3A', color: '#5A5A5A', marginBottom: '1rem' }}
+          style={{ ...btnBase, padding: '0.7rem 1.2rem', fontSize: 'clamp(0.68rem, 0.9vw, 0.8rem)', border: '1px solid #1a1a1a', color: '#5A5A5A', display: 'block' }}
         >
           ← start over
         </button>
-        <div className="ws-cta-mark">vveritas* — built for Ron Blake</div>
       </div>
     );
   }
