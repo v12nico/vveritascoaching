@@ -84,18 +84,18 @@ const NOTES = [
   },
   {
     n: 17,
-    title: 'remote coaching.',
-    note: 'Don\'t rush through this list. Pause on "unlimited messaging" — most trainers don\'t offer that. Every item here is something someone would normally pay extra for, or not have at all.',
+    title: 'elite transformation.',
+    note: 'Lead with this. Let him see the top of the range first. Don\'t explain it away — just let it land. Some clients want full immersion. If he reacts to the price, that\'s when you transition to hybrid.',
   },
   {
     n: 18,
     title: 'hybrid coaching. (recommended)',
-    note: 'This is Ron\'s package. Point to it. Say: "this is what we\'ve been looking at today." The portal, the grocery list, the check-ins — all of that is here. Plus you show up once a week and coach him in person.',
+    note: 'This is Ron\'s package. Point to it. Say: "this is what we\'ve been looking at today — and honestly, this is what I\'d recommend for where you are right now." One session a week in person plus everything else in the system.',
   },
   {
     n: 19,
-    title: 'elite transformation.',
-    note: 'Don\'t push this one unless they ask about it. Just let them see it exists. Some clients want full immersion — three sessions a week plus everything else. That option is here.',
+    title: 'remote coaching.',
+    note: 'This is the entry point. Show it last so it feels accessible by comparison. Don\'t undersell it — it\'s still a complete system. But for someone who came in wanting in-person, this is the "if budget is a constraint" option.',
   },
   {
     n: 20,
