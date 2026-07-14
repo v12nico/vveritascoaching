@@ -45,7 +45,14 @@ const SLIDES = [
     label: 'the system',
     headline: 'everything lives in one place.',
     body: 'your workouts. your nutrition. your daily mission. your check-ins. your progress. all organized. all connected. all built for you.',
-    notes: 'Transition to screen sharing the portal now. Say: "let me show you what that actually looks like."',
+    notes: "Don't open the portal yet. Say: \"before I show you this, I want to address something.\" Then advance to the next slide.",
+  },
+  {
+    type: 'statement',
+    label: 'the reason',
+    headline: 'the hour we spend together\nisn\'t what determines your results.',
+    body: 'your results come from the other 167 hours of the week.\nso i built a system that coaches you there too.',
+    notes: "Say this slowly. Full delivery: \"You reached out because you wanted a personal trainer. And looking at what I'm about to show you, you might be thinking — man, this is way more than I asked for. And honestly? You're right.\" Pause. \"I've worked as a personal trainer. And what I realized is that the hour we spend together each week isn't what determines your results.\" Pause. \"Your results come from the other 167 hours of the week.\" Pause. \"So I built a system that coaches you there too. Not because I'm trying to sell you more. Because I genuinely believe it gives you a better chance of reaching the goals you told me about.\" Now open the portal.",
   },
   {
     type: 'demo',
@@ -152,10 +159,10 @@ const SLIDES = [
   },
   {
     type: 'packages-intro',
-    label: 'coaching options',
-    headline: 'choose your\nlevel of access.',
-    body: "every level runs on the same vveritas* system. the coaching philosophy, the dashboard, the accountability — all of it is identical. the only difference is how much time you spend working directly with your coach.",
-    notes: "Reframe before you show the packages. You're not selling three different products. You're selling three levels of access to the same system. Say: \"the real question isn't which package — it's how much in-person coaching you want each week.\"",
+    label: 'my recommendation',
+    headline: "let me tell you\nwhat i honestly think.",
+    body: "based on what you told me, i'm not going to show you a menu and ask you to pick. i'm going to tell you what i'd actually recommend — and what i don't think you need right now.",
+    notes: "Say this with conviction. \"Before I show you the options, I want to be straight with you. Based on your goals and where you are right now, I don't automatically think you need the most expensive package. I'd rather recommend the right level of support than put you in something bigger than your situation calls for.\" Then advance to Elite first so he sees the full range — then you'll land on your recommendation.",
   },
   {
     type: 'package',
@@ -211,7 +218,7 @@ const SLIDES = [
       { weeks: 8, price: 2300, sessions: 8, savings: 100, label: 'most popular', tagline: 'the flagship timeline' },
       { weeks: 12, price: 3300, sessions: 12, savings: 300, label: 'best value', tagline: 'strongest foundation' },
     ],
-    notes: "One session a week is enough to correct form, push performance, and stay accountable — with the full system running every other day. Say: \"one day a week I'm with you. every other day, the system has you covered.\"",
+    notes: "This is your recommendation for Ron. After showing Elite, say: \"Now — this is the one I'd actually recommend for you.\" Pause. \"One session a week is enough to correct your form, push your performance, and hold you accountable. And the full system runs every other day — so you're not on your own between sessions.\" Then say: \"I'm not recommending this because it's cheaper. I'm recommending it because I don't think you need to train with me three times a week to get the result you described. One strong session plus the system may be enough.\" Let that land.",
   },
   {
     type: 'package',
@@ -259,6 +266,25 @@ const SLIDES = [
       { feature: 'priority support', elite: true, hybrid: false, remote: false },
     ],
     notes: "This is the most important slide in the package section. Every row with three checkmarks reinforces that coaching quality doesn't change — only the access does. Let him scan the whole table. Then point to the in-person row and say: \"that's the only real difference.\"",
+  },
+  {
+    type: 'recommendation',
+    label: 'my recommendation for you',
+    headline: 'hybrid coaching.\n8 weeks.',
+    reasons: [
+      'you want hands-on training and real accountability',
+      'one coached session each week sets the standard and builds your confidence',
+      'independent workouts between sessions teach you to execute on your own',
+      'the full vveritas* system supports you every day — not just on session days',
+      '8 weeks is enough time to build consistency and measure real progress',
+    ],
+    notNeeded: [
+      'three in-person sessions per week — unless you need maximum hands-on support',
+      'complicated calorie or macro tracking',
+      'excessive training volume or frequency',
+      'a long-term commitment before we see how you respond',
+    ],
+    notes: "Read the reasons out loud — slowly. Then say: \"And here's what I don't think you need right now.\" Read those too. \"I'm not removing these things to give you less. I'm removing them because they're not necessary for your situation.\" Pause. \"One strong session a week, the full system running between sessions — I believe that gives you a real shot at everything you described.\" This slide should feel like a doctor reading you a diagnosis, not a salesperson showing you a menu.",
   },
   {
     type: 'eight-week',
@@ -309,6 +335,7 @@ const SLIDES = [
         id: 'hybrid',
         name: 'hybrid coaching',
         sub: '1 in-person session / week',
+        recommended: true,
         durations: [
           { weeks: 4, price: 1200, sessions: '4 sessions' },
           { weeks: 8, price: 2300, sessions: '8 sessions', savings: 'save $100' },
@@ -326,7 +353,7 @@ const SLIDES = [
         ],
       },
     ],
-    notes: "This is the close. Show this slide, ask \"what questions do you have before we move forward?\" — then go silent. Let Ron talk. If he selects a package, walk through it together. If he hesitates, ask \"what's holding you back?\" Then address it directly.",
+    notes: "Don't say \"which one feels right?\" Say: \"Based on everything you told me, I'd recommend the 8-week Hybrid. You'll have me in person every week, and the system runs every other day. The investment is $2,300 — and we can structure the payment however works for you.\" Pause. \"Does that structure make sense for what you described?\" Let him answer. If yes: \"Good. Let me walk you through it and we'll lock in your start date.\" If budget is the issue: \"Would it help if I walked you through which parts are most essential for your situation?\" Never push. Never invent urgency. If he needs time — give him the enroll link and follow up same day.",
   },
   {
     type: 'cta',
@@ -572,11 +599,16 @@ function EnrollmentSlide({ slide }) {
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '1rem',
-              border: '1px solid #1a1a1a',
+              border: `1px solid ${p.recommended ? '#EDEDE8' : '#1a1a1a'}`,
             }}
           >
             <div>
-              <div style={{ fontSize: 'clamp(0.82rem, 1.3vw, 1rem)', fontWeight: 300, marginBottom: '0.2rem' }}>{p.name}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.2rem' }}>
+                <span style={{ fontSize: 'clamp(0.82rem, 1.3vw, 1rem)', fontWeight: 300 }}>{p.name}</span>
+                {p.recommended && (
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.4rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#4a8c6a', border: '1px solid #4a8c6a', padding: '0.15em 0.5em' }}>recommended</span>
+                )}
+              </div>
               <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.48rem', letterSpacing: '0.15em', color: '#5A5A5A' }}>{p.sub}</div>
             </div>
             <span style={{ color: '#3A3A3A', fontSize: '0.8rem' }}>→</span>
@@ -774,6 +806,39 @@ function Slide({ slide }) {
 
   if (slide.type === 'package') return <PackageSlide slide={slide} />;
   if (slide.type === 'comparison-table') return <ComparisonTable slide={slide} />;
+
+  if (slide.type === 'recommendation') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">{slide.label}</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '2rem' }}>{slide.headline}</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 4vw', maxWidth: '700px' }}>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#4a8c6a' }}>why i'm recommending this</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {slide.reasons.map((r, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.55rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
+                  <span style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.85rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{r}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#3A3A3A' }}>what i don't think you need right now</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {slide.notNeeded.map((r, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.55rem', color: '#2a2a2a', flexShrink: 0 }}>—</span>
+                  <span style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.85rem)', color: '#5A5A5A', lineHeight: 1.5 }}>{r}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (slide.type === 'eight-week') {
     return (
