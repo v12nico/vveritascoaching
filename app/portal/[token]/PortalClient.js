@@ -348,10 +348,222 @@ function GroceryList({ groceryList }) {
   );
 }
 
+// ─── daily standards (Ron-style nutrition) ────────────────────────
+function DailyStandards({ nutri }) {
+  const [standards, setStandards] = useState(
+    nutri?.dailyStandards?.map(s => ({ ...s })) || []
+  );
+
+  function toggle(id) {
+    setStandards(prev => prev.map(s => s.id === id ? { ...s, done: !s.done } : s));
+  }
+
+  const score = nutri?.dailyScore || 0;
+  const color = score >= 80 ? '#4a8c6a' : score >= 60 ? '#8c7a3a' : '#5C1A1A';
+
+  return (
+    <div className="portal-fq">
+      <div className="portal-fq-header">
+        <span className="portal-section-label">today's standards</span>
+        <span className="portal-fq-score" style={{ color }}>{score}</span>
+      </div>
+      <div className="portal-sms-track" style={{ marginBottom: '1.5rem' }}>
+        <div className="portal-sms-fill" style={{ width: `${score}%`, background: color }} />
+      </div>
+
+      <div className="portal-task-list">
+        {standards.map(item => {
+          const hasProgress = item.current !== null && item.target !== null && item.unit !== 'high';
+          const progressText = item.unit === 'high'
+            ? 'high'
+            : hasProgress
+              ? `${item.current} / ${item.target}${item.unit}`
+              : item.unit !== '' ? `${item.current} ${item.unit}` : '';
+
+          return (
+            <button
+              key={item.id}
+              className={`portal-task${item.done ? ' done' : ''}`}
+              onClick={() => toggle(item.id)}
+            >
+              <span className="portal-task-check">{item.done ? '✓' : '○'}</span>
+              <span className="portal-task-text">{item.label}</span>
+              {progressText && (
+                <span className="portal-ds-progress">{progressText}</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {nutri?.coachFocus && (
+        <div className="portal-ds-focus">
+          <div className="portal-section-label" style={{ marginTop: '2rem', marginBottom: '0.6rem' }}>coach's focus</div>
+          <div className="portal-ds-focus-note">"{nutri.coachFocus}"</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── progress tab ─────────────────────────────────────────────────
+function ProgressTab({ progressInfo, client }) {
+  if (!progressInfo) return <div className="portal-empty">progress data coming soon.</div>;
+
+  const { weight, bodyFat, strength, workoutCompletion, nutritionAdherence, streak, photos } = progressInfo;
+  const weightToGo = weight.current - weight.goal;
+  const totalToLose = weight.start - weight.goal;
+  const lost = weight.start - weight.current;
+  const pct = totalToLose > 0 ? Math.round((lost / totalToLose) * 100) : 0;
+
+  return (
+    <div className="portal-progress">
+      <div className="portal-prog-weight">
+        <div className="portal-prog-weight-row">
+          <div className="portal-weight-stat">
+            <div className="portal-weight-val">{weight.current}</div>
+            <div className="portal-weight-lab">current</div>
+          </div>
+          <div className="portal-weight-arrow">→</div>
+          <div className="portal-weight-stat">
+            <div className="portal-weight-val" style={{ color: '#4a8c6a' }}>{weight.goal}</div>
+            <div className="portal-weight-lab">goal</div>
+          </div>
+          {weightToGo > 0 && (
+            <div className="portal-weight-stat">
+              <div className="portal-weight-val" style={{ color: '#5A5A5A' }}>−{weightToGo} lbs</div>
+              <div className="portal-weight-lab">to go</div>
+            </div>
+          )}
+        </div>
+        {totalToLose > 0 && (
+          <div style={{ marginTop: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+              <span className="portal-section-label" style={{ marginBottom: 0 }}>weight progress</span>
+              <span style={{ fontSize: '0.7rem', color: 'var(--dim)' }}>{pct}%</span>
+            </div>
+            <div className="portal-sms-track">
+              <div className="portal-sms-fill" style={{ width: `${pct}%`, background: '#4a8c6a' }} />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="portal-prog-stats">
+        <div className="portal-prog-stat">
+          <div className="portal-prog-stat-label">body fat</div>
+          <div className="portal-prog-stat-val" style={{ color: '#4a8c6a' }}>↓ {bodyFat.label}</div>
+        </div>
+        <div className="portal-prog-stat">
+          <div className="portal-prog-stat-label">strength</div>
+          <div className="portal-prog-stat-val" style={{ color: '#4a8c6a' }}>↑ {strength.label}</div>
+        </div>
+        <div className="portal-prog-stat">
+          <div className="portal-prog-stat-label">workout completion</div>
+          <div className="portal-prog-stat-val">{workoutCompletion}%</div>
+        </div>
+        <div className="portal-prog-stat">
+          <div className="portal-prog-stat-label">nutrition adherence</div>
+          <div className="portal-prog-stat-val">{nutritionAdherence}%</div>
+        </div>
+        <div className="portal-prog-stat">
+          <div className="portal-prog-stat-label">current streak</div>
+          <div className="portal-prog-stat-val" style={{ color: '#4a8c6a' }}>{streak} days</div>
+        </div>
+      </div>
+
+      <div className="portal-section-label" style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>progress photos</div>
+      <div className="portal-photos-grid">
+        {photos.map((p, i) => (
+          <div key={i} className="portal-photo-slot">
+            {p.src ? (
+              <img src={p.src} alt={p.label} className="portal-photo-img" />
+            ) : (
+              <div className="portal-photo-placeholder">
+                <span className="portal-photo-placeholder-label">add photo</span>
+              </div>
+            )}
+            <div className="portal-photo-week">{p.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── in-person training tab ───────────────────────────────────────
+function InPersonTab({ inPerson }) {
+  if (!inPerson) return <div className="portal-empty">in-person details coming soon.</div>;
+
+  return (
+    <div className="portal-inperson">
+      <div className="portal-ip-upcoming">
+        <div className="portal-section-label">upcoming session</div>
+        <div className="portal-ip-session-card">
+          <div className="portal-ip-day">{inPerson.upcoming.day}</div>
+          <div className="portal-ip-time">{inPerson.upcoming.time}</div>
+          <div className="portal-ip-location">{inPerson.upcoming.location}</div>
+        </div>
+        <div className="portal-ip-tracker">
+          <div className="portal-ip-tracker-row">
+            <span className="portal-ip-tracker-label">completed sessions</span>
+            <span className="portal-ip-tracker-val">{inPerson.completedSessions}</span>
+          </div>
+          <div className="portal-ip-tracker-row">
+            <span className="portal-ip-tracker-label">next goal</span>
+            <span className="portal-ip-tracker-goal">{inPerson.nextGoal}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="portal-section-label" style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>what happens during sessions</div>
+      <div className="portal-ip-list">
+        {inPerson.duringSession.map((item, i) => (
+          <div key={i} className="portal-ip-list-row">
+            <span className="portal-ip-dot">—</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="portal-section-label" style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>between sessions</div>
+      <div className="portal-ip-list">
+        {inPerson.betweenSessions.map((item, i) => (
+          <div key={i} className="portal-ip-list-row">
+            <span className="portal-ip-dot">—</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── your coach tab ───────────────────────────────────────────────
+function CoachTab({ coachData }) {
+  if (!coachData) return null;
+  return (
+    <div className="portal-coach">
+      <div className="portal-coach-name">nico cortez</div>
+      <div className="portal-coach-title">your coach</div>
+      <div className="portal-section-label" style={{ marginTop: '2rem', marginBottom: '1rem' }}>what's included</div>
+      <div className="portal-coach-services">
+        {coachData.services.map((s, i) => (
+          <div key={i} className="portal-coach-service">
+            <span className="portal-coach-check">✓</span>
+            <span>{s}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── main portal ──────────────────────────────────────────────────
 export default function PortalClient({
   client, program, thread, nutri, groceryList,
   mission, pillarData, objectiveData, checkInQ, pillarDetailsData,
+  progressInfo, inPerson, coachData,
 }) {
   const [tab, setTab] = useState('mission');
   const [checkInSent, setCheckInSent] = useState(false);
@@ -369,7 +581,19 @@ export default function PortalClient({
     ? Math.round(pillarData.data.reduce((s, p) => s + p.score, 0) / pillarData.data.length)
     : client.momentum;
 
-  const tabs = ['mission', 'pillars', 'fitness', 'nutrition', 'check in', 'grocery', 'messages'];
+  // build tab list dynamically based on available data
+  const tabs = [
+    'mission',
+    ...(pillarData ? ['pillars'] : []),
+    'fitness',
+    'nutrition',
+    'grocery',
+    ...(progressInfo ? ['progress'] : []),
+    'check in',
+    'messages',
+    ...(inPerson ? ['in-person'] : []),
+    ...(coachData ? ['coach'] : []),
+  ];
 
   return (
     <div className="portal-page">
@@ -467,45 +691,46 @@ export default function PortalClient({
 
         {tab === 'nutrition' && (
           <div className="portal-nutrition">
-            <FoodQualityScore nutri={nutri} />
-
-            <div className="portal-fq-macros-toggle">
-              <button
-                className="portal-macros-expand"
-                onClick={() => setShowMacros(s => !s)}
-              >
-                {showMacros ? '− hide macro detail' : '+ full macro tracking'}
-              </button>
-            </div>
-
-            {showMacros && nutri && (
-              <div className="portal-macros-detail">
-                <div className="portal-section-label" style={{ marginBottom: '1rem' }}>macro targets</div>
-                <div className="portal-macros">
-                  <div className="portal-macro"><span>{nutri.targets.calories}</span><label>kcal</label></div>
-                  <div className="portal-macro"><span>{nutri.targets.protein}g</span><label>protein</label></div>
-                  <div className="portal-macro"><span>{nutri.targets.carbs}g</span><label>carbs</label></div>
-                  <div className="portal-macro"><span>{nutri.targets.fat}g</span><label>fat</label></div>
+            {nutri?.dailyStandards ? (
+              <DailyStandards nutri={nutri} />
+            ) : (
+              <>
+                <FoodQualityScore nutri={nutri} />
+                <div className="portal-fq-macros-toggle">
+                  <button className="portal-macros-expand" onClick={() => setShowMacros(s => !s)}>
+                    {showMacros ? '− hide macro detail' : '+ full macro tracking'}
+                  </button>
                 </div>
-                <div className="portal-section-label" style={{ marginTop: '1.5rem', marginBottom: '0.8rem' }}>log today</div>
-                {macroSent ? (
-                  <div className="portal-sent">
-                    <div className="portal-sent-title">logged.</div>
-                    <div className="portal-sent-sub">nico can see today's numbers.</div>
-                  </div>
-                ) : (
-                  <form className="portal-macro-form" onSubmit={e => { e.preventDefault(); setMacroSent(true); }}>
-                    {['calories', 'protein', 'carbs', 'fat'].map(k => (
-                      <div key={k} className="portal-field">
-                        <label>{k}{k !== 'calories' ? ' (g)' : ' (kcal)'}</label>
-                        <input type="number" placeholder={nutri.targets[k]}
-                          value={macroLog[k]} onChange={e => setMacroLog({ ...macroLog, [k]: e.target.value })} />
+                {showMacros && nutri && (
+                  <div className="portal-macros-detail">
+                    <div className="portal-section-label" style={{ marginBottom: '1rem' }}>macro targets</div>
+                    <div className="portal-macros">
+                      <div className="portal-macro"><span>{nutri.targets.calories}</span><label>kcal</label></div>
+                      <div className="portal-macro"><span>{nutri.targets.protein}g</span><label>protein</label></div>
+                      <div className="portal-macro"><span>{nutri.targets.carbs}g</span><label>carbs</label></div>
+                      <div className="portal-macro"><span>{nutri.targets.fat}g</span><label>fat</label></div>
+                    </div>
+                    <div className="portal-section-label" style={{ marginTop: '1.5rem', marginBottom: '0.8rem' }}>log today</div>
+                    {macroSent ? (
+                      <div className="portal-sent">
+                        <div className="portal-sent-title">logged.</div>
+                        <div className="portal-sent-sub">nico can see today's numbers.</div>
                       </div>
-                    ))}
-                    <button type="submit" className="portal-submit">log it →</button>
-                  </form>
+                    ) : (
+                      <form className="portal-macro-form" onSubmit={e => { e.preventDefault(); setMacroSent(true); }}>
+                        {['calories', 'protein', 'carbs', 'fat'].map(k => (
+                          <div key={k} className="portal-field">
+                            <label>{k}{k !== 'calories' ? ' (g)' : ' (kcal)'}</label>
+                            <input type="number" placeholder={nutri.targets[k]}
+                              value={macroLog[k]} onChange={e => setMacroLog({ ...macroLog, [k]: e.target.value })} />
+                          </div>
+                        ))}
+                        <button type="submit" className="portal-submit">log it →</button>
+                      </form>
+                    )}
+                  </div>
                 )}
-              </div>
+              </>
             )}
           </div>
         )}
@@ -594,12 +819,16 @@ export default function PortalClient({
 
         {tab === 'grocery' && <GroceryList groceryList={groceryList} />}
 
+        {tab === 'progress' && (
+          <ProgressTab progressInfo={progressInfo} client={client} />
+        )}
+
         {tab === 'messages' && (
           <div className="portal-messages">
             <div className="portal-thread">
               {thread ? thread.thread.map((m, i) => (
                 <div key={i} className={`portal-msg ${m.from}`}>
-                  <div className="portal-msg-text">{m.text}</div>
+                  <div className="portal-msg-text" style={{ whiteSpace: 'pre-line' }}>{m.text}</div>
                   <div className="portal-msg-time">{m.time}</div>
                 </div>
               )) : (
@@ -613,6 +842,10 @@ export default function PortalClient({
             </div>
           </div>
         )}
+
+        {tab === 'in-person' && <InPersonTab inPerson={inPerson} />}
+
+        {tab === 'coach' && <CoachTab coachData={coachData} />}
 
       </div>
 

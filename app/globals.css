@@ -3288,6 +3288,226 @@ textarea {
   padding-left: 0;
 }
 
+/* ─── daily standards (ron-style nutrition) ──────────────────────── */
+.portal-ds-progress {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+  white-space: nowrap;
+  margin-left: auto;
+}
+.portal-ds-focus {
+  margin-top: 0;
+}
+.portal-ds-focus-note {
+  font-size: 0.88rem;
+  color: var(--dim);
+  font-style: italic;
+  line-height: 1.65;
+  padding: 1rem 1.2rem;
+  border: 1px solid #141414;
+}
+
+/* ─── progress tab ───────────────────────────────────────────────── */
+.portal-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.portal-prog-weight {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #141414;
+  margin-bottom: 2rem;
+}
+.portal-prog-weight-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.portal-prog-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.portal-prog-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #0a0a0a;
+}
+.portal-prog-stat-label {
+  font-size: 0.85rem;
+  color: var(--dim);
+}
+.portal-prog-stat-val {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.portal-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #0f0f0f;
+}
+.portal-photo-slot {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+.portal-photo-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.portal-photo-placeholder {
+  aspect-ratio: 3/4;
+  background: #050505;
+  border: 1px dashed #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portal-photo-placeholder-label {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+.portal-photo-week {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ghost);
+  padding: 0.6rem 0.8rem;
+}
+
+/* ─── in-person training tab ─────────────────────────────────────── */
+.portal-inperson {
+  display: flex;
+  flex-direction: column;
+}
+.portal-ip-session-card {
+  border: 1px solid #141414;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.portal-ip-day {
+  font-size: 1.4rem;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.portal-ip-time {
+  font-size: 0.9rem;
+  color: var(--dim);
+}
+.portal-ip-location {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-top: 0.3rem;
+}
+.portal-ip-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0;
+}
+.portal-ip-tracker-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #0a0a0a;
+}
+.portal-ip-tracker-label {
+  font-size: 0.82rem;
+  color: var(--dim);
+}
+.portal-ip-tracker-val {
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.portal-ip-tracker-goal {
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.portal-ip-list {
+  display: flex;
+  flex-direction: column;
+}
+.portal-ip-list-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #0a0a0a;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.portal-ip-dot {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ghost);
+  flex-shrink: 0;
+  min-width: 1rem;
+}
+
+/* ─── your coach tab ─────────────────────────────────────────────── */
+.portal-coach {
+  display: flex;
+  flex-direction: column;
+}
+.portal-coach-name {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.portal-coach-title {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 0;
+}
+.portal-coach-services {
+  display: flex;
+  flex-direction: column;
+}
+.portal-coach-service {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #0a0a0a;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.portal-coach-check {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.65rem;
+  color: #4a8c6a;
+  min-width: 1rem;
+}
+
 /* ─── grocery additions ──────────────────────────────────────────── */
 .portal-grocery-check {
   font-family: ui-monospace, 'SF Mono', monospace;
