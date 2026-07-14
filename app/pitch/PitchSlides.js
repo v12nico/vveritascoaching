@@ -174,7 +174,7 @@ const SLIDES = [
     tier: '02 — hybrid',
     headline: 'hybrid coaching.',
     for: 'for clients who want in-person coaching and ongoing accountability.',
-    badge: 'recommended',
+    badge: null,
     items: [
       'everything in remote coaching',
       '1 in-person session each week',
