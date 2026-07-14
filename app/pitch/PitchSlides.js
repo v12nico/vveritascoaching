@@ -170,21 +170,6 @@ const SLIDES = [
   },
 ];
 
-function ScoreBar({ score }) {
-  const color = score >= 70 ? '#4a8c6a' : score >= 50 ? '#8c7a3a' : '#5C1A1A';
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%' }}>
-      <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'clamp(0.48rem, 0.8vw, 0.6rem)', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#3A3A3A', minWidth: '7rem' }}>
-        {arguments[1]}
-      </span>
-      <div style={{ flex: 1, height: '1px', background: '#1a1a1a' }}>
-        <div style={{ width: `${score}%`, height: '100%', background: color }} />
-      </div>
-      <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'clamp(0.6rem, 1vw, 0.75rem)', color, minWidth: '2rem', textAlign: 'right' }}>{score}</span>
-    </div>
-  );
-}
-
 function Slide({ slide }) {
   if (slide.type === 'hero') {
     return (
