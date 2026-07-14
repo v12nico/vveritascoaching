@@ -3522,3 +3522,17 @@ textarea {
 .portal-grocery-row.purchased .portal-grocery-check {
   color: #4a8c6a;
 }
+
+/* ─── intake form inputs ─────────────────────────────────────────── */
+.vin-input:focus {
+  border-bottom-color: #EDEDE8;
+  outline: none;
+}
+.vin-input::placeholder {
+  color: #2a2a2a;
+}
+.vin-select {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
