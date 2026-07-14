@@ -4,9 +4,9 @@ import Back from '../../components/Back';
 import Footer from '../../components/Footer';
 
 const coaching = [
-  { name: 'the blueprint', href: '/blueprint', price: '$250' },
-  { name: 'the mentorship', href: '/mentorship', price: '$500' },
-  { name: 'the competitor', href: '/competitor', price: '$1,000' },
+  { name: 'foundation', href: '/foundation', price: '$997' },
+  { name: 'operator', href: '/operator', price: '$2,750' },
+  { name: 'sovereign', href: '/sovereign', price: '$5,000' },
 ];
 
 const programs = [
