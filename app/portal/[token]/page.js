@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { clients, programs, messages, nutrition } from '../../../lib/mockData';
+import { clients, programs, messages, nutrition, groceryLists } from '../../../lib/mockData';
 import PortalClient from './PortalClient';
 
 export default async function PortalPage({ params }) {
@@ -10,6 +10,7 @@ export default async function PortalPage({ params }) {
   const program = programs.find(p => p.assignedTo.includes(client.id));
   const thread = messages.find(m => m.clientId === client.id);
   const nutri = nutrition.find(n => n.clientId === client.id);
+  const groceryList = groceryLists.find(g => g.clientId === client.id);
 
   return (
     <PortalClient
@@ -17,6 +18,7 @@ export default async function PortalPage({ params }) {
       program={program || null}
       thread={thread || null}
       nutri={nutri || null}
+      groceryList={groceryList || null}
     />
   );
 }

@@ -1732,6 +1732,188 @@ textarea {
 
 .portal-submit-inline:hover { color: var(--text); }
 
+/* ---------- momentum bar ---------- */
+.portal-momentum {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.portal-momentum-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.portal-momentum-label {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--ghost);
+  text-transform: uppercase;
+}
+
+.portal-momentum-score {
+  font-size: 0.78rem;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  letter-spacing: 0.05em;
+}
+
+.portal-momentum-track {
+  width: 100%;
+  height: 2px;
+  background: #141414;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-momentum-fill {
+  height: 100%;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- program calendar ---------- */
+.portal-calendar {
+  margin-bottom: 0.5rem;
+}
+
+.portal-calendar-weeks {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0.8rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.portal-week-block {
+  flex: 1;
+  min-width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.portal-week-block::after {
+  content: '';
+  position: absolute;
+  top: calc(0.5rem + 5px);
+  left: 50%;
+  right: -50%;
+  height: 1px;
+  z-index: 0;
+}
+
+.portal-week-block:last-child::after { display: none; }
+
+.portal-week-block.done::after { background: #4a8c6a; }
+.portal-week-block.active::after { background: #141414; }
+.portal-week-block.upcoming::after { background: #141414; }
+
+.portal-week-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.portal-week-block.done .portal-week-dot {
+  background: #4a8c6a;
+}
+
+.portal-week-block.active .portal-week-dot {
+  background: var(--text);
+  box-shadow: 0 0 0 3px rgba(237,237,232,0.15);
+  animation: pulse 2s ease infinite;
+}
+
+.portal-week-block.upcoming .portal-week-dot {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+}
+
+.portal-week-num {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+  color: var(--ghost);
+}
+
+.portal-week-block.active .portal-week-num { color: var(--text); }
+.portal-week-block.done .portal-week-num { color: #4a8c6a; }
+
+.portal-calendar-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.portal-calendar-legend span {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.legend-done { color: #4a8c6a; }
+.legend-active { color: var(--text); }
+.legend-upcoming { color: #2a2a2a; }
+
+/* ---------- grocery list ---------- */
+.portal-grocery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.portal-grocery-note {
+  font-size: 0.85rem;
+  color: var(--dim);
+  font-style: italic;
+  line-height: 1.6;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #141414;
+}
+
+.portal-grocery-week {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: var(--ghost);
+  margin-top: -1.5rem;
+}
+
+.portal-grocery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.portal-grocery-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #0a0a0a;
+}
+
+.portal-grocery-name {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.portal-grocery-qty {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+}
+
 /* ---------- portal footer ---------- */
 .portal-footer {
   text-align: center;

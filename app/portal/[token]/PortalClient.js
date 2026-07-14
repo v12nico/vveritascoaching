@@ -1,7 +1,95 @@
 'use client';
 import { useState } from 'react';
 
-export default function PortalClient({ client, program, thread, nutri }) {
+function MomentumBar({ score }) {
+  const color = score >= 70 ? '#4a8c6a' : score >= 40 ? '#8c7a3a' : '#5C1A1A';
+  return (
+    <div className="portal-momentum">
+      <div className="portal-momentum-top">
+        <span className="portal-momentum-label">momentum</span>
+        <span className="portal-momentum-score" style={{ color }}>{score}</span>
+      </div>
+      <div className="portal-momentum-track">
+        <div
+          className="portal-momentum-fill"
+          style={{ width: `${score}%`, background: color }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function ProgramCalendar({ program, blockStart }) {
+  if (!program || !blockStart) return null;
+
+  const totalWeeks = program.weeks;
+  const start = new Date(blockStart);
+  const today = new Date('2026-07-14');
+  const daysPassed = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+  const currentWeek = Math.min(Math.floor(daysPassed / 7) + 1, totalWeeks);
+
+  return (
+    <div className="portal-calendar">
+      <div className="portal-section-label">program timeline — week {currentWeek} of {totalWeeks}</div>
+      <div className="portal-calendar-weeks">
+        {Array.from({ length: totalWeeks }, (_, i) => {
+          const week = i + 1;
+          const done = week < currentWeek;
+          const active = week === currentWeek;
+          return (
+            <div
+              key={week}
+              className={`portal-week-block${done ? ' done' : active ? ' active' : ' upcoming'}`}
+            >
+              <div className="portal-week-dot" />
+              <div className="portal-week-num">{week}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="portal-calendar-legend">
+        <span className="legend-done">■ complete</span>
+        <span className="legend-active">■ this week</span>
+        <span className="legend-upcoming">■ upcoming</span>
+      </div>
+    </div>
+  );
+}
+
+function GroceryList({ groceryList }) {
+  const categories = ['protein', 'dairy', 'fat', 'carbs', 'other'];
+  const labels = { protein: 'protein', dairy: 'dairy', fat: 'fats + oils', carbs: 'carbs + fruit', other: 'other' };
+
+  if (!groceryList) return (
+    <div className="portal-empty">grocery list coming this week.</div>
+  );
+
+  return (
+    <div className="portal-grocery">
+      {groceryList.note && (
+        <div className="portal-grocery-note">"{groceryList.note}"</div>
+      )}
+      <div className="portal-grocery-week">week of {groceryList.week}</div>
+      {categories.map(cat => {
+        const items = groceryList.items.filter(i => i.category === cat);
+        if (!items.length) return null;
+        return (
+          <div key={cat} className="portal-grocery-section">
+            <div className="portal-section-label">{labels[cat]}</div>
+            {items.map((item, i) => (
+              <div key={i} className="portal-grocery-row">
+                <span className="portal-grocery-name">{item.name}</span>
+                <span className="portal-grocery-qty">{item.qty}</span>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function PortalClient({ client, program, thread, nutri, groceryList }) {
   const [tab, setTab] = useState('program');
   const [checkInSent, setCheckInSent] = useState(false);
   const [checkIn, setCheckIn] = useState({ weight: '', energy: '5', sleep: '5', notes: '' });
@@ -12,14 +100,14 @@ export default function PortalClient({ client, program, thread, nutri }) {
   const firstName = client.name.split(' ')[0];
   const weightDelta = client.weight.start - client.weight.current;
 
+  const tabs = ['program', 'check in', 'nutrition', 'grocery', 'messages'];
+
   return (
     <div className="portal-page">
 
       <header className="portal-header">
         <div className="portal-brand">vveritas*</div>
-        <div className="portal-header-right">
-          <span className="portal-tier">{client.tier}</span>
-        </div>
+        <span className="portal-tier">{client.tier}</span>
       </header>
 
       <div className="portal-hero">
@@ -44,10 +132,11 @@ export default function PortalClient({ client, program, thread, nutri }) {
             </div>
           )}
         </div>
+        <MomentumBar score={client.momentum} />
       </div>
 
       <nav className="portal-tabs">
-        {['program', 'check in', 'nutrition', 'messages'].map(t => (
+        {tabs.map(t => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -62,9 +151,10 @@ export default function PortalClient({ client, program, thread, nutri }) {
 
         {tab === 'program' && (
           <div className="portal-program">
+            <ProgramCalendar program={program} blockStart={client.blockStart} />
             {program ? (
               <>
-                <div className="portal-program-name">{program.name}</div>
+                <div className="portal-program-name" style={{marginTop:'2rem'}}>{program.name}</div>
                 <div className="portal-program-meta">{program.daysPerWeek}x/week · {program.weeks} weeks</div>
                 {program.workouts.length > 0 ? (
                   <div className="portal-workout-list">
@@ -111,22 +201,16 @@ export default function PortalClient({ client, program, thread, nutri }) {
                 <div className="portal-field">
                   <label>energy this week (1–10)</label>
                   <div className="portal-slider-row">
-                    <input
-                      type="range" min="1" max="10"
-                      value={checkIn.energy}
-                      onChange={e => setCheckIn({ ...checkIn, energy: e.target.value })}
-                    />
+                    <input type="range" min="1" max="10" value={checkIn.energy}
+                      onChange={e => setCheckIn({ ...checkIn, energy: e.target.value })} />
                     <span className="portal-slider-val">{checkIn.energy}</span>
                   </div>
                 </div>
                 <div className="portal-field">
                   <label>sleep quality this week (1–10)</label>
                   <div className="portal-slider-row">
-                    <input
-                      type="range" min="1" max="10"
-                      value={checkIn.sleep}
-                      onChange={e => setCheckIn({ ...checkIn, sleep: e.target.value })}
-                    />
+                    <input type="range" min="1" max="10" value={checkIn.sleep}
+                      onChange={e => setCheckIn({ ...checkIn, sleep: e.target.value })} />
                     <span className="portal-slider-val">{checkIn.sleep}</span>
                   </div>
                 </div>
@@ -151,20 +235,11 @@ export default function PortalClient({ client, program, thread, nutri }) {
               <>
                 <div className="portal-section-label">your targets</div>
                 <div className="portal-macros">
-                  <div className="portal-macro">
-                    <span>{nutri.targets.calories}</span><label>kcal</label>
-                  </div>
-                  <div className="portal-macro">
-                    <span>{nutri.targets.protein}g</span><label>protein</label>
-                  </div>
-                  <div className="portal-macro">
-                    <span>{nutri.targets.carbs}g</span><label>carbs</label>
-                  </div>
-                  <div className="portal-macro">
-                    <span>{nutri.targets.fat}g</span><label>fat</label>
-                  </div>
+                  <div className="portal-macro"><span>{nutri.targets.calories}</span><label>kcal</label></div>
+                  <div className="portal-macro"><span>{nutri.targets.protein}g</span><label>protein</label></div>
+                  <div className="portal-macro"><span>{nutri.targets.carbs}g</span><label>carbs</label></div>
+                  <div className="portal-macro"><span>{nutri.targets.fat}g</span><label>fat</label></div>
                 </div>
-
                 <div className="portal-section-label" style={{marginTop:'2.5rem'}}>log today</div>
                 {macroSent ? (
                   <div className="portal-sent">
@@ -176,18 +251,13 @@ export default function PortalClient({ client, program, thread, nutri }) {
                     {['calories', 'protein', 'carbs', 'fat'].map(k => (
                       <div key={k} className="portal-field">
                         <label>{k}{k !== 'calories' ? ' (g)' : ' (kcal)'}</label>
-                        <input
-                          type="number"
-                          placeholder={nutri.targets[k]}
-                          value={macroLog[k]}
-                          onChange={e => setMacroLog({ ...macroLog, [k]: e.target.value })}
-                        />
+                        <input type="number" placeholder={nutri.targets[k]}
+                          value={macroLog[k]} onChange={e => setMacroLog({ ...macroLog, [k]: e.target.value })} />
                       </div>
                     ))}
                     <button type="submit" className="portal-submit">log it →</button>
                   </form>
                 )}
-
                 <div className="portal-section-label" style={{marginTop:'2.5rem'}}>recent</div>
                 {nutri.log.map(day => (
                   <div key={day.date} className="portal-log-row">
@@ -205,6 +275,8 @@ export default function PortalClient({ client, program, thread, nutri }) {
           </div>
         )}
 
+        {tab === 'grocery' && <GroceryList groceryList={groceryList} />}
+
         {tab === 'messages' && (
           <div className="portal-messages">
             <div className="portal-thread">
@@ -218,17 +290,9 @@ export default function PortalClient({ client, program, thread, nutri }) {
               )}
             </div>
             <div className="portal-msg-input-row">
-              <input
-                type="text"
-                className="portal-msg-input"
-                placeholder="message nico..."
-                value={msg}
-                onChange={e => setMsg(e.target.value)}
-              />
-              <button
-                className="portal-submit-inline"
-                onClick={() => setMsg('')}
-              >send</button>
+              <input type="text" className="portal-msg-input" placeholder="message nico..."
+                value={msg} onChange={e => setMsg(e.target.value)} />
+              <button className="portal-submit-inline" onClick={() => setMsg('')}>send</button>
             </div>
           </div>
         )}
