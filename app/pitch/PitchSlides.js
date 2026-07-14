@@ -16,6 +16,18 @@ const SLIDES = [
     notes: "Open with this on screen before the call starts. Let Ron see his name. That alone tells him this isn't a generic pitch — it was made for him. Don't say anything until he reacts.",
   },
   {
+    type: 'fit-frame',
+    notes: "Say slowly: \"Before I walk you through what I built, I want to set the expectation for this conversation. This isn't a traditional sales call where I try to convince you to buy something. I want to understand where you are, what's stopped you before, and whether I genuinely believe my system is the right fit for you.\" Pause. \"You should be deciding whether you trust me to coach you — and I'm also deciding whether I believe you're ready to uphold the standards of the program. If I don't think it fits, I'll tell you directly. And if I believe a simpler option would serve you better, I'll tell you that too.\" Then ask: \"Fair?\" Wait for him to agree before moving forward.",
+  },
+  {
+    type: 'fit-standard',
+    notes: "Let him read this. Don't rush. Then say: \"Perfection isn't required. Participation is. A missed workout doesn't disqualify you. Disappearing, avoiding communication, and refusing feedback — those are what make coaching ineffective.\" Now ask the diagnostic questions from your phone. Listen for evidence, not promises. Ask for examples. Do not reward answers that just sound motivated.",
+  },
+  {
+    type: 'fit-commitment',
+    notes: "Say: \"Before I show you what I've built, I want to be clear about what this relationship looks like from both sides.\" Read the left column. Then: \"And here's what I'd need from you.\" Read the right. Then: \"I don't expect perfection. I expect communication and effort. If you give me those things, I can coach you.\" Ask: \"Does that feel like something you can genuinely commit to?\" Wait. Don't fill the silence.",
+  },
+  {
     type: 'statement',
     headline: "most people don't fail because they don't try.",
     body: "they fail because nothing is organized, nothing is tracked, and there's nobody holding them accountable.",
@@ -156,6 +168,10 @@ const SLIDES = [
       'weekly check-ins.',
     ],
     notes: "This is the premium experience. You're not just showing up to count reps — you're building the entire system around him. The in-person sessions are supported by everything else. That's what makes this different.",
+  },
+  {
+    type: 'fit-who',
+    notes: "Say: \"I want to be honest about who this is built for — and who it isn't.\" Let him read both columns. Then: \"This isn't about being perfect. It's about being honest, coachable, and willing to keep showing up.\" Then ask: \"Based on what you know about yourself — where do you land on this list?\" Let him answer. That answer tells you everything about whether he's actually ready.",
   },
   {
     type: 'packages-intro',
@@ -800,6 +816,108 @@ function Slide({ slide }) {
         <div className="ws-label">{slide.label}</div>
         <h1 className="ws-headline" style={{ whiteSpace: 'pre-line', marginBottom: '1.5rem' }}>{slide.headline}</h1>
         <p className="ws-body ws-body-spaced">{slide.body}</p>
+      </div>
+    );
+  }
+
+  if (slide.type === 'fit-frame') {
+    return (
+      <div className="ws-slide" style={{ justifyContent: 'center', maxWidth: '70vw', margin: '0 auto', padding: '5vw 8vw' }}>
+        <div className="ws-label">before we begin</div>
+        <h1 className="ws-headline" style={{ marginBottom: '2.5rem' }}>this is not<br />a traditional<br />sales call.</h1>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', maxWidth: '480px', marginBottom: '2.5rem' }}>
+          <p style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)', color: '#5A5A5A', lineHeight: 1.75 }}>you are deciding whether vveritas fits you.</p>
+          <p style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)', color: '#5A5A5A', lineHeight: 1.75 }}>i am deciding whether i believe the system fits your goals, schedule, and willingness to execute.</p>
+        </div>
+        <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.25em', color: '#3A3A3A' }}>the goal is the right fit — not the largest package.</div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'fit-standard') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">what the program requires</div>
+        <h1 className="ws-headline" style={{ marginBottom: '2.5rem' }}>the standard.</h1>
+        <div className="ws-steps" style={{ maxWidth: '520px', marginBottom: '2.5rem' }}>
+          {['honest communication', 'consistent attendance', 'independent execution', 'openness to coaching', 'responsibility for your results'].map((item, i) => (
+            <div key={i} className="ws-step">
+              <span className="ws-step-n">0{i + 1}</span>
+              <span className="ws-step-text">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.25em', color: '#3A3A3A' }}>perfection is not required. participation is.</div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'fit-commitment') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">mutual commitment</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2rem' }}>what this<br />relationship looks like.</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4vw', maxWidth: '680px', marginBottom: '2rem' }}>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#4a8c6a' }}>what you get from me</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {['personalized structure', 'honest feedback', 'in-person coaching', 'nutrition guidance', 'accountability', 'adjustments based on your progress'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.65rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
+                  <span style={{ fontSize: 'clamp(0.7rem, 1.1vw, 0.84rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#3A3A3A' }}>what i need from you</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {['show up', 'follow the plan', 'complete the check-ins', 'communicate when you struggle', 'stay engaged when motivation fades'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.65rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', color: '#2a2a2a', flexShrink: 0 }}>—</span>
+                  <span style={{ fontSize: 'clamp(0.7rem, 1.1vw, 0.84rem)', color: '#5A5A5A', lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div style={{ borderTop: '1px solid #141414', paddingTop: '1.5rem' }}>
+          <p style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.88rem)', color: '#5A5A5A', marginBottom: '0.8rem' }}>if we both uphold our side, the process works.</p>
+          <p style={{ fontSize: 'clamp(0.82rem, 1.3vw, 1rem)', color: '#EDEDE8', fontStyle: 'italic' }}>are you ready to be coached at this level?</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (slide.type === 'fit-who') {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">who this is built for</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2rem' }}>the right fit.</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4vw', maxWidth: '720px' }}>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#4a8c6a' }}>vveritas is built for</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {['men ready to follow a clear structure', 'men who value honest coaching', 'men willing to communicate when they struggle', 'men who want to become more capable, not dependent', 'men prepared to build consistency — not chase quick fixes', 'men willing to be held to the standards they choose'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.65rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
+                  <span style={{ fontSize: 'clamp(0.65rem, 1vw, 0.78rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="ws-mini-label" style={{ marginBottom: '1rem', color: '#3A3A3A' }}>it is not built for</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {['someone looking for motivation without action', 'someone unwilling to communicate', 'someone expecting results from sessions alone', 'someone who changes the plan every few days', 'someone who wants shortcuts without changing habits', 'someone not currently able to make room for the process'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.65rem', alignItems: 'baseline' }}>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', color: '#2a2a2a', flexShrink: 0 }}>—</span>
+                  <span style={{ fontSize: 'clamp(0.65rem, 1vw, 0.78rem)', color: '#5A5A5A', lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
