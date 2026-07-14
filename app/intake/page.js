@@ -130,18 +130,25 @@ export default function IntakePage() {
   const [form, setForm] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState(false);
 
   function set(id, val) { setForm(f => ({ ...f, [id]: val })); }
 
   async function submit() {
     setSubmitting(true);
+    setError(false);
     try {
-      await fetch('/api/intake', {
+      const res = await fetch('/api/intake', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-    } catch (_) {}
+      if (!res.ok) { setError(true); setSubmitting(false); return; }
+    } catch (_) {
+      setError(true);
+      setSubmitting(false);
+      return;
+    }
     setDone(true);
     setSubmitting(false);
   }
@@ -232,6 +239,11 @@ export default function IntakePage() {
           ))}
         </div>
 
+        {error && (
+          <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.1em', color: '#5C1A1A', marginTop: '2rem' }}>
+            something went wrong sending your answers. try again or contact nico directly.
+          </p>
+        )}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '3.5rem' }}>
           <button
             onClick={() => step > 0 ? setStep(step - 1) : setStep(-1)}

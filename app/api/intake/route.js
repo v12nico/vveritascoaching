@@ -49,12 +49,13 @@ export async function POST(req) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: 'vveritas <onboarding@resend.dev>',
-      to: 'iamnicofresh@gmail.com',
+      to: 'ncortezwilliams@gmail.com',
       subject: `[vveritas*] intake — ${d.name || 'new client'}`,
       text: lines.join('\n'),
     });
   } catch (err) {
     console.error('intake email error:', err);
+    return Response.json({ error: 'failed' }, { status: 500 });
   }
 
   return Response.json({ ok: true });
