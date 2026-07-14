@@ -7,13 +7,13 @@ const SLIDES = [
     label: 'vveritas* coaching',
     headline: 'built for\nRon Blake.',
     body: 'this is what your life inside vveritas looks like.',
-    notes: 'Open with this on screen before the call starts. Let Ron see his name. That alone tells him this isn\'t a generic pitch — it was made for him. Don\'t say anything until he reacts.',
+    notes: "Open with this on screen before the call starts. Let Ron see his name. That alone tells him this isn't a generic pitch — it was made for him. Don't say anything until he reacts.",
   },
   {
     type: 'statement',
-    headline: 'most people don\'t fail because they don\'t try.',
-    body: 'they fail because nothing is organized, nothing is tracked, and there\'s nobody holding them accountable.',
-    notes: 'Pause here. Let that land. This is Ron\'s reality — he\'s tried before. He knows this feeling. You\'re naming it without making him feel judged.',
+    headline: "most people don't fail because they don't try.",
+    body: "they fail because nothing is organized, nothing is tracked, and there's nobody holding them accountable.",
+    notes: "Pause here. Let that land. This is Ron's reality — he's tried before. He knows this feeling. You're naming it without making him feel judged.",
   },
   {
     type: 'statement',
@@ -32,7 +32,7 @@ const SLIDES = [
       'become more consistent.',
       'have real accountability.',
     ],
-    notes: 'Read these back to him slowly. Every person wants to feel heard. This moment — seeing his own words on the screen — is what makes this feel personal. Let him say "yes, that\'s me."',
+    notes: "Read these back to him slowly. Every person wants to feel heard. This moment — seeing his own words on the screen — is what makes this feel personal. Let him say \"yes, that's me.\"",
   },
   {
     type: 'statement',
@@ -44,7 +44,7 @@ const SLIDES = [
   {
     type: 'demo',
     label: '01 — dashboard',
-    headline: 'today\'s mission.',
+    headline: "today's mission.",
     body: 'every morning you open this and you know exactly what you need to do.',
     sub: 'no guessing. no figuring it out yourself. just execute.',
     notes: 'Show the mission tab. Click through the tasks. Point out the streak counter and the self-mastery score. Ask him: "can you see yourself checking these off?" Let him interact mentally with it.',
@@ -60,7 +60,7 @@ const SLIDES = [
       { name: 'recovery', score: 58 },
       { name: 'consistency', score: 64 },
     ],
-    body: 'this score reflects how you\'re actually living — not just how hard you trained.',
+    body: "this score reflects how you're actually living — not just how hard you trained.",
     notes: 'This is powerful. Most trainers only track workouts. You\'re tracking the whole person. Say: "your score right now is 62. over the next 12 weeks, we\'re going to move this number. every pillar goes up together."',
   },
   {
@@ -81,15 +81,15 @@ const SLIDES = [
       'leave stronger than last week — not more tired.',
       'technique before weight. always.',
     ],
-    notes: 'This is where you differentiate yourself from every trainer who just destroyed someone in their first session. You\'re building a foundation. That\'s what he needs — and it\'s what will actually get him results.',
+    notes: "This is where you differentiate yourself from every trainer who just destroyed someone in their first session. You're building a foundation. That's what he needs — and it's what will actually get him results.",
   },
   {
     type: 'demo',
     label: '04 — nutrition',
-    headline: 'today\'s standards.',
-    body: 'not counting every calorie. building habits that actually stick.',
+    headline: "today's standards.",
+    body: "not counting every calorie. building habits that actually stick.",
     sub: 'protein. whole food meals. water. fruit. food quality.',
-    notes: 'Show the nutrition tab. Point out the "today\'s standards" checklist with the progress numbers (130/150g protein, 2/3 meals, 70/90oz water). Say: "this week we\'re not chasing perfect numbers. we\'re building the habit of showing up." Read the coach\'s focus note.',
+    notes: "Show the nutrition tab. Point out the \"today's standards\" checklist with the progress numbers (130/150g protein, 2/3 meals, 70/90oz water). Say: \"this week we're not chasing perfect numbers. we're building the habit of showing up.\" Read the coach's focus note.",
   },
   {
     type: 'split-list',
@@ -97,7 +97,7 @@ const SLIDES = [
     headline: 'your list. every week.',
     col1: { label: 'protein', items: ['ground beef', 'chicken breast', 'greek yogurt', 'eggs'] },
     col2: { label: 'everything else', items: ['apples · bananas · blueberries', 'rice · potatoes · oats', 'spinach · broccoli · peppers', 'butter · olive oil'] },
-    notes: 'This one always gets a reaction. People don\'t expect the grocery list. Say: "you never have to think about what to buy. it\'s already done." Tap a few items so he sees they can be checked off.',
+    notes: "This one always gets a reaction. People don't expect the grocery list. Say: \"you never have to think about what to buy. it's already done.\" Tap a few items so he sees they can be checked off.",
   },
   {
     type: 'demo',
@@ -112,19 +112,19 @@ const SLIDES = [
     label: '07 — check in',
     headline: 'daily accountability.',
     body: 'six questions. two minutes. every day.',
-    sub: 'i see exactly how you\'re doing before you even message me.',
-    notes: 'Show the check-in tab. Walk through the questions: did you complete your workout? hit your protein? complete your walk? Then the sliders for energy and confidence. Say: "this is how I stay ahead of problems — I\'m not waiting for you to tell me something is off."',
+    sub: "i see exactly how you're doing before you even message me.",
+    notes: "Show the check-in tab. Walk through the questions: did you complete your workout? hit your protein? complete your walk? Then the sliders for energy and confidence. Say: \"this is how I stay ahead of problems — I'm not waiting for you to tell me something is off.\"",
   },
   {
     type: 'messages',
     label: '08 — messages',
     headline: 'this is what real coaching looks like.',
     preview: [
-      { from: 'coach', text: 'morning Ron. big focus today: get your workout done. don\'t skip breakfast. protein at every meal.' },
+      { from: 'coach', text: "morning Ron. big focus today: get your workout done. don't skip breakfast. protein at every meal." },
       { from: 'client', text: 'got it.' },
-      { from: 'coach', text: 'you\'re doing exactly what I want to see. keep showing up, follow the plan, and trust the process.' },
+      { from: 'coach', text: "you're doing exactly what I want to see. keep showing up, follow the plan, and trust the process." },
     ],
-    notes: 'This is the moment. Read the final message out loud — slowly. Let him feel what it would be like to receive that. Most people have never had a coach who checks in like this. This is unlimited messaging. Real communication.',
+    notes: "This is the moment. Read the final message out loud — slowly. Let him feel what it would be like to receive that. Most people have never had a coach who checks in like this. This is unlimited messaging. Real communication.",
   },
   {
     type: 'inperson',
@@ -142,79 +142,129 @@ const SLIDES = [
       'unlimited messaging.',
       'weekly check-ins.',
     ],
-    notes: 'This is the premium experience. You\'re not just showing up to count reps — you\'re building the entire system around him. The in-person sessions are supported by everything else. That\'s what makes this different.',
+    notes: "This is the premium experience. You're not just showing up to count reps — you're building the entire system around him. The in-person sessions are supported by everything else. That's what makes this different.",
   },
   {
     type: 'packages-intro',
     label: 'coaching options',
-    headline: 'choose your\nlevel of coaching.',
-    body: 'three ways to work together. every option includes the full vveritas* dashboard, personalized programming, and real accountability.',
-    notes: 'This is the transition from "here\'s what the system looks like" to "here\'s how you invest in yourself." Let the portal demo land first — then come back here. Don\'t rush.',
+    headline: 'choose your\nlevel of access.',
+    body: "every level runs on the same vveritas* system. the coaching philosophy, the dashboard, the accountability — all of it is identical. the only difference is how much time you spend working directly with your coach.",
+    notes: "Reframe before you show the packages. You're not selling three different products. You're selling three levels of access to the same system. Say: \"the real question isn't which package — it's how much in-person coaching you want each week.\"",
   },
   {
     type: 'package',
-    tier: '01 — elite',
-    headline: 'elite transformation.',
-    for: 'maximum hands-on coaching. three sessions a week plus the full system.',
-    badge: null,
+    tier: '01 — elite transformation',
+    headline: 'maximum\nhands-on coaching.',
+    subtitle: 'three in-person sessions per week + complete vveritas* coaching',
+    for: 'highest level of support. highest accountability. highest access.',
     items: [
-      'everything in hybrid coaching',
       '3 in-person sessions every week',
-      'customized training adjustments weekly',
-      'customized nutrition updates weekly',
-      'weekly strategy calls',
-      'recovery optimization',
-      'priority support',
+      'personalized resistance-training program',
+      'complete vveritas* dashboard',
+      'personalized nutrition framework',
+      'grocery lists and meal structure',
+      'weekly progress reviews',
+      'body measurements + progress tracking',
+      'habit and lifestyle accountability',
+      'unlimited coach messaging',
+      'real-time form correction every session',
+      'strength and performance tracking',
+      'recovery guidance',
+      'priority scheduling and support',
     ],
-    investment: '$1,800 – $2,500+ / month',
-    notes: 'Lead with this. Let him see the top of the range first. Don\'t explain it away — just let it land. Some clients want full immersion. If he reacts to the price, that\'s when you transition to hybrid.',
+    durations: [
+      { weeks: 4, price: 2400, sessions: 12, savings: null, label: null, tagline: 'build the foundation' },
+      { weeks: 8, price: 4600, sessions: 24, savings: 200, label: 'most popular', tagline: 'the flagship timeline' },
+      { weeks: 12, price: 6600, sessions: 36, savings: 600, label: 'best value', tagline: 'strongest foundation' },
+    ],
+    notes: "Don't rush past this slide. Let him see the full scope of what \"elite\" means. Say: \"this is what it looks like when I'm with you three times a week. everything tracked, everything personalized, no guessing.\" Show price after the features land.",
   },
   {
     type: 'package',
-    tier: '02 — hybrid',
-    headline: 'hybrid coaching.',
-    for: 'for clients who want in-person coaching and ongoing accountability.',
-    badge: null,
+    tier: '02 — hybrid coaching',
+    headline: 'the ideal\nbalance.',
+    subtitle: 'one in-person session per week + complete online coaching',
+    for: 'hands-on guidance once a week, with the full system supporting every other day.',
     items: [
-      'everything in remote coaching',
-      '1 in-person session each week',
-      'technique coaching every session',
-      'form corrections in real time',
-      'progressive overload tracked in person',
-      'exercise adjustments on the spot',
+      '1 in-person training session per week',
+      'personalized workouts for independent training days',
+      'complete vveritas* dashboard',
+      'personalized nutrition framework',
+      'grocery lists and meal structure',
+      'weekly accountability call',
+      'unlimited coach messaging',
+      'form review via submitted video',
+      'progress tracking',
+      'habit and lifestyle accountability',
+      'program adjustments',
+      'strength and performance tracking',
+      'recovery guidance',
     ],
-    investment: '$997 – $1,297 / month',
-    notes: 'This is Ron\'s package. Point to it. Say: "this is what we\'ve been looking at today — and honestly, this is what I\'d recommend for where you are right now." One session a week in person plus everything else in the system.',
+    durations: [
+      { weeks: 4, price: 1200, sessions: 4, savings: null, label: null, tagline: 'build the foundation' },
+      { weeks: 8, price: 2300, sessions: 8, savings: 100, label: 'most popular', tagline: 'the flagship timeline' },
+      { weeks: 12, price: 3300, sessions: 12, savings: 300, label: 'best value', tagline: 'strongest foundation' },
+    ],
+    notes: "One session a week is enough to correct form, push performance, and stay accountable — with the full system running every other day. Say: \"one day a week I'm with you. every other day, the system has you covered.\"",
   },
   {
     type: 'package',
-    tier: '03 — remote',
-    headline: 'remote coaching.',
-    for: 'best for self-motivated people who want guidance and accountability from anywhere.',
-    badge: null,
+    tier: '03 — remote coaching',
+    headline: 'complete coaching.\nfull flexibility.',
+    subtitle: 'the complete vveritas* system — fully online',
+    for: "travel often? prefer your own schedule? same coaching philosophy. same system. fully remote.",
     items: [
       'personalized fitness program',
-      'personalized nutrition plan',
-      'full vveritas* dashboard',
+      'complete vveritas* dashboard',
+      'personalized nutrition framework',
+      'grocery lists and meal structure',
       'weekly accountability call',
-      'unlimited messaging',
-      'grocery lists',
-      'habit tracking',
-      'progress tracking',
-      'monthly program updates',
+      'unlimited coach messaging',
       'exercise video library',
-      'form review via video',
+      'form review via submitted video',
+      'progress tracking',
+      'habit and lifestyle accountability',
+      'program adjustments',
+      'strength and performance tracking',
+      'recovery guidance',
     ],
-    investment: '$497 – $697 / month',
-    notes: 'This is the entry point. Show it last so it feels accessible by comparison. Don\'t undersell it — it\'s still a complete system. But for someone who came in wanting in-person, this is the "if budget is a constraint" option.',
+    durations: [
+      { weeks: 4, price: 600, sessions: null, savings: null, label: null, tagline: 'build the foundation' },
+      { weeks: 8, price: 1100, sessions: null, savings: 100, label: 'most popular', tagline: 'the flagship timeline' },
+      { weeks: 12, price: 1500, sessions: null, savings: 300, label: 'best value', tagline: 'strongest foundation' },
+    ],
+    notes: "Present this as a continuation option, not a downgrade. Say: \"if your schedule changes, you move, or you prefer training on your own — you don't lose the system. everything stays the same except we meet virtually instead of in person. the quality of coaching doesn't change. the access does.\"",
   },
   {
-    type: 'comparison',
-    label: 'the difference',
-    headline: 'this is not\npersonal training.',
-    col1: { label: 'traditional personal training', items: ['workout sessions', 'basic exercise instruction'] },
-    col2: { label: 'vveritas* coaching', items: ['personalized strength program', 'nutrition guidance', 'habit coaching', 'accountability', 'weekly reviews', 'progress tracking', 'messaging support', 'exercise instruction', 'lifestyle coaching', 'personalized dashboard', 'progress analytics'] },
-    notes: 'Don\'t say anything negative about other trainers. Just let the contrast speak. Two items vs eleven. They\'ll do the math. Say: "you\'re not paying for time in the gym. you\'re investing in a complete system."',
+    type: 'comparison-table',
+    label: 'what is included',
+    headline: 'every level.\nsame system.',
+    rows: [
+      { feature: 'personalized training program', elite: true, hybrid: true, remote: true },
+      { feature: 'personalized nutrition', elite: true, hybrid: true, remote: true },
+      { feature: 'vveritas* dashboard', elite: true, hybrid: true, remote: true },
+      { feature: 'weekly accountability', elite: true, hybrid: true, remote: true },
+      { feature: 'unlimited messaging', elite: true, hybrid: true, remote: true },
+      { feature: 'grocery planning', elite: true, hybrid: true, remote: true },
+      { feature: 'progress tracking', elite: true, hybrid: true, remote: true },
+      { feature: 'habit coaching', elite: true, hybrid: true, remote: true },
+      { feature: 'in-person coaching', elite: '3x / week', hybrid: '1x / week', remote: false },
+      { feature: 'technique coaching', elite: true, hybrid: true, remote: 'video review' },
+      { feature: 'priority support', elite: true, hybrid: false, remote: false },
+    ],
+    notes: "This is the most important slide in the package section. Every row with three checkmarks reinforces that coaching quality doesn't change — only the access does. Let him scan the whole table. Then point to the in-person row and say: \"that's the only real difference.\"",
+  },
+  {
+    type: 'eight-week',
+    label: 'recommended starting point',
+    headline: '8 weeks.',
+    lines: [
+      '4 weeks builds momentum.',
+      '8 weeks builds consistency, real strength, and visible progress.',
+      '12 weeks builds the strongest foundation for a long-term transformation.',
+    ],
+    body: "you're not investing in sessions. you're investing in the version of yourself that shows up every day — especially between sessions.",
+    notes: "Don't promise specific results. Just explain the logic. Four weeks is a sprint. Eight weeks is where real change sets in. Twelve is for someone who wants to do it right the first time. Ask him: \"what timeline feels right to you?\" Then let him answer.",
   },
   {
     type: 'payment',
@@ -222,11 +272,55 @@ const SLIDES = [
     headline: 'flexible payment options.',
     items: [
       { label: 'pay in full', desc: 'one payment. no recurring charges.' },
-      { label: 'monthly subscription', desc: 'pay month to month where applicable.' },
-      { label: 'installment plans', desc: 'available for eligible packages.' },
+      { label: 'split payment', desc: 'two equal payments over the program length.' },
+      { label: 'monthly installments', desc: 'automatic monthly payments.' },
+      { label: 'deposit + scheduled', desc: 'initial deposit followed by a payment plan.' },
     ],
-    body: 'we\'ll find a structure that fits your situation before getting started.',
-    notes: 'Price is not the obstacle — uncertainty is. When you give them payment options, you remove the last reason to say "let me think about it." Say: "whatever structure works best for you, we can make it work."',
+    examples: [
+      { label: 'elite — 8 weeks', options: ['pay in full: $4,600', 'two payments: $2,300 each', 'four payments: $1,150 each'] },
+      { label: 'hybrid — 8 weeks', options: ['pay in full: $2,300', 'two payments: $1,150 each', 'four payments: $575 each'] },
+      { label: 'remote — 8 weeks', options: ['pay in full: $1,100', 'two payments: $550 each', 'four payments: $275 each'] },
+    ],
+    body: "the total investment stays the same regardless of which schedule you choose. your start date is secured once the first payment or deposit is received.",
+    notes: "Bring this up naturally. Say: \"I want to make this as easy as possible, so we can structure the payment however works best for you.\" This removes the last barrier. You're not financing anything — just giving people options.",
+  },
+  {
+    type: 'enrollment',
+    label: 'the decision',
+    headline: 'choose your\ncoaching experience.',
+    packages: [
+      {
+        id: 'elite',
+        name: 'elite transformation',
+        sub: '3 in-person sessions / week',
+        durations: [
+          { weeks: 4, price: 2400, sessions: '12 sessions' },
+          { weeks: 8, price: 4600, sessions: '24 sessions', savings: 'save $200' },
+          { weeks: 12, price: 6600, sessions: '36 sessions', savings: 'save $600' },
+        ],
+      },
+      {
+        id: 'hybrid',
+        name: 'hybrid coaching',
+        sub: '1 in-person session / week',
+        durations: [
+          { weeks: 4, price: 1200, sessions: '4 sessions' },
+          { weeks: 8, price: 2300, sessions: '8 sessions', savings: 'save $100' },
+          { weeks: 12, price: 3300, sessions: '12 sessions', savings: 'save $300' },
+        ],
+      },
+      {
+        id: 'remote',
+        name: 'remote coaching',
+        sub: 'fully online',
+        durations: [
+          { weeks: 4, price: 600 },
+          { weeks: 8, price: 1100, savings: 'save $100' },
+          { weeks: 12, price: 1500, savings: 'save $300' },
+        ],
+      },
+    ],
+    notes: "This is the close. Show this slide, ask \"what questions do you have before we move forward?\" — then go silent. Let Ron talk. If he selects a package, walk through it together. If he hesitates, ask \"what's holding you back?\" Then address it directly.",
   },
   {
     type: 'cta',
@@ -234,9 +328,246 @@ const SLIDES = [
     headline: 'the only thing left\nis the decision.',
     body: 'your goals are clear. the system is built. the results come from starting.',
     sub: 'what questions do you have before we move forward?',
-    notes: 'Do not pitch. Do not oversell. Ask that question and then go silent. Let Ron talk. Whatever he says next is your close. If he asks about price — you\'re ready. If he has objections — address them. If he says "let\'s do it" — great.',
+    notes: "Do not pitch. Do not oversell. Ask that question and then go silent. Let Ron talk. Whatever he says next is your close. If he asks about price — you're ready. If he has objections — address them. If he says \"let's do it\" — great.",
   },
 ];
+
+// ── sub-components for stateful slides ─────────────────────────────────────
+
+function PackageSlide({ slide }) {
+  const [sel, setSel] = useState(1);
+  const chosen = slide.durations[sel];
+  const GREEN = '#4a8c6a';
+  const AMBER = '#8c7a3a';
+
+  return (
+    <div className="ws-slide" style={{ gap: '0.5rem' }}>
+      <div className="ws-label" style={{ margin: 0 }}>{slide.tier}</div>
+      <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '0.2rem' }}>{slide.headline}</h1>
+      <p style={{ fontSize: 'clamp(0.66rem, 0.95vw, 0.8rem)', color: '#5A5A5A', marginBottom: '0.2rem' }}>{slide.subtitle}</p>
+      <p style={{ fontSize: 'clamp(0.62rem, 0.85vw, 0.72rem)', color: '#3A3A3A', fontStyle: 'italic', marginBottom: '1rem' }}>{slide.for}</p>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.3rem 3vw', maxWidth: '580px', marginBottom: '1.2rem' }}>
+        {slide.items.map((item, i) => (
+          <div key={i} style={{ display: 'flex', gap: '0.55rem', alignItems: 'baseline' }}>
+            <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', color: GREEN, flexShrink: 0 }}>✓</span>
+            <span style={{ fontSize: 'clamp(0.65rem, 0.95vw, 0.78rem)', color: '#EDEDE8', lineHeight: 1.4 }}>{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.7rem', maxWidth: '580px' }}>
+        {slide.durations.map((d, i) => (
+          <button
+            key={i}
+            onClick={() => setSel(i)}
+            style={{
+              background: 'none',
+              border: `1px solid ${sel === i ? '#EDEDE8' : '#1a1a1a'}`,
+              padding: '0.9rem 1rem',
+              cursor: 'pointer',
+              textAlign: 'left',
+              borderRadius: '2px',
+            }}
+          >
+            {d.label && (
+              <div style={{
+                fontFamily: 'ui-monospace, monospace',
+                fontSize: '0.4rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: d.label === 'most popular' ? GREEN : AMBER,
+                marginBottom: '0.35rem',
+              }}>
+                {d.label}
+              </div>
+            )}
+            <div style={{
+              fontFamily: 'ui-monospace, monospace',
+              fontSize: '0.48rem',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: sel === i ? '#EDEDE8' : '#5A5A5A',
+              marginBottom: '0.4rem',
+            }}>
+              {d.weeks} weeks
+            </div>
+            <div style={{
+              fontSize: 'clamp(1.1rem, 1.9vw, 1.5rem)',
+              fontWeight: 200,
+              letterSpacing: '-0.03em',
+              color: sel === i ? '#EDEDE8' : '#5A5A5A',
+              marginBottom: d.sessions || d.savings ? '0.3rem' : 0,
+            }}>
+              ${d.price.toLocaleString()}
+            </div>
+            {d.sessions && (
+              <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.08em', color: sel === i ? '#5A5A5A' : '#3A3A3A', marginBottom: '0.15rem' }}>
+                {d.sessions} sessions
+              </div>
+            )}
+            {d.savings && (
+              <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.42rem', letterSpacing: '0.05em', color: GREEN }}>
+                save ${d.savings}
+              </div>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ComparisonTable({ slide }) {
+  const CHECK = () => <span style={{ color: '#4a8c6a', fontFamily: 'ui-monospace, monospace', fontSize: '0.7rem' }}>✓</span>;
+  const DASH = () => <span style={{ color: '#2a2a2a', fontFamily: 'ui-monospace, monospace', fontSize: '0.7rem' }}>—</span>;
+
+  function Cell({ val }) {
+    if (val === true) return <CHECK />;
+    if (val === false) return <DASH />;
+    return <span style={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.68rem)', color: '#5A5A5A', textAlign: 'center' }}>{val}</span>;
+  }
+
+  const colStyle = { fontFamily: 'ui-monospace, monospace', fontSize: '0.48rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#3A3A3A', textAlign: 'center', paddingBottom: '0.8rem', borderBottom: '1px solid #141414' };
+  const cellStyle = { display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.45rem 0', borderBottom: '1px solid #0d0d0d' };
+  const featStyle = { fontSize: 'clamp(0.62rem, 0.9vw, 0.75rem)', color: '#5A5A5A', padding: '0.45rem 0', borderBottom: '1px solid #0d0d0d', display: 'flex', alignItems: 'center' };
+
+  return (
+    <div className="ws-slide">
+      <div className="ws-label">{slide.label}</div>
+      <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '1.5rem' }}>{slide.headline}</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px 80px', gap: '0 0.5rem', maxWidth: '600px' }}>
+        <div />
+        {['elite', 'hybrid', 'remote'].map(col => <div key={col} style={colStyle}>{col}</div>)}
+        {slide.rows.flatMap((row, i) => [
+          <div key={`f${i}`} style={featStyle}>{row.feature}</div>,
+          <div key={`e${i}`} style={cellStyle}><Cell val={row.elite} /></div>,
+          <div key={`h${i}`} style={cellStyle}><Cell val={row.hybrid} /></div>,
+          <div key={`r${i}`} style={cellStyle}><Cell val={row.remote} /></div>,
+        ])}
+      </div>
+    </div>
+  );
+}
+
+function EnrollmentSlide({ slide }) {
+  const [step, setStep] = useState(0);
+  const [selPkg, setSelPkg] = useState(null);
+  const [selDur, setSelDur] = useState(null);
+
+  const pkg = selPkg !== null ? slide.packages[selPkg] : null;
+  const dur = selDur !== null && pkg ? pkg.durations[selDur] : null;
+
+  const btnBase = {
+    background: 'none',
+    border: '1px solid #1a1a1a',
+    cursor: 'pointer',
+    textAlign: 'left',
+    borderRadius: '2px',
+    fontFamily: 'Inter, -apple-system, sans-serif',
+    color: '#EDEDE8',
+    transition: 'border-color 0.15s',
+  };
+
+  if (step === 2 && pkg && dur) {
+    return (
+      <div className="ws-slide ws-cta-slide">
+        <div className="ws-label">your transformation plan</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '480px', marginBottom: '2rem' }}>
+          {[
+            { label: 'package', val: pkg.name },
+            { label: 'length', val: `${dur.weeks} weeks` },
+            { label: 'investment', val: `$${dur.price.toLocaleString()}` },
+            { label: 'sessions', val: dur.sessions || 'fully remote' },
+            { label: 'payment preference', val: 'to be selected' },
+          ].map(({ label, val }) => (
+            <div key={label} style={{ display: 'grid', gridTemplateColumns: '10rem 1fr', alignItems: 'baseline', borderBottom: '1px solid #0f0f0f', paddingBottom: '0.8rem' }}>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#3A3A3A' }}>{label}</span>
+              <span style={{ fontSize: 'clamp(0.85rem, 1.4vw, 1.1rem)', fontWeight: 200 }}>{val}</span>
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={() => { setStep(0); setSelPkg(null); setSelDur(null); }}
+          style={{ ...btnBase, padding: '0.8rem 1.5rem', fontSize: 'clamp(0.72rem, 1vw, 0.85rem)', border: '1px solid #3A3A3A', color: '#5A5A5A', marginBottom: '1rem' }}
+        >
+          ← start over
+        </button>
+        <div className="ws-cta-mark">vveritas* — built for Ron Blake</div>
+      </div>
+    );
+  }
+
+  if (step === 1 && pkg) {
+    return (
+      <div className="ws-slide">
+        <div className="ws-label">step 2 of 2 — choose your commitment</div>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '0.4rem' }}>{pkg.name}</h1>
+        <p style={{ fontSize: 'clamp(0.68rem, 1vw, 0.82rem)', color: '#5A5A5A', marginBottom: '2rem' }}>{pkg.sub}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.8rem', maxWidth: '580px', marginBottom: '2rem' }}>
+          {pkg.durations.map((d, i) => (
+            <button
+              key={i}
+              onClick={() => { setSelDur(i); setStep(2); }}
+              style={{ ...btnBase, padding: '1.2rem 1.1rem', border: '1px solid #1a1a1a' }}
+            >
+              <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#5A5A5A', marginBottom: '0.5rem' }}>
+                {d.weeks} weeks
+              </div>
+              <div style={{ fontSize: 'clamp(1.2rem, 2vw, 1.6rem)', fontWeight: 200, letterSpacing: '-0.03em', marginBottom: '0.3rem' }}>
+                ${d.price.toLocaleString()}
+              </div>
+              {d.sessions && (
+                <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.45rem', letterSpacing: '0.08em', color: '#3A3A3A', marginBottom: '0.15rem' }}>{d.sessions}</div>
+              )}
+              {d.savings && (
+                <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.43rem', color: '#4a8c6a' }}>{d.savings}</div>
+              )}
+            </button>
+          ))}
+        </div>
+        <button
+          onClick={() => setStep(0)}
+          style={{ ...btnBase, padding: '0.7rem 1.2rem', fontSize: 'clamp(0.7rem, 1vw, 0.82rem)', border: '1px solid #1a1a1a', color: '#5A5A5A' }}
+        >
+          ← back
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="ws-slide">
+      <div className="ws-label">{slide.label}</div>
+      <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '2rem' }}>{slide.headline}</h1>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', maxWidth: '520px' }}>
+        {slide.packages.map((p, i) => (
+          <button
+            key={i}
+            onClick={() => { setSelPkg(i); setStep(1); }}
+            style={{
+              ...btnBase,
+              padding: '1.1rem 1.3rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1rem',
+              border: '1px solid #1a1a1a',
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 'clamp(0.82rem, 1.3vw, 1rem)', fontWeight: 300, marginBottom: '0.2rem' }}>{p.name}</div>
+              <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.48rem', letterSpacing: '0.15em', color: '#5A5A5A' }}>{p.sub}</div>
+            </div>
+            <span style={{ color: '#3A3A3A', fontSize: '0.8rem' }}>→</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── main Slide dispatcher ───────────────────────────────────────────────────
 
 function Slide({ slide }) {
   if (slide.type === 'hero') {
@@ -267,9 +598,7 @@ function Slide({ slide }) {
         <div className="ws-label">{slide.label}</div>
         <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2rem' }}>{slide.headline}</h1>
         <ul className="ws-bullets">
-          {slide.items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
+          {slide.items.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
       </div>
     );
@@ -367,10 +696,7 @@ function Slide({ slide }) {
         <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2rem' }}>{slide.headline}</h1>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '560px' }}>
           {slide.preview.map((m, i) => (
-            <div key={i} style={{
-              alignSelf: m.from === 'coach' ? 'flex-start' : 'flex-end',
-              maxWidth: '80%',
-            }}>
+            <div key={i} style={{ alignSelf: m.from === 'coach' ? 'flex-start' : 'flex-end', maxWidth: '80%' }}>
               <div style={{
                 fontSize: 'clamp(0.78rem, 1.3vw, 1rem)',
                 lineHeight: 1.6,
@@ -416,23 +742,6 @@ function Slide({ slide }) {
     );
   }
 
-  if (slide.type === 'included') {
-    return (
-      <div className="ws-slide">
-        <div className="ws-label">{slide.label}</div>
-        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2rem' }}>{slide.headline}</h1>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem 4vw', maxWidth: '680px' }}>
-          {slide.items.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.8rem', alignItems: 'baseline' }}>
-              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.6rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
-              <span style={{ fontSize: 'clamp(0.8rem, 1.3vw, 1rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
   if (slide.type === 'packages-intro') {
     return (
       <div className="ws-slide" style={{ justifyContent: 'center', maxWidth: '70vw', margin: '0 auto', padding: '5vw 8vw' }}>
@@ -443,68 +752,23 @@ function Slide({ slide }) {
     );
   }
 
-  if (slide.type === 'package') {
-    return (
-      <div className="ws-slide">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-          <div className="ws-label" style={{ margin: 0 }}>{slide.tier}</div>
-          {slide.badge && (
-            <span style={{
-              fontFamily: 'ui-monospace, monospace',
-              fontSize: '0.48rem',
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
-              color: '#4a8c6a',
-              border: '1px solid #4a8c6a',
-              padding: '0.25em 0.6em',
-              borderRadius: '1px',
-            }}>
-              {slide.badge}
-            </span>
-          )}
-        </div>
-        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '0.5rem' }}>{slide.headline}</h1>
-        <p style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.88rem)', color: '#5A5A5A', marginBottom: '1.8rem', fontStyle: 'italic' }}>{slide.for}</p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem 4vw', maxWidth: '640px', marginBottom: '2.5rem' }}>
-          {slide.items.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
-              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.6rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
-              <span style={{ fontSize: 'clamp(0.78rem, 1.2vw, 0.95rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
-            </div>
-          ))}
-        </div>
-        <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '1.5rem', display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-          <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#3A3A3A' }}>investment</span>
-          <span style={{ fontSize: 'clamp(1.2rem, 2.2vw, 1.8rem)', fontWeight: 200, letterSpacing: '-0.02em', color: '#EDEDE8' }}>{slide.investment}</span>
-        </div>
-      </div>
-    );
-  }
+  if (slide.type === 'package') return <PackageSlide slide={slide} />;
+  if (slide.type === 'comparison-table') return <ComparisonTable slide={slide} />;
 
-  if (slide.type === 'comparison') {
+  if (slide.type === 'eight-week') {
     return (
       <div className="ws-slide">
         <div className="ws-label">{slide.label}</div>
-        <h1 className="ws-headline ws-headline-sm" style={{ whiteSpace: 'pre-line', marginBottom: '2.5rem' }}>{slide.headline}</h1>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4vw', maxWidth: '700px' }}>
-          <div>
-            <div className="ws-mini-label" style={{ marginBottom: '1.2rem', color: '#3A3A3A' }}>{slide.col1.label}</div>
-            <ul className="ws-bullets ws-bullets-dim">
-              {slide.col1.items.map((item, i) => <li key={i}>{item}</li>)}
-            </ul>
-          </div>
-          <div>
-            <div className="ws-mini-label" style={{ marginBottom: '1.2rem', color: '#4a8c6a' }}>{slide.col2.label}</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {slide.col2.items.map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: '0.7rem', alignItems: 'baseline' }}>
-                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.55rem', color: '#4a8c6a', flexShrink: 0 }}>✓</span>
-                  <span style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.9rem)', color: '#EDEDE8', lineHeight: 1.5 }}>{item}</span>
-                </div>
-              ))}
+        <h1 className="ws-headline" style={{ marginBottom: '2rem' }}>{slide.headline}</h1>
+        <div className="ws-steps" style={{ marginBottom: '2.5rem' }}>
+          {slide.lines.map((line, i) => (
+            <div key={i} className="ws-step">
+              <span className="ws-step-n">0{i + 1}</span>
+              <span className="ws-step-text">{line}</span>
             </div>
-          </div>
+          ))}
         </div>
+        <p className="ws-body" style={{ color: '#5A5A5A', fontStyle: 'italic', maxWidth: '520px' }}>{slide.body}</p>
       </div>
     );
   }
@@ -513,30 +777,37 @@ function Slide({ slide }) {
     return (
       <div className="ws-slide">
         <div className="ws-label">{slide.label}</div>
-        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '2.5rem' }}>{slide.headline}</h1>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '480px', marginBottom: '2.5rem' }}>
+        <h1 className="ws-headline ws-headline-sm" style={{ marginBottom: '1.5rem' }}>{slide.headline}</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem 4vw', maxWidth: '640px', marginBottom: '2rem' }}>
           {slide.items.map((item, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '2.5rem 1fr', gap: '1rem', alignItems: 'start' }}>
-              <span style={{
-                fontFamily: 'ui-monospace, monospace',
-                fontSize: '0.52rem',
-                letterSpacing: '0.2em',
-                color: '#3A3A3A',
-                paddingTop: '0.15rem',
-              }}>
-                0{i + 1}
-              </span>
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '2rem 1fr', gap: '0.8rem', alignItems: 'start' }}>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', letterSpacing: '0.2em', color: '#3A3A3A', paddingTop: '0.12rem' }}>0{i + 1}</span>
               <div>
-                <div style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1.05rem)', color: '#EDEDE8', marginBottom: '0.2rem' }}>{item.label}</div>
-                <div style={{ fontSize: 'clamp(0.72rem, 1vw, 0.85rem)', color: '#5A5A5A' }}>{item.desc}</div>
+                <div style={{ fontSize: 'clamp(0.8rem, 1.2vw, 0.95rem)', color: '#EDEDE8', marginBottom: '0.15rem' }}>{item.label}</div>
+                <div style={{ fontSize: 'clamp(0.65rem, 0.9vw, 0.78rem)', color: '#5A5A5A' }}>{item.desc}</div>
               </div>
             </div>
           ))}
         </div>
-        <p className="ws-body" style={{ color: '#5A5A5A', fontStyle: 'italic' }}>{slide.body}</p>
+        <div style={{ borderTop: '1px solid #0f0f0f', paddingTop: '1.5rem' }}>
+          <div className="ws-mini-label" style={{ marginBottom: '0.8rem' }}>example schedules (8 weeks)</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.6rem 2vw', maxWidth: '640px' }}>
+            {slide.examples.map((ex, i) => (
+              <div key={i}>
+                <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#3A3A3A', marginBottom: '0.5rem' }}>{ex.label}</div>
+                {ex.options.map((opt, j) => (
+                  <div key={j} style={{ fontSize: 'clamp(0.6rem, 0.85vw, 0.72rem)', color: j === 0 ? '#EDEDE8' : '#5A5A5A', marginBottom: '0.2rem' }}>{opt}</div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <p style={{ fontSize: 'clamp(0.62rem, 0.85vw, 0.72rem)', color: '#3A3A3A', fontStyle: 'italic', marginTop: '1.2rem' }}>{slide.body}</p>
       </div>
     );
   }
+
+  if (slide.type === 'enrollment') return <EnrollmentSlide slide={slide} />;
 
   if (slide.type === 'cta') {
     return (
@@ -552,6 +823,8 @@ function Slide({ slide }) {
 
   return null;
 }
+
+// ── main shell ──────────────────────────────────────────────────────────────
 
 export default function PitchSlides() {
   const [idx, setIdx] = useState(0);
