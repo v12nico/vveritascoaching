@@ -2610,6 +2610,408 @@ textarea {
   color: var(--ghost);
 }
 
+/* ─── coach tabs ─────────────────────────────────────────────────── */
+.coach-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #141414;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.coach-tabs::-webkit-scrollbar { display: none; }
+
+.coach-tab {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.coach-tab:hover { color: var(--text); }
+.coach-tab.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+/* ─── coach overview additions ───────────────────────────────────── */
+.coach-sms-chip {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+/* ─── coach client card pillars ──────────────────────────────────── */
+.coach-card-sms {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+.coach-card-sms-label {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ghost);
+}
+.coach-card-sms-val {
+  font-size: 1.3rem;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.coach-card-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.coach-card-pillar {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr 2rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+.coach-card-pillar-name {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ghost);
+}
+.coach-card-pillar-track {
+  height: 1px;
+  background: #1a1a1a;
+}
+.coach-card-pillar-fill {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.coach-card-pillar-score {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+/* ─── coach pillar grid (client detail) ──────────────────────────── */
+.coach-pillars-avg {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #0f0f0f;
+}
+.coach-pillars-avg-val {
+  font-size: 2.2rem;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.coach-pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #0f0f0f;
+}
+.coach-pillar-card {
+  background: #000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  cursor: default;
+}
+.coach-pillar-card.clickable {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.coach-pillar-card.clickable:hover { background: #060606; }
+.coach-pillar-name {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ghost);
+}
+.coach-pillar-track {
+  height: 1px;
+  background: #1a1a1a;
+}
+.coach-pillar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+.coach-pillar-bottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.coach-pillar-score {
+  font-size: 1.3rem;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.coach-pillar-tap {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  color: #2a2a2a;
+  text-transform: uppercase;
+}
+
+/* ─── coach pillar detail ────────────────────────────────────────── */
+.coach-pd { display: flex; flex-direction: column; gap: 0; }
+.coach-pd-back {
+  font-size: 0.78rem;
+  color: var(--dim);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: color 0.15s;
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 300;
+}
+.coach-pd-back:hover { color: var(--text); }
+.coach-pd-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.coach-pd-name {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ghost);
+}
+.coach-pd-score {
+  font-size: 2.4rem;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.coach-pd-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.coach-pd-streak {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  color: var(--ghost);
+}
+.coach-pd-next-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--dim);
+  margin-bottom: 0.35rem;
+}
+.coach-pd-next-track {
+  height: 1px;
+  background: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+.coach-pd-next-fill {
+  height: 100%;
+  background: var(--dim);
+  transition: width 0.5s ease;
+}
+.coach-pd-section { margin-top: 1.5rem; }
+.coach-pd-section-label {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 0.6rem;
+}
+.coach-pd-item {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #0a0a0a;
+  align-items: baseline;
+}
+.coach-pd-dot {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ghost);
+  min-width: 1rem;
+  flex-shrink: 0;
+}
+.coach-pd-item span:last-child {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.coach-pd-note {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--dim);
+  font-style: italic;
+  line-height: 1.6;
+  padding: 1rem 1.2rem;
+  border: 1px solid #141414;
+}
+
+/* ─── coach fitness tab ──────────────────────────────────────────── */
+.coach-program-philosophy {
+  font-size: 0.8rem;
+  color: var(--dim);
+  line-height: 1.65;
+  padding: 0.9rem 1.1rem;
+  border-left: 1px solid #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+.coach-exercise-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #0a0a0a;
+  gap: 0.2rem;
+}
+.coach-exercise-item:last-child { border-bottom: none; }
+.coach-exercise-note {
+  font-size: 0.68rem;
+  color: #2a2a2a;
+  font-style: italic;
+}
+
+/* ─── coach nutrition tab ────────────────────────────────────────── */
+.coach-protein-target {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border: 1px solid #141414;
+}
+.coach-protein-val {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.coach-fq-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #0a0a0a;
+}
+.coach-fq-date {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--ghost);
+  min-width: 90px;
+  letter-spacing: 0.05em;
+}
+.coach-fq-bar-track {
+  flex: 1;
+  height: 1px;
+  background: #1a1a1a;
+}
+.coach-fq-bar { height: 100%; transition: width 0.3s ease; }
+.coach-fq-score {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.6rem;
+  min-width: 2.5rem;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.coach-fq-protein-badge {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: #4a8c6a;
+  white-space: nowrap;
+}
+
+/* ─── coach mission tab ──────────────────────────────────────────── */
+.coach-mission-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #0a0a0a;
+}
+.coach-mission-check {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ghost);
+  min-width: 1rem;
+}
+.coach-mission-check.done { color: #4a8c6a; }
+.coach-mission-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.coach-mission-pillar {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+.coach-objective-card {
+  padding: 1rem 1.2rem;
+  border: 1px solid #141414;
+  margin-bottom: 0.6rem;
+}
+.coach-objective-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+.coach-objective-title {
+  font-size: 0.88rem;
+  font-weight: 200;
+  color: var(--text);
+}
+.coach-objective-pct {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+.coach-obj-track {
+  height: 1px;
+  background: #1a1a1a;
+  margin-bottom: 0.6rem;
+}
+.coach-obj-fill {
+  height: 100%;
+  background: var(--dim);
+  transition: width 0.4s ease;
+}
+.coach-objective-milestone {
+  font-size: 0.75rem;
+  color: var(--dim);
+}
+
 /* ─── pillar card additions ──────────────────────────────────────── */
 .portal-pillar-card.clickable {
   cursor: pointer;
