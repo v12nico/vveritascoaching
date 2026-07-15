@@ -18,8 +18,8 @@ const programs = [
 
 const screenshots = [
   { src: '/portal-score.png',    label: 'self-mastery score' },
+  { src: '/portal-mission.png',  label: 'daily mission' },
   { src: '/portal-fitness.png',  label: 'training program' },
-  { src: '/portal-checkin.png',  label: 'weekly check-in' },
   { src: '/portal-messages.png', label: 'coach messages' },
 ];
 
