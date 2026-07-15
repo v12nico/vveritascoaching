@@ -210,6 +210,21 @@ select option {
   flex: 1;
 }
 
+.work-top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.work-book-call {
+  font-size: 0.8rem;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  transition: color 0.15s ease;
+}
+
+.work-book-call:hover { color: var(--text); }
+
 .work-menu { width: 100%; max-width: 560px; }
 
 .work-divider {

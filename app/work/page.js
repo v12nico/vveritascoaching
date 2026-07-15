@@ -11,9 +11,7 @@ const coaching = [
 ];
 
 const programs = [
-  { name: 'custom meal plan', href: '/meal-plan', label: '$50' },
-  { name: 'custom workout', href: '/workout', label: '$50' },
-  { name: 'meal + workout bundle', href: '/bundle', label: '$100' },
+  { name: 'the blueprint', href: '/blueprint', label: '$250' },
 ];
 
 const screenshots = [
@@ -47,6 +45,17 @@ export default function Work() {
     <main className="page">
       <Back href="/" />
 
+      <div className="work-top-bar">
+        <a
+          href="https://calendly.com/vveritascoaching/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="work-book-call"
+        >
+          book a call →
+        </a>
+      </div>
+
       <div className="work-menu">
         <section className="menu-section">
           <div className="menu-label">coaching</div>
@@ -64,7 +73,7 @@ export default function Work() {
         {screenshots.map(s => (
           <div key={s.src} className="screenshot-card">
             <div className="screenshot-img">
-              <Image src={s.src} alt={s.label} fill sizes="220px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
+              <Image src={s.src} alt={s.label} fill sizes="420px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
             </div>
             <span className="screenshot-label">{s.label}</span>
           </div>
