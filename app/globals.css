@@ -399,6 +399,15 @@ select option {
   font-variant-numeric: tabular-nums;
 }
 
+.menu-row-desc {
+  font-size: 0.72rem;
+  color: var(--ghost);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.menu-row:hover .menu-row-desc { color: var(--dim); }
+
 .menu-row:hover .name { color: #FFFFFF; }
 .menu-row:hover .arrow {
   transform: translate(2px, -2px);

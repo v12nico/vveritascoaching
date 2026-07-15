@@ -11,7 +11,7 @@ const coaching = [
 ];
 
 const programs = [
-  { name: 'the blueprint', href: '/blueprint', label: '$250' },
+  { name: 'the blueprint', href: '/blueprint', label: '$250', desc: 'custom training + nutrition plan. built for you. run it yourself.' },
 ];
 
 const screenshots = [
@@ -33,9 +33,12 @@ const system = [
 
 function MenuRow({ item }) {
   return (
-    <Link href={item.href} className="menu-row">
-      <span className="name">{item.name} <span className="arrow">↗</span></span>
-      <span className="price">{item.label}</span>
+    <Link href={item.href} className="menu-row" style={{ alignItems: item.desc ? 'flex-start' : 'baseline', flexDirection: item.desc ? 'column' : 'row', gap: item.desc ? '0.4rem' : undefined }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'baseline' }}>
+        <span className="name">{item.name} <span className="arrow">↗</span></span>
+        <span className="price">{item.label}</span>
+      </div>
+      {item.desc && <span className="menu-row-desc">{item.desc}</span>}
     </Link>
   );
 }

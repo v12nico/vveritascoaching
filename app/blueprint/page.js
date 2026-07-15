@@ -1,6 +1,13 @@
 import OfferPage from '../../components/OfferPage';
 
-export const metadata = { title: 'the blueprint — vveritas*' };
+export const metadata = {
+  title: 'the blueprint — vveritas*',
+  description: 'custom training + nutrition plan built around you. 30 days of programming, grocery list, meal structure. $250, one-time.',
+  openGraph: {
+    title: 'the blueprint — vveritas*',
+    description: 'custom training + nutrition plan built around you. 30 days of programming, grocery list, meal structure. $250, one-time.',
+  },
+};
 
 export default function Blueprint() {
   return (
