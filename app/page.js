@@ -8,6 +8,14 @@ export default function Landing() {
         <h1>vveritas*</h1>
         <div className="sub">coaching</div>
       </Link>
+      <a
+        href="https://calendly.com/vveritascoaching/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="landing-calendly"
+      >
+        book a call →
+      </a>
     </main>
   );
 }

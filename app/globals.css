@@ -154,6 +154,19 @@ select option {
 
 .landing-enter:hover { color: var(--text); }
 
+.landing-calendly {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.4rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  transition: color 0.15s ease;
+  animation: fadeIn 1.4s 0.7s ease both;
+}
+
+.landing-calendly:hover { color: var(--text); }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
