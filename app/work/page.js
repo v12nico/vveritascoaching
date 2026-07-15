@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Back from '../../components/Back';
 import Footer from '../../components/Footer';
 import LeadForm from '../../components/LeadForm';
@@ -13,6 +14,14 @@ const programs = [
   { name: 'custom meal plan', href: '/meal-plan', label: '$50' },
   { name: 'custom workout', href: '/workout', label: '$50' },
   { name: 'meal + workout bundle', href: '/bundle', label: '$100' },
+];
+
+const screenshots = [
+  { src: '/portal-mission.jpg',   label: 'daily mission' },
+  { src: '/portal-fitness.jpg',   label: 'training program' },
+  { src: '/portal-nutrition.jpg', label: 'nutrition' },
+  { src: '/portal-progress.jpg',  label: 'progress tracking' },
+  { src: '/portal-checkin.jpg',   label: 'check-ins' },
 ];
 
 const system = [
@@ -48,6 +57,19 @@ export default function Work() {
           <div className="menu-label">programs</div>
           {programs.map(item => <MenuRow key={item.href} item={item} />)}
         </section>
+      </div>
+
+      <div className="work-divider" />
+
+      <div className="screenshots-scroll">
+        {screenshots.map(s => (
+          <div key={s.src} className="screenshot-card">
+            <div className="screenshot-img">
+              <Image src={s.src} alt={s.label} fill sizes="220px" style={{ objectFit: 'cover', objectPosition: 'top' }} />
+            </div>
+            <span className="screenshot-label">{s.label}</span>
+          </div>
+        ))}
       </div>
 
       <div className="work-divider" />
