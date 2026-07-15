@@ -1,27 +1,35 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import Back from '../../components/Back';
 import Footer from '../../components/Footer';
+import LeadForm from '../../components/LeadForm';
 
 const coaching = [
-  { name: 'remote coaching', href: '/remote', price: 'online' },
-  { name: 'hybrid coaching', href: '/hybrid', price: 'hybrid' },
-  { name: 'elite transformation', href: '/elite', price: 'in-person' },
+  { name: 'remote coaching', href: '/remote', label: 'online' },
+  { name: 'hybrid coaching', href: '/hybrid', label: 'hybrid' },
+  { name: 'elite transformation', href: '/elite', label: 'in-person' },
 ];
 
 const programs = [
-  { name: 'custom meal plan', href: '/meal-plan', price: '$50' },
-  { name: 'custom workout', href: '/workout', price: '$50' },
-  { name: 'meal + workout bundle', href: '/bundle', price: '$100' },
+  { name: 'custom meal plan', href: '/meal-plan', label: '$50' },
+  { name: 'custom workout', href: '/workout', label: '$50' },
+  { name: 'meal + workout bundle', href: '/bundle', label: '$100' },
+];
+
+const system = [
+  'personalized training program built around your schedule',
+  'nutrition framework — no calorie counting, no guesswork',
+  'weekly grocery list, built for your goals',
+  'daily accountability dashboard',
+  'progress tracking — weight, body composition, strength',
+  'weekly check-ins and program adjustments',
+  'unlimited coach messaging',
 ];
 
 function MenuRow({ item }) {
   return (
     <Link href={item.href} className="menu-row">
-      <span className="name">
-        {item.name} <span className="arrow">↗</span>
-      </span>
-      <span className="price">{item.price}</span>
+      <span className="name">{item.name} <span className="arrow">↗</span></span>
+      <span className="price">{item.label}</span>
     </Link>
   );
 }
@@ -30,46 +38,36 @@ export default function Work() {
   return (
     <main className="page">
       <Back href="/" />
-      <div className="work-grid">
-        <div>
-          <section className="menu-section">
-            <div className="menu-label">coaching</div>
-            {coaching.map((item) => (
-              <MenuRow key={item.href} item={item} />
-            ))}
-          </section>
-          <section className="menu-section">
-            <div className="menu-label">programs</div>
-            {programs.map((item) => (
-              <MenuRow key={item.href} item={item} />
-            ))}
-          </section>
-        </div>
-        <aside className="photo-col">
-          <div className="photo-frame">
-            <div className="inner">
-              <Image
-                src="/nico.jpg"
-                alt="nico — vveritas*"
-                fill
-                sizes="(max-width: 820px) 100vw, 360px"
-                priority
-              />
-            </div>
-          </div>
-          <div className="photo-frame" style={{ marginTop: '14px' }}>
-            <div className="inner">
-              <Image
-                src="/nico2.jpg"
-                alt="nico — vveritas*"
-                fill
-                sizes="(max-width: 820px) 100vw, 360px"
-              />
-            </div>
-          </div>
-          <div className="photo-caption">nico — vveritas*</div>
-        </aside>
+
+      <div className="work-menu">
+        <section className="menu-section">
+          <div className="menu-label">coaching</div>
+          {coaching.map(item => <MenuRow key={item.href} item={item} />)}
+        </section>
+        <section className="menu-section">
+          <div className="menu-label">programs</div>
+          {programs.map(item => <MenuRow key={item.href} item={item} />)}
+        </section>
       </div>
+
+      <div className="work-divider" />
+
+      <div className="work-system">
+        <div className="menu-label">what&apos;s inside the system</div>
+        <ul className="system-list">
+          {system.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="work-cta-block">
+        <p className="work-cta-line">
+          book a call. i&apos;ll show you exactly how vveritas* coaching gets built around you.
+        </p>
+        <LeadForm />
+      </div>
+
       <Footer />
     </main>
   );
