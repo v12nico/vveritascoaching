@@ -73,7 +73,20 @@ function ReadyForm() {
   };
 
   if (done) {
-    return <div className="confirm">got it. let&apos;s get right.</div>;
+    return (
+      <div className="confirm">
+        <p>got it. book your call below.</p>
+        <a
+          href="https://calendly.com/vveritascoaching/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ready-cta"
+          style={{ display: 'inline-block', marginTop: '1.5rem' }}
+        >
+          schedule a call →
+        </a>
+      </div>
+    );
   }
 
   return (
@@ -206,6 +219,18 @@ function ReadyForm() {
           {sending ? 'sending…' : 'send'}
         </button>
       </form>
+
+      <p style={{ marginTop: '2rem', fontSize: '0.75rem', color: 'var(--dim)' }}>
+        prefer to book directly?{' '}
+        <a
+          href="https://calendly.com/vveritascoaching/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'var(--text)', textDecoration: 'none', borderBottom: '1px solid var(--ghost)' }}
+        >
+          schedule a call →
+        </a>
+      </p>
     </>
   );
 }
