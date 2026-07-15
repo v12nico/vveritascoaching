@@ -48,7 +48,7 @@ export async function POST(req) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: 'vveritas <onboarding@resend.dev>',
+      from: 'vveritas <hello@vveritascoaching.com>',
       to: ['ncortezwilliams@gmail.com', 'iamnicofresh@gmail.com', 'vveritascoaching@gmail.com'],
       subject: `new client intake: ${d.name || 'new client'}`,
       text: lines.join('\n'),
