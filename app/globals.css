@@ -265,8 +265,8 @@ select option {
 
 .screenshot-img {
   position: relative;
-  width: 200px;
-  aspect-ratio: 9 / 16;
+  width: 420px;
+  aspect-ratio: 16 / 10;
   background: #0a0a0a;
   border: 1px solid #1a1a1a;
   overflow: hidden;

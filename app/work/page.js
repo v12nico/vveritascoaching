@@ -17,11 +17,10 @@ const programs = [
 ];
 
 const screenshots = [
-  { src: '/portal-mission.jpg',   label: 'daily mission' },
-  { src: '/portal-fitness.jpg',   label: 'training program' },
-  { src: '/portal-nutrition.jpg', label: 'nutrition' },
-  { src: '/portal-progress.jpg',  label: 'progress tracking' },
-  { src: '/portal-checkin.jpg',   label: 'check-ins' },
+  { src: '/portal-score.png',    label: 'self-mastery score' },
+  { src: '/portal-fitness.png',  label: 'training program' },
+  { src: '/portal-checkin.png',  label: 'weekly check-in' },
+  { src: '/portal-messages.png', label: 'coach messages' },
 ];
 
 const system = [
