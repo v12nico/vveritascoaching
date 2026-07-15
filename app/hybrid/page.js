@@ -25,6 +25,9 @@ export default function Hybrid() {
         nutrition framework, grocery lists, vveritas* dashboard, weekly accountability,
         unlimited messaging, video form review, and progress tracking.
       </p>
+      <p className="muted">
+        in-person sessions available in the baltimore / prince george's county area only.
+      </p>
     </OfferPage>
   );
 }

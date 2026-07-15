@@ -4,9 +4,9 @@ import Back from '../../components/Back';
 import Footer from '../../components/Footer';
 
 const coaching = [
-  { name: 'elite transformation', href: '/elite', price: 'from $2,400' },
-  { name: 'hybrid coaching', href: '/hybrid', price: 'from $1,200' },
   { name: 'remote coaching', href: '/remote', price: 'from $600' },
+  { name: 'hybrid coaching', href: '/hybrid', price: 'from $1,200' },
+  { name: 'elite transformation', href: '/elite', price: 'from $2,400' },
 ];
 
 const programs = [

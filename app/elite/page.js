@@ -25,6 +25,9 @@ export default function Elite() {
         vveritas* dashboard, progress tracking, habit coaching, unlimited messaging,
         priority scheduling, and recovery guidance.
       </p>
+      <p className="muted">
+        in-person sessions available in the baltimore / prince george's county area only.
+      </p>
     </OfferPage>
   );
 }

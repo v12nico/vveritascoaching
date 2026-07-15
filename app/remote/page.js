@@ -11,14 +11,13 @@ export default function Remote() {
       ctaLabel="enroll →"
     >
       <p>
-        the complete vveritas* system delivered remotely. same coaching philosophy,
-        same accountability structure, same personalized programming —
-        no in-person requirement.
+        the complete vveritas* system delivered remotely. personalized training,
+        structured nutrition, grocery lists, daily accountability, and a coach
+        who stays on top of you between sessions — all online.
       </p>
       <p>
-        built for people who travel, prefer their own gym, or want a serious
-        coaching system without a location constraint. the quality doesn't change.
-        the access does.
+        train at your gym, on your schedule. no location required.
+        this is how most clients work with me and it works.
       </p>
       <p className="muted">4 weeks — $600 &nbsp;·&nbsp; 8 weeks — $1,100 &nbsp;·&nbsp; 12 weeks — $1,500</p>
       <p className="muted">
