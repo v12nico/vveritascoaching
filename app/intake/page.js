@@ -17,7 +17,6 @@ const SECTIONS = [
     fields: [
       { id: 'mainGoal',   q: 'main goal right now',                  type: 'select',   opts: ['build muscle', 'lose body fat', 'reduce waist size', 'improve strength', 'improve overall health', 'build consistency'] },
       { id: 'focusArea',  q: 'where do you most want to see change?', type: 'text',     ph: 'stomach, arms, overall...' },
-      { id: 'blockers',   q: 'what has stopped you before?',          type: 'textarea', ph: 'be honest.' },
     ],
   },
   {
@@ -25,8 +24,8 @@ const SECTIONS = [
     fields: [
       { id: 'trainingDays',  q: 'how many days per week can you train?',         type: 'select',   opts: ['2 days', '3 days', '4 days', '5 days', '6 days'] },
       { id: 'experience',    q: 'experience level',                               type: 'select',   opts: ['beginner', 'some experience', 'experienced', 'very experienced'] },
-      { id: 'inPersonTime',  q: 'best day and time for in-person session',         type: 'text',     ph: 'wednesday at 6pm' },
-      { id: 'backupTime',    q: 'backup day and time',                             type: 'text',     ph: 'thursday evening' },
+      { id: 'inPersonTime',  q: 'which days and times work for in-person sessions?', type: 'text',     ph: 'wednesday at 6pm, friday at 7pm...' },
+      { id: 'backupTime',    q: 'any backup days if those don\'t work?',            type: 'text',     ph: 'thursday evening' },
       { id: 'injuries',      q: 'any injuries, pain, or limitations?',             type: 'textarea', ph: 'none / describe...' },
     ],
   },
@@ -50,8 +49,7 @@ const SECTIONS = [
   {
     label: '06 — accountability',
     fields: [
-      { id: 'coachingStyle', q: 'coaching style that works best for you', type: 'select',   opts: ['direct and firm', 'encouraging', 'balanced', 'highly structured'] },
-      { id: 'fallOff',       q: 'what usually makes you fall off track?',  type: 'textarea', ph: 'busy schedule, low motivation, travel...' },
+      { id: 'coachingStyle', q: 'coaching style that works best for you', type: 'select', opts: ['direct and firm', 'encouraging', 'balanced', 'highly structured'] },
     ],
   },
 ];
