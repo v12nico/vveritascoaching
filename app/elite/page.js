@@ -6,9 +6,9 @@ export default function Elite() {
   return (
     <OfferPage
       title="elite transformation"
-      priceLine="from $2,400 — 3 in-person sessions / week"
-      ctaHref="/enroll"
-      ctaLabel="enroll →"
+      priceLine="3 in-person sessions / week"
+      from="elite transformation"
+      ctaLabel="apply →"
     >
       <p>
         maximum hands-on coaching. three sessions a week with me, the full vveritas*
@@ -19,7 +19,6 @@ export default function Elite() {
         every rep coached in person. every meal structured. every week reviewed.
         nothing slips through.
       </p>
-      <p className="muted">4 weeks — $2,400 &nbsp;·&nbsp; 8 weeks — $4,600 &nbsp;·&nbsp; 12 weeks — $6,600</p>
       <p className="muted">
         includes: personalized training program, nutrition framework, grocery lists,
         vveritas* dashboard, progress tracking, habit coaching, unlimited messaging,

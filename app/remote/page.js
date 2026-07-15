@@ -6,9 +6,9 @@ export default function Remote() {
   return (
     <OfferPage
       title="remote coaching"
-      priceLine="from $600 — fully online"
-      ctaHref="/enroll"
-      ctaLabel="enroll →"
+      priceLine="fully online"
+      from="remote coaching"
+      ctaLabel="apply →"
     >
       <p>
         the complete vveritas* system delivered remotely. personalized training,
@@ -19,7 +19,6 @@ export default function Remote() {
         train at your gym, on your schedule. no location required.
         this is how most clients work with me and it works.
       </p>
-      <p className="muted">4 weeks — $600 &nbsp;·&nbsp; 8 weeks — $1,100 &nbsp;·&nbsp; 12 weeks — $1,500</p>
       <p className="muted">
         includes: personalized fitness program, nutrition framework, grocery lists,
         vveritas* dashboard, weekly accountability call, unlimited messaging,

@@ -10,7 +10,7 @@ export default function OfferPage({ title, priceLine, children, from, secondary,
       <Back />
       <div className="offer">
         <h1>{title}</h1>
-        <div className="price-line">{priceLine}</div>
+        {priceLine && <div className="price-line">{priceLine}</div>}
         {children}
         <div>
           <Link href={href} className="ready-cta">
