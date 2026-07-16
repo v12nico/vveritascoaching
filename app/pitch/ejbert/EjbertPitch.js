@@ -6,13 +6,13 @@ const prospectName = 'Ejbert';
 
 // Set prices before the call (numbers only — no $ sign)
 const PRICE_4W  = null;   // 4-week total
-const PRICE_8W  = null;   // 8-week total ← recommended
+const PRICE_8W  = 997;    // 8-week total ← recommended
 const PRICE_12W = null;   // 12-week total
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const fmt  = n => n ? `$${Number(n).toLocaleString()}` : '[ set before call ]';
-const div2 = n => n ? `$${(n / 2).toLocaleString()}` : '[ ÷ 2 ]';
-const div4 = n => n ? `$${(n / 4).toLocaleString()}` : '[ ÷ 4 ]';
+const div2 = n => n ? `$${Math.ceil(n / 2).toLocaleString()} / payment` : '[ ÷ 2 ]';
+const div4 = n => n ? `$${Math.ceil(n / 4).toLocaleString()} / mo` : '[ ÷ 4 ]';
 
 const GREEN = '#4a8c6a';
 const AMBER = '#8c7a3a';
@@ -841,9 +841,25 @@ function Slide({ slide }) {
             </div>
           ))}
         </div>
-        <p style={{ fontSize: 'clamp(0.62rem, 0.85vw, 0.72rem)', color: '#3A3A3A', fontStyle: 'italic', maxWidth: '480px' }}>
-          the total stays the same regardless of payment schedule. start date is confirmed once the first payment is received.
-        </p>
+        <div style={{ marginTop: '2rem', maxWidth: '480px', borderTop: '1px solid #0f0f0f', paddingTop: '1.5rem' }}>
+          <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.46rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#3A3A3A', marginBottom: '1rem' }}>8-week payment options</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+            {[
+              { label: 'pay in full',      amount: fmt(PRICE_8W),  note: 'one payment. immediate start.' },
+              { label: 'two payments',     amount: div2(PRICE_8W), note: 'split over the program.' },
+              { label: 'four payments',    amount: div4(PRICE_8W), note: 'monthly. automatic.' },
+            ].map((opt, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '8rem 1fr', gap: '1rem', alignItems: 'baseline', paddingBottom: '0.6rem', borderBottom: '1px solid #0a0a0a' }}>
+                <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.46rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: i === 0 ? '#EDEDE8' : '#3A3A3A' }}>{opt.label}</span>
+                <div>
+                  <span style={{ fontSize: 'clamp(0.88rem, 1.4vw, 1.1rem)', fontWeight: 200, color: i === 0 ? '#EDEDE8' : '#5A5A5A' }}>{opt.amount}</span>
+                  <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', color: '#3A3A3A', marginLeft: '0.8rem' }}>{opt.note}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 'clamp(0.58rem, 0.8vw, 0.68rem)', color: '#2a2a2a', fontStyle: 'italic', marginTop: '1rem' }}>start date confirmed once the first payment is received.</p>
+        </div>
       </div>
     );
   }
