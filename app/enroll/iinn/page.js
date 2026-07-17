@@ -22,8 +22,8 @@ const items = [
 const totalPrice = 997;
 const plans = [
   { label: 'pay in full',   amount: `$${totalPrice}`,          note: 'one payment. immediate start.',  primary: true,  href: STRIPE },
-  { label: 'two payments',  amount: '$499 / payment',           note: 'installment — not a discount.',  primary: false, href: null },
-  { label: 'four payments', amount: '$250 / mo',                note: 'four monthly payments.',         primary: false, href: null },
+  { label: 'two payments',  amount: '$499 / $498',              note: 'two payments — total $997.',     primary: false, href: null },
+  { label: 'four payments', amount: '$250 + $249 × 3',          note: 'four payments — total $997.',    primary: false, href: null },
 ];
 
 const GREEN = '#4a8c6a';

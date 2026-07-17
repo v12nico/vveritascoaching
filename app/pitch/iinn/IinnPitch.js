@@ -7,8 +7,17 @@ const PRICE_8W = 997;
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const fmt  = n => n ? `$${Number(n).toLocaleString()}` : '[ set before call ]';
-const div2 = n => n ? `$${Math.ceil(n / 2).toLocaleString()} / payment` : '[ ÷ 2 ]';
-const div4 = n => n ? `$${Math.ceil(n / 4).toLocaleString()} / mo` : '[ ÷ 4 ]';
+const div2 = n => {
+  if (!n) return '[ ÷ 2 ]';
+  const first = Math.ceil(n / 2);
+  return `$${first} / $${n - first}`;
+};
+const div4 = n => {
+  if (!n) return '[ ÷ 4 ]';
+  const first = Math.ceil(n / 4);
+  const each  = Math.floor((n - first) / 3);
+  return `$${first} + $${each} × 3`;
+};
 
 const GREEN = '#4a8c6a';
 
@@ -777,8 +786,8 @@ function Slide({ slide }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0', maxWidth: '420px', marginBottom: '2rem' }}>
           {[
             { label: 'pay in full',    amount: fmt(PRICE_8W),  note: 'immediate start.' },
-            { label: 'two payments',   amount: div2(PRICE_8W), note: 'split over the program.' },
-            { label: 'four payments',  amount: div4(PRICE_8W), note: 'monthly.' },
+            { label: 'two payments',   amount: div2(PRICE_8W), note: 'total $997.' },
+            { label: 'four payments',  amount: div4(PRICE_8W), note: 'total $997.' },
           ].map((opt, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '8rem 1fr', gap: '1rem', alignItems: 'center', padding: '0.75rem 0', borderBottom: '1px solid #0d0d0d' }}>
               <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: i === 0 ? '#EDEDE8' : '#3A3A3A' }}>{opt.label}</span>
