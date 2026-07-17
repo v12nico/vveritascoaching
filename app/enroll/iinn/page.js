@@ -1,6 +1,6 @@
 export const metadata = { title: 'vveritas* — enroll' };
 
-const STRIPE = null; // set before enrollment
+const STRIPE = 'https://buy.stripe.com/3cI3cveSOdqW25A0256wE0n';
 
 const items = [
   'personalized 8-week training plan',
