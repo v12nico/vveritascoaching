@@ -1,6 +1,7 @@
 export const metadata = { title: 'vveritas* — enroll' };
 
-const GREEN = '#4a8c6a';
+const STRIPE = 'https://buy.stripe.com/3cIaEX8uq4UqcKeeWZ6wE0o';
+const GREEN  = '#4a8c6a';
 
 const items = [
   'personalized training plan',
@@ -87,12 +88,12 @@ export default function JaylinEnroll() {
           your first payment activates onboarding and plan development. billing begins on your confirmed start date. cancellation policy confirmed directly with your coach.
         </p>
 
-        <div style={{ padding: '1.1rem 1.5rem', border: '1px solid #3A3A3A', color: '#3A3A3A', fontSize: 'clamp(0.82rem, 1.2vw, 0.92rem)', textAlign: 'center', letterSpacing: '0.01em', marginBottom: '1.5rem', fontFamily: 'ui-monospace, monospace', fontSize: '0.52rem' }}>
-          payment link — to be sent directly
-        </div>
+        <a href={STRIPE} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '1.1rem 1.5rem', border: '1px solid #EDEDE8', color: '#EDEDE8', textDecoration: 'none', fontSize: 'clamp(0.85rem, 1.3vw, 1rem)', textAlign: 'center', letterSpacing: '0.01em', marginBottom: '1.5rem' }}>
+          begin my coaching →
+        </a>
 
         <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.1em', color: '#2a2a2a', textAlign: 'center' }}>
-          message your coach directly to confirm enrollment and payment setup.
+          $497 / month — billed monthly. cancellation policy confirmed with your coach.
         </p>
 
       </div>
