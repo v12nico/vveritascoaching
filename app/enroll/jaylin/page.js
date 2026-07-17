@@ -40,7 +40,7 @@ export default function JaylinEnroll() {
           built for jaylin.
         </p>
         <p style={{ fontSize: 'clamp(0.68rem, 1vw, 0.8rem)', color: '#3A3A3A', marginBottom: '3rem' }}>
-          fully remote. fully personalized. four payments of $150.
+          fully remote. fully personalized. four biweekly payments.
         </p>
 
         <div style={{ borderTop: '1px solid #141414', paddingTop: '2rem', marginBottom: '2.5rem' }}>
@@ -71,7 +71,7 @@ export default function JaylinEnroll() {
             ))}
             <div style={{ display: 'grid', gridTemplateColumns: '6rem 4rem 1fr', alignItems: 'center', gap: '1rem', padding: '0.85rem 0' }}>
               <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#3A3A3A' }}>total</span>
-              <span style={{ fontSize: 'clamp(0.85rem, 1.2vw, 1rem)', fontWeight: 200, color: '#EDEDE8' }}>$600</span>
+              <span style={{ fontSize: 'clamp(0.85rem, 1.2vw, 1rem)', fontWeight: 200, color: '#EDEDE8' }}>$597</span>
               <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.42rem', color: '#3A3A3A' }}>8 weeks</span>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function JaylinEnroll() {
         </a>
 
         <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.44rem', letterSpacing: '0.1em', color: '#2a2a2a', textAlign: 'center' }}>
-          first payment of $150 due today. remaining payments every 2 weeks.
+          four biweekly payments — $597 total.
         </p>
 
       </div>
