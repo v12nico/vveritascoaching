@@ -9,24 +9,33 @@ const BORDER = '#141414';
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const client = {
-  name: 'Jaylin',
-  goal: 'organize the foundation i already have and take it to the next level.',
+  name: 'John',
+  goal: 'build the body, sharpen the mind, and run the business — all at the same time.',
   tier: 'remote',
   momentum: 72,
 };
 
-const todayTasks = [
-  { id: 't1', text: 'complete assigned workout',           pillar: 'fitness',     done: false },
-  { id: 't2', text: 'reach personalized protein standard', pillar: 'nutrition',   done: false },
-  { id: 't3', text: 'follow planned meals',                pillar: 'nutrition',   done: false },
-  { id: 't4', text: 'complete recovery target',            pillar: 'recovery',    done: false },
-  { id: 't5', text: 'complete evening check-in',           pillar: 'consistency', done: false },
+const pillars = [
+  { name: 'fitness',     score: 78 },
+  { name: 'nutrition',   score: 64 },
+  { name: 'business',    score: 61 },
+  { name: 'mindset',     score: 74 },
+  { name: 'consistency', score: 55 },
 ];
 
-const todayFocus = `this week the focus is not perfection. it is following the structure long enough to collect real data. execute the training, follow the nutrition, recover, and give me honest feedback.`;
+const todayTasks = [
+  { id: 't1', text: 'complete workout a — upper body push',    pillar: 'fitness',     done: true  },
+  { id: 't2', text: 'hit 185g protein target',                 pillar: 'nutrition',   done: true  },
+  { id: 't3', text: 'complete 2-hour deep work block',         pillar: 'business',    done: false },
+  { id: 't4', text: 'review and log daily revenue metrics',    pillar: 'business',    done: false },
+  { id: 't5', text: '8hrs sleep — in bed by 10:30pm',         pillar: 'recovery',    done: false },
+  { id: 't6', text: 'complete evening check-in',               pillar: 'consistency', done: false },
+];
+
+const todayFocus = `your body and your business run on the same fuel — energy, discipline, and execution. this week: do not let a hard business day become an excuse to skip the training. and do not let a missed workout spiral into a lost work day. one standard. both areas.`;
 
 const program = {
-  name: `jaylin's personalized plan`,
+  name: `john's personalized program`,
   split: '3 days / week — full body',
   note: 'minimal effective volume. high-quality working sets. controlled execution. progressive overload is the only variable that matters long term.',
   days: [
@@ -54,7 +63,7 @@ const program = {
 };
 
 const nutritionData = {
-  proteinTarget: '[ confirmed after intake ]',
+  proteinTarget: '185g',
   checklist: [
     { id: 'n1', text: 'protein at every meal',              done: false },
     { id: 'n2', text: 'whole-food meals — minimize processed', done: false },
@@ -85,32 +94,33 @@ const nutritionData = {
 };
 
 const mindsetData = {
-  weeklyStandard: 'your mindset is not measured by how motivated you feel. it is measured by whether you execute the standard you agreed to.',
-  currentObstacle: '[ to be confirmed during onboarding ]',
-  focus: 'follow the structure. collect evidence. do not judge the first week.',
-  reflection: 'what did you do today that the previous version of you would not have done?',
-  streak: 0,
-  coachMessage: `the goal this week is not to completely overhaul everything at once. follow the training, hit the nutrition standards, recover properly, and give me honest feedback. we will use your actual response to make the plan more precise.`,
+  weeklyStandard: 'the version of you running a business and building the body at the same time does not skip things because the day was hard. he executes because the standard is the standard.',
+  currentObstacle: 'splitting focus between business execution and training consistency — trying to be on point in both without a system that connects them.',
+  focus: 'the deep work block and the workout are not competing priorities. one fuels the other. execute both this week.',
+  reflection: 'what did you do today — in the gym or in the business — that required you to be more disciplined than you felt like being?',
+  streak: 3,
+  coachMessage: `john — you are not someone who needs to be sold on why this matters. you already know.\n\nthis week i need you to treat the deep work block and the training session with equal weight. missing one is missing both — they run on the same discipline.\n\nhit the 185g. complete the workout. close your revenue task list before 6pm. check in honest.\n\nwe build from what you actually do, not what you intended.`,
 };
 
 const checkInQuestions = {
   daily: [
-    { id: 'd1', type: 'yesno', text: 'did you complete the assigned training?' },
-    { id: 'd2', type: 'yesno', text: 'did you follow the nutrition structure?' },
-    { id: 'd3', type: 'slider', text: 'how was your energy today? (1–10)' },
-    { id: 'd4', type: 'text',  text: 'what went well today?' },
-    { id: 'd5', type: 'text',  text: 'what needs adjustment tomorrow?' },
+    { id: 'd1', type: 'yesno',  text: 'did you complete the assigned training?' },
+    { id: 'd2', type: 'yesno',  text: 'did you complete your deep work block?' },
+    { id: 'd3', type: 'yesno',  text: 'did you hit the nutrition structure?' },
+    { id: 'd4', type: 'slider', text: 'overall energy and focus today (1–10)' },
+    { id: 'd5', type: 'text',   text: 'what did you execute on that mattered?' },
+    { id: 'd6', type: 'text',   text: 'what needs to be sharper tomorrow?' },
   ],
   weekly: [
-    { id: 'w1', type: 'text', text: 'what improved this week?' },
-    { id: 'w2', type: 'text', text: 'where did you struggle?' },
-    { id: 'w3', type: 'text', text: 'how was training performance?' },
-    { id: 'w4', type: 'text', text: 'how were digestion, energy, and recovery?' },
-    { id: 'w5', type: 'text', text: 'what should the coach adjust?' },
+    { id: 'w1', type: 'text', text: 'what improved this week in training?' },
+    { id: 'w2', type: 'text', text: 'what improved this week in business execution?' },
+    { id: 'w3', type: 'text', text: 'where did discipline break down and why?' },
+    { id: 'w4', type: 'text', text: 'how were energy, recovery, and focus across the week?' },
+    { id: 'w5', type: 'text', text: 'what one adjustment would make next week more productive?' },
   ],
 };
 
-const coachMessage = `the goal this week is not to completely overhaul everything at once.\n\nfollow the training, hit the nutrition standards, recover properly, and give me honest feedback.\n\nwe will use your actual response to make the plan more precise.`;
+const coachMessage = `john — you are not someone who needs to be sold on why this matters. you already know.\n\nthis week i need you to treat the deep work block and the training session with equal weight. missing one is missing both — they run on the same discipline.\n\nhit the 185g. complete the workout. close your revenue task list before 6pm. check in honest.\n\nwe build from what you actually do, not what you intended.`;
 
 // ── SHARED STYLES ─────────────────────────────────────────────────────────────
 const label = { fontFamily: 'ui-monospace, monospace', fontSize: '0.46rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: GHOST, display: 'block', marginBottom: '0.8rem' };
@@ -132,6 +142,22 @@ function TodayTab() {
       <div style={{ height: '2px', background: BORDER, marginBottom: '1.5rem', borderRadius: '1px' }}>
         <div style={{ height: '100%', width: `${pct}%`, background: color, transition: 'width 0.3s', borderRadius: '1px' }} />
       </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem', marginBottom: '2rem' }}>
+        {pillars.map(p => {
+          const pc = p.score >= 75 ? GREEN : p.score >= 55 ? AMBER : '#5C1A1A';
+          return (
+            <div key={p.name} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+              <div style={{ height: '48px', background: BORDER, borderRadius: '2px', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: `${p.score}%`, background: pc, opacity: 0.7, transition: 'height 0.4s' }} />
+              </div>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.38rem', color: GHOST, letterSpacing: '0.1em', textAlign: 'center' }}>{p.name}</span>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.42rem', color: pc, textAlign: 'center' }}>{p.score}</span>
+            </div>
+          );
+        })}
+      </div>
+
       {tasks.map(task => (
         <button key={task.id} onClick={() => setTasks(prev => prev.map(t => t.id === task.id ? { ...t, done: !t.done } : t))}
           style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', width: '100%', background: 'none', border: 'none', padding: '0.85rem 0', borderBottom: `1px solid ${BORDER}`, cursor: 'pointer', textAlign: 'left' }}>
@@ -293,10 +319,12 @@ function ProgressTab() {
     <div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
         {[
-          { label: 'training completion', val: 'baseline', sub: 'week 1 — collecting data' },
-          { label: 'nutrition adherence', val: 'baseline', sub: 'week 1 — collecting data' },
-          { label: 'consistency streak',  val: '0',        sub: 'days' },
-          { label: 'strength trend',      val: '→',        sub: 'establishing baseline' },
+          { label: 'training completion', val: '78%',   sub: 'week 3 — above target' },
+          { label: 'nutrition adherence', val: '64%',   sub: 'protein consistency improving' },
+          { label: 'business execution',  val: '61%',   sub: 'deep work consistency building' },
+          { label: 'consistency streak',  val: '3',     sub: 'days — keep going' },
+          { label: 'strength trend',      val: '↑',     sub: 'progressive overload confirmed' },
+          { label: 'mindset score',       val: '74',    sub: 'focus and clarity trending up' },
         ].map((stat, i) => (
           <div key={i} style={{ padding: '1.1rem', border: `1px solid ${BORDER}` }}>
             <span style={{ ...label, marginBottom: '0.5rem' }}>{stat.label}</span>
@@ -319,7 +347,7 @@ function ProgressTab() {
       <div style={{ padding: '1rem', border: `1px solid ${BORDER}` }}>
         <span style={{ ...label, marginBottom: '0.4rem' }}>coach note</span>
         <p style={{ fontSize: 'clamp(0.68rem, 1vw, 0.8rem)', color: GHOST, lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
-          week 1 is for establishing baseline. numbers, habits, and patterns — not performance targets. give me honest data and i will use it to build the most accurate plan possible.
+          your training and your business execution are both trending in the right direction. the data says the consistency is building — not perfect, but real. that is what compounds. keep the standard.
         </p>
       </div>
     </div>
