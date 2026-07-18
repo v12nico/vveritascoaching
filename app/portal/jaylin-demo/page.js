@@ -137,22 +137,23 @@ function TodayTab() {
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.6rem' }}>
         <span style={label}>today's mission</span>
-        <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', color }}>{pct}% complete</span>
+        <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'clamp(0.7rem, 1.1vw, 0.85rem)', color, fontWeight: 300 }}>{pct}% complete</span>
       </div>
       <div style={{ height: '2px', background: BORDER, marginBottom: '1.5rem', borderRadius: '1px' }}>
         <div style={{ height: '100%', width: `${pct}%`, background: color, transition: 'width 0.3s', borderRadius: '1px' }} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem', marginBottom: '2rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.4rem', marginBottom: '2rem' }}>
         {pillars.map(p => {
           const pc = p.score >= 75 ? GREEN : p.score >= 55 ? AMBER : '#5C1A1A';
           return (
-            <div key={p.name} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <div style={{ height: '48px', background: BORDER, borderRadius: '2px', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: `${p.score}%`, background: pc, opacity: 0.7, transition: 'height 0.4s' }} />
+            <div key={p.name} style={{ display: 'flex', flexDirection: 'column', border: `1px solid ${BORDER}`, padding: '0.7rem 0.5rem 0.5rem', gap: '0.5rem', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: `${p.score}%`, background: pc, opacity: 0.08 }} />
+              <span style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', fontWeight: 200, color: pc, letterSpacing: '-0.03em', lineHeight: 1, textAlign: 'center' }}>{p.score}</span>
+              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'clamp(0.5rem, 0.8vw, 0.6rem)', color: GHOST, letterSpacing: '0.08em', textAlign: 'center', textTransform: 'uppercase' }}>{p.name}</span>
+              <div style={{ height: '2px', background: BORDER, borderRadius: '1px' }}>
+                <div style={{ height: '100%', width: `${p.score}%`, background: pc, borderRadius: '1px' }} />
               </div>
-              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.38rem', color: GHOST, letterSpacing: '0.1em', textAlign: 'center' }}>{p.name}</span>
-              <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.42rem', color: pc, textAlign: 'center' }}>{p.score}</span>
             </div>
           );
         })}
@@ -329,7 +330,7 @@ function ProgressTab() {
           <div key={i} style={{ padding: '1.1rem', border: `1px solid ${BORDER}` }}>
             <span style={{ ...label, marginBottom: '0.5rem' }}>{stat.label}</span>
             <div style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 200, color: '#EDEDE8', letterSpacing: '-0.03em', lineHeight: 1 }}>{stat.val}</div>
-            <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.4rem', color: GHOST, marginTop: '0.3rem' }}>{stat.sub}</div>
+            <div style={{ fontFamily: 'ui-monospace, monospace', fontSize: 'clamp(0.52rem, 0.8vw, 0.62rem)', color: GHOST, marginTop: '0.3rem' }}>{stat.sub}</div>
           </div>
         ))}
       </div>
