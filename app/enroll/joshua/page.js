@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 
+const STRIPE = 'https://buy.stripe.com/3cI3cveSOdqW25A0256wE0n';
+
 const GREEN  = '#4a8c6a';
 const GHOST  = '#3A3A3A';
 const DIM    = '#5A5A5A';
@@ -75,6 +77,7 @@ export default function JoshuaEnroll() {
       return;
     }
     setError('');
+    window.open(STRIPE, '_blank');
     setSubmitted(true);
   }
 
