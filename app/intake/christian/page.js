@@ -106,7 +106,7 @@ export default function ChristianIntake() {
               </div>
               <div>
                 {fieldLabel('height')}
-                <input style={input} type="text" placeholder='5\'10"' value={form.height} onChange={e => set('height', e.target.value)} />
+                <input style={input} type="text" placeholder="5'10&quot;" value={form.height} onChange={e => set('height', e.target.value)} />
               </div>
             </div>
             <div>
