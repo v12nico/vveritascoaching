@@ -11,6 +11,7 @@ const coaching = [
 ];
 
 const programs = [
+  { name: 'guided',        href: '/guided',    label: '$497', desc: 'full 8-week system built for you. training, nutrition, grocery lists. no coaching. you execute.' },
   { name: 'the blueprint', href: '/blueprint', label: '$250', desc: 'custom training + nutrition plan. built for you. run it yourself.' },
 ];
 
