@@ -59,7 +59,7 @@ export default function ChristianIntake() {
       const res = await fetch('/api/coaching/intake', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug: 'christian', ...form }),
+        body: JSON.stringify({ slug: 'christian', name: 'christian', email: 'zchristian896@gmail.com', ...form }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'failed');
