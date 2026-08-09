@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { useSearchParams } from 'next/navigation';
 import {
   SECTIONS, TOTAL, DAYS, TIMES,
   emptyForm, flatScreens, isVisible, screenComplete, missingBySection,
@@ -11,7 +10,6 @@ import {
 const storageKey = (slug) => `vv-intake-${slug || 'default'}`;
 
 export default function IntakeWizard({ slug = '', clientName = '' }) {
-  const params = useSearchParams();
   const screens = useMemo(() => flatScreens(), []);
 
   const [form, setForm] = useState(emptyForm);
@@ -21,6 +19,7 @@ export default function IntakeWizard({ slug = '', clientName = '' }) {
   const [saved, setSaved] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+  const [link, setLink] = useState({ pkg: '', startDate: '' });
   const top = useRef(null);
 
   const set = (id, value) => setForm((f) => ({ ...f, [id]: value }));
@@ -28,9 +27,15 @@ export default function IntakeWizard({ slug = '', clientName = '' }) {
   // ── prefill + restore ──────────────────────────────────────────────────────
   // Order matters: saved answers win over query params, because a client who
   // already typed something should never watch it get overwritten by a link.
+  // Query params are read here rather than through useSearchParams, which would
+  // opt this whole subtree out of prerendering and hand the client a blank
+  // screen until hydration. Nothing needs them before mount.
   useEffect(() => {
-    const prefill = {};
+    const params = new URLSearchParams(window.location.search);
     const q = (k) => params.get(k) || '';
+    setLink({ pkg: q('package') || q('plan'), startDate: q('start') });
+
+    const prefill = {};
     if (q('name') || clientName) prefill.fullName = q('name') || clientName;
     if (q('email')) prefill.email = q('email');
     if (q('phone')) prefill.phone = q('phone');
@@ -46,7 +51,7 @@ export default function IntakeWizard({ slug = '', clientName = '' }) {
     setForm((f) => ({ ...f, ...prefill, ...(stored?.form || {}) }));
     if (stored?.form) setRestored(true);
     if (typeof stored?.step === 'number') setStep(stored.step);
-  }, [params, slug, clientName]);
+  }, [slug, clientName]);
 
   useEffect(() => {
     if (phase === 'start') return;
@@ -63,8 +68,6 @@ export default function IntakeWizard({ slug = '', clientName = '' }) {
 
   const current = screens[step];
   const canContinue = current ? screenComplete(current.screen, form) : false;
-  const pkg = params.get('package') || params.get('plan') || '';
-  const startDate = params.get('start') || '';
 
   const next = () => (step + 1 < screens.length ? setStep(step + 1) : setPhase('review'));
   const back = () => (step === 0 ? setPhase('start') : setStep(step - 1));
@@ -81,7 +84,7 @@ export default function IntakeWizard({ slug = '', clientName = '' }) {
       const res = await fetch('/api/intake', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, slug, package: pkg, startDate }),
+        body: JSON.stringify({ ...form, slug, package: link.pkg, startDate: link.startDate }),
       });
       if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error || 'failed');
       try { window.localStorage.removeItem(storageKey(slug)); } catch {}
