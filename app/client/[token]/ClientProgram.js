@@ -147,23 +147,34 @@ function Nutrition({ c }) {
         <p className="cp-note">{c.nutrition.proteinNote}</p>
       </Section>
 
-      <Section label="how the day looks">
-        {c.nutrition.meals.map(m => (
-          <div className="cp-meal" key={m.slot}>
-            <div className="cp-meal-head">
-              <span className="cp-meal-slot">{m.slot}</span>
-              <span className="cp-meal-p">{m.protein}</span>
-            </div>
-            <div className="cp-chips">
-              {m.options.map(o => <span className="cp-chip" key={o}>{o}</span>)}
-            </div>
-            {m.note && <p className="cp-note tight">{m.note}</p>}
-          </div>
-        ))}
-        <p className="cp-note">{c.nutrition.rhythm}</p>
+      <DaySchedule d={c.nutrition.workDays} />
+      <DaySchedule d={c.nutrition.offDays} />
+
+      <Section label="around training">
         <p className="cp-note">pre-workout — {c.nutrition.preWorkout}</p>
+        <p className="cp-note">{c.nutrition.rhythm}</p>
       </Section>
     </>
+  )
+}
+
+function DaySchedule({ d }) {
+  return (
+    <Section label={d.label}>
+      <p className="cp-note tight">{d.note}</p>
+      {d.meals.map(m => (
+        <div className="cp-meal" key={m.slot}>
+          <div className="cp-meal-head">
+            <span className="cp-meal-slot">{m.slot}</span>
+            <span className="cp-meal-p">{m.protein}</span>
+          </div>
+          <div className="cp-chips">
+            {m.options.map(o => <span className="cp-chip" key={o}>{o}</span>)}
+          </div>
+          {m.note && <p className="cp-note tight">{m.note}</p>}
+        </div>
+      ))}
+    </Section>
   )
 }
 

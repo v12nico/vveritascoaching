@@ -10,6 +10,21 @@ const localDate = () => {
   return z.toISOString().slice(0, 10)
 }
 
+// Two sentences, meaning two real ones. Splitting on punctuation alone lets
+// "ok. fine." through, which is not a reflection — so it also has to clear a
+// length floor. The counter is shown live so he is never guessing why the
+// button is locked.
+const MIN_SENTENCES = 2
+const MIN_CHARS = 60
+
+export function countSentences(text = '') {
+  return String(text)
+    .split(/[.!?\n]+/)
+    .map(s => s.trim())
+    .filter(s => s.length >= 8)      // fragments and stray punctuation don't count
+    .length
+}
+
 const QUESTIONS = [
   { id: 'trained', q: 'did you train today?',
     options: [['yes', 'yes'], ['rest', 'rest day'], ['no', 'no']] },
@@ -51,7 +66,10 @@ export default function CheckIn({ c }) {
       .catch(() => setState('form'))
   }, [c.token, date])
 
-  const ready = QUESTIONS.every(q => f[q.id])
+  const sentences = countSentences(f.note)
+  const longEnough = f.note.trim().length >= MIN_CHARS
+  const reflectionOk = sentences >= MIN_SENTENCES && longEnough
+  const ready = QUESTIONS.every(q => f[q.id]) && reflectionOk
 
   async function submit() {
     setState('saving')
@@ -122,10 +140,20 @@ export default function CheckIn({ c }) {
       ))}
 
       <section className="cp-section">
-        <div className="cp-q">anything i need to know?</div>
-        <textarea className="cp-area" rows={3} value={f.note}
-          placeholder="optional. one line is fine."
+        <div className="cp-q">how was today?</div>
+        <p className="cp-note tight">
+          two sentences minimum. training, food, energy, what got in the way — whatever
+          actually happened. this is the part i read first.
+        </p>
+        <textarea className="cp-area" rows={5} value={f.note}
+          placeholder="what happened today?"
           onChange={e => set('note', e.target.value)} />
+        <div className="cp-count">
+          <span className={reflectionOk ? 'ok' : ''}>
+            {sentences} {sentences === 1 ? 'sentence' : 'sentences'}
+          </span>
+          {!reflectionOk && <span className="cp-count-hint">need {MIN_SENTENCES}</span>}
+        </div>
       </section>
 
       {state === 'error' && (
@@ -135,7 +163,13 @@ export default function CheckIn({ c }) {
       <button className="cp-submit" onClick={submit} disabled={!ready || state === 'saving'}>
         {state === 'saving' ? 'sending…' : existing ? 'update check-in' : 'send check-in'}
       </button>
-      {!ready && <p className="cp-note">answer the first three and this unlocks.</p>}
+      {!ready && (
+        <p className="cp-note">
+          {QUESTIONS.every(q => f[q.id])
+            ? 'write two sentences about your day and this unlocks.'
+            : 'answer the first three and write your reflection.'}
+        </p>
+      )}
     </>
   )
 }

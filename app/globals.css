@@ -4420,3 +4420,8 @@ textarea {
   border-radius: 0; transition: all 0.22s ease; }
 .gate-btn:hover:not(:disabled) { background: #0f0f0f; box-shadow: 0 0 22px rgba(237,237,232,0.06); }
 .gate-btn:disabled { border-color: #191919; color: #2e2e2e; cursor: not-allowed; }
+.cp-count { display: flex; justify-content: space-between; margin-top: 0.55rem;
+  font-family: ui-monospace,monospace; font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #2e2e2e; }
+.cp-count .ok { color: var(--dim); }
+.cp-count-hint { color: #2e2e2e; }

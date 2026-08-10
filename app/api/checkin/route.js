@@ -20,6 +20,14 @@ export async function POST(req) {
     return Response.json({ error: 'bad date' }, { status: 400 })
   }
 
+  // The reflection is the point of the check-in, so it is enforced server-side
+  // too — the client check alone is a suggestion to anyone with a console.
+  const reflection = String(b.note ?? '').trim()
+  const sentences = reflection.split(/[.!?\n]+/).map(x => x.trim()).filter(x => x.length >= 8).length
+  if (sentences < 2 || reflection.length < 60) {
+    return Response.json({ error: 'write two sentences about your day.' }, { status: 400 })
+  }
+
   const energy = Number.isFinite(+b.energy) ? Math.min(10, Math.max(1, +b.energy)) : null
   const digestion = Number.isFinite(+b.digestion) ? Math.min(10, Math.max(1, +b.digestion)) : null
 
@@ -33,7 +41,7 @@ export async function POST(req) {
       VALUES
         (${client.token}, ${client.fullName}, ${b.localDate}, ${b.trained ?? null},
          ${b.protein ?? null}, ${b.atePlanned ?? null}, ${energy}, ${digestion},
-         ${(b.note ?? '').trim() || null}, ${JSON.stringify(b)})
+         ${reflection}, ${JSON.stringify(b)})
       ON CONFLICT (client_token, local_date) DO UPDATE SET
         trained = EXCLUDED.trained, protein = EXCLUDED.protein,
         ate_planned = EXCLUDED.ate_planned, energy = EXCLUDED.energy,
@@ -70,8 +78,8 @@ export async function POST(req) {
         `energy:     ${energy ?? '—'}/10`,
         `digestion:  ${digestion ?? '—'}/10`,
         '',
-        'note:',
-        (b.note ?? '').trim() || '—',
+        'his words:',
+        reflection,
       ].join('\n'),
     })
     emailed = true
