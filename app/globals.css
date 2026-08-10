@@ -4398,3 +4398,25 @@ textarea {
   font-family: Inter, sans-serif; font-size: 0.78rem; font-weight: 300;
   cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .cp-ghost:hover { color: var(--dim); }
+
+/* ─── coach gate ─────────────────────────────────────────────────── */
+.gate { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.gate-box { width: 100%; max-width: 330px; display: flex; flex-direction: column; }
+.gate-eyebrow { font-family: ui-monospace,'SF Mono',Menlo,monospace; font-size: 9px;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--ghost); }
+.gate-title { font-size: 1.7rem; font-weight: 200; letter-spacing: -0.02em;
+  color: var(--text); margin: 0.8rem 0 0; }
+.gate-sub { font-size: 0.8rem; font-weight: 300; color: var(--dim); margin: 0.5rem 0 2rem; }
+.gate-input { background: transparent; border: none; border-bottom: 1px solid #1a1a1a;
+  color: var(--text); font-family: Inter, sans-serif; font-size: 1rem; font-weight: 300;
+  padding: 0.75rem 0; outline: none; border-radius: 0; }
+.gate-input:focus { border-bottom-color: var(--dim); }
+.gate-input::placeholder { color: #2a2a2a; }
+.gate-error { font-size: 0.78rem; font-weight: 300; line-height: 1.6; color: var(--dim);
+  margin-top: 1rem; padding-left: 0.8rem; border-left: 1px solid var(--oxblood); }
+.gate-btn { margin-top: 1.75rem; min-height: 50px; background: transparent;
+  border: 1px solid var(--dim); color: var(--text); font-family: Inter, sans-serif;
+  font-size: 0.85rem; font-weight: 300; letter-spacing: 0.04em; cursor: pointer;
+  border-radius: 0; transition: all 0.22s ease; }
+.gate-btn:hover:not(:disabled) { background: #0f0f0f; box-shadow: 0 0 22px rgba(237,237,232,0.06); }
+.gate-btn:disabled { border-color: #191919; color: #2e2e2e; cursor: not-allowed; }
