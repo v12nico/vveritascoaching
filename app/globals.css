@@ -4355,3 +4355,46 @@ textarea {
   text-transform: uppercase; color: #2c2c2c; }
 
 @media (max-width: 420px) { .cp { padding: 2.25rem 1rem 4rem; } }
+
+/* ─── check-in ───────────────────────────────────────────────────── */
+.cp-q { font-size: 0.95rem; font-weight: 300; color: var(--text); line-height: 1.45; margin-bottom: 0.85rem; }
+.cp-opts { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+/* 52px tall: thumb-sized, because this gets tapped in bed at midnight */
+.cp-opt { flex: 1; min-width: 96px; min-height: 52px; background: transparent;
+  border: 1px solid #1a1a1a; color: var(--dim); font-family: Inter, sans-serif;
+  font-size: 0.84rem; font-weight: 300; cursor: pointer; border-radius: 0;
+  transition: all 0.18s ease; }
+.cp-opt:hover { border-color: #2c2c2c; color: var(--text); }
+.cp-opt.on { color: var(--text); border-color: var(--dim); background: #0d0d0d;
+  box-shadow: inset 0 0 26px rgba(237,237,232,0.035); }
+
+.cp-slider-head { display: flex; justify-content: space-between; align-items: baseline; }
+.cp-slider-val { font-family: ui-monospace,monospace; font-size: 1.05rem; color: var(--text); }
+.cp-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 1px;
+  background: #1f1f1f; outline: none; margin-top: 0.5rem; }
+.cp-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--text); cursor: pointer;
+  box-shadow: 0 0 14px rgba(237,237,232,0.2); }
+.cp-slider::-moz-range-thumb { width: 26px; height: 26px; border: none; border-radius: 50%;
+  background: var(--text); cursor: pointer; }
+.cp-slider-ends { display: flex; justify-content: space-between; margin-top: 0.5rem;
+  font-family: ui-monospace,monospace; font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #2e2e2e; }
+
+.cp-area { width: 100%; background: transparent; border: 1px solid #1a1a1a; color: var(--text);
+  font-family: Inter, sans-serif; font-size: 0.9rem; font-weight: 300; padding: 0.85rem;
+  line-height: 1.6; outline: none; border-radius: 0; resize: vertical; }
+.cp-area:focus { border-color: var(--dim); }
+.cp-area::placeholder { color: #2a2a2a; }
+
+.cp-submit { width: 100%; min-height: 56px; margin-top: 1.5rem; background: transparent;
+  border: 1px solid var(--dim); color: var(--text); font-family: Inter, sans-serif;
+  font-size: 0.88rem; font-weight: 300; letter-spacing: 0.04em; cursor: pointer;
+  border-radius: 0; transition: all 0.22s ease; }
+.cp-submit:hover:not(:disabled) { background: #0f0f0f; box-shadow: 0 0 24px rgba(237,237,232,0.06); }
+.cp-submit:disabled { border-color: #191919; color: #2e2e2e; cursor: not-allowed; }
+
+.cp-ghost { margin-top: 1.5rem; background: none; border: none; color: #3a3a3a;
+  font-family: Inter, sans-serif; font-size: 0.78rem; font-weight: 300;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cp-ghost:hover { color: var(--dim); }
