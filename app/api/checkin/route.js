@@ -1,13 +1,14 @@
 import { Resend } from 'resend'
 import { getCoachingDb } from '@/lib/db'
 import olaf from '@/lib/clients/olaf'
+import fanta from '@/lib/clients/fanta'
 
 // Same rule as the intake: a client fills this in once and will not do it twice.
 // The database write and the email run independently, and only a failure of BOTH
 // is reported as a failure — otherwise a broken notifier looks like a lost
 // check-in and he re-types it.
 
-const CLIENTS = { [olaf.token]: olaf }
+const CLIENTS = { [olaf.token]: olaf, [fanta.token]: fanta }
 
 export async function POST(req) {
   const b = await req.json()
