@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import CheckIn from './CheckIn'
+import LiftLog from './LiftLog'
+import Progress from './Progress'
 
 // Mobile-first: he will open this on his phone, in a gym, between sets. Tabs
 // rather than one long scroll so the day's exercises are never more than a tap
@@ -11,6 +13,8 @@ const TABS = [
   { key: 'training',  label: 'training' },
   { key: 'nutrition', label: 'food' },
   { key: 'grocery',   label: 'grocery' },
+  { key: 'log',       label: 'log' },
+  { key: 'progress',  label: 'progress' },
   { key: 'checkin',   label: 'check in' },
 ]
 
@@ -46,6 +50,8 @@ export default function ClientProgram({ c }) {
         {tab === 'training'  && <Training c={c} />}
         {tab === 'nutrition' && <Nutrition c={c} />}
         {tab === 'grocery'   && <Grocery c={c} />}
+        {tab === 'log'       && <LiftLog c={c} />}
+        {tab === 'progress'  && <Progress c={c} />}
         {tab === 'checkin'   && <CheckIn c={c} />}
       </main>
 

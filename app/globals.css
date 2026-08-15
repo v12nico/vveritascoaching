@@ -4425,3 +4425,45 @@ textarea {
   text-transform: uppercase; color: #2e2e2e; }
 .cp-count .ok { color: var(--dim); }
 .cp-count-hint { color: #2e2e2e; }
+
+/* ─── lift log ───────────────────────────────────────────────────── */
+.cp-daypick { display: flex; gap: 0.4rem; margin: 0.9rem 0 0.2rem; }
+.cp-daybtn { flex: 1; min-height: 42px; background: transparent; border: 1px solid #1a1a1a;
+  color: var(--ghost); font-family: ui-monospace,monospace; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border-radius: 0; }
+.cp-daybtn.on { color: var(--text); border-color: var(--dim); background: #0d0d0d; }
+
+.cp-lift-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.cp-lift-name { font-size: 0.95rem; font-weight: 300; color: var(--text); }
+.cp-lift-target { font-family: ui-monospace,monospace; font-size: 11px; color: var(--dim); white-space: nowrap; }
+
+.cp-set { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0; border-bottom: 1px solid #111; }
+.cp-set-n { font-family: ui-monospace,monospace; font-size: 10px; color: var(--ghost); width: 12px; }
+/* 64px wide, 44px tall: thumb targets, because this is used mid-set */
+.cp-set-in { width: 64px; min-height: 44px; background: transparent; border: 1px solid #1a1a1a;
+  color: var(--text); font-family: ui-monospace,monospace; font-size: 15px; text-align: center;
+  outline: none; border-radius: 0; -moz-appearance: textfield; }
+.cp-set-in::-webkit-outer-spin-button, .cp-set-in::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0; }
+.cp-set-in:focus { border-color: var(--dim); }
+.cp-set-in::placeholder { color: #2a2a2a; font-size: 11px; }
+.cp-set-x { font-family: ui-monospace,monospace; font-size: 11px; color: var(--ghost); }
+.cp-set-prev { flex: 1; font-family: ui-monospace,monospace; font-size: 10px; color: #3d3d3d;
+  text-align: right; white-space: nowrap; }
+.cp-beat { color: var(--text); font-weight: 400; }
+.cp-set-state { width: 12px; font-family: ui-monospace,monospace; font-size: 11px; color: #2e2e2e; }
+.cp-set-state.ok { color: var(--dim); }
+.cp-set-state.bad { color: var(--oxblood); }
+
+/* ─── progress ───────────────────────────────────────────────────── */
+.cp-big { font-size: 3.6rem; font-weight: 200; line-height: 1; color: var(--text); }
+.cp-prog { padding: 0.75rem 0; border-bottom: 1px solid #111; }
+.cp-prog-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.cp-prog-name { font-size: 0.88rem; font-weight: 300; color: var(--text); }
+.cp-prog-best { font-family: ui-monospace,monospace; font-size: 13px; color: var(--text); white-space: nowrap; }
+.cp-prog-sub { font-family: ui-monospace,monospace; font-size: 10px; color: #3d3d3d; margin-top: 0.35rem; }
+.cp-sessions { display: flex; flex-direction: column; }
+.cp-session { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0;
+  border-bottom: 1px solid #111; font-family: ui-monospace,monospace; font-size: 11px; color: var(--dim); }
+.cp-session-day { color: var(--text); }
+.cp-session-sets { color: var(--ghost); }
