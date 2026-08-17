@@ -87,6 +87,12 @@ function Today({ c }) {
         </div>
       </Section>
 
+      {c.reminder && (
+        <Section label={c.reminder.label}>
+          <p className="cp-note strong">{c.reminder.text}</p>
+        </Section>
+      )}
+
       <Section label="i need an answer on this">
         <p className="cp-note strong">{c.followUp}</p>
       </Section>
