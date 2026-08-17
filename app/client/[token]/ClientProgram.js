@@ -133,6 +133,13 @@ function Training({ c }) {
         <p className="cp-mono">{c.training.progression.example}</p>
       </Section>
 
+      {c.training.sleep && (
+        <Section label="sleep">
+          <h2 className="cp-h2">{c.training.sleep.headline}</h2>
+          <p className="cp-note">{c.training.sleep.note}</p>
+        </Section>
+      )}
+
       <Section label="cardio">
         <h2 className="cp-h2">{c.training.cardio.headline}</h2>
         <p className="cp-note">{c.training.cardio.note}</p>
