@@ -4467,3 +4467,12 @@ textarea {
   border-bottom: 1px solid #111; font-family: ui-monospace,monospace; font-size: 11px; color: var(--dim); }
 .cp-session-day { color: var(--text); }
 .cp-session-sets { color: var(--ghost); }
+/* tap a session to see every set from that day */
+.cp-session { width: 100%; background: none; border: none; border-bottom: 1px solid #111;
+  cursor: pointer; text-align: left; }
+.cp-history { padding: 0.5rem 0 0.9rem 0; border-bottom: 1px solid #111; }
+.cp-history-ex { padding: 0.4rem 0; }
+.cp-history-name { font-size: 0.8rem; font-weight: 300; color: var(--text); }
+.cp-history-sets { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
+.cp-history-set { font-family: ui-monospace,monospace; font-size: 10px; color: var(--dim);
+  border: 1px solid #1a1a1a; padding: 0.2rem 0.45rem; }

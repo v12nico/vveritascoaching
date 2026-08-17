@@ -79,6 +79,16 @@ export async function GET(req) {
       return Response.json({ best: rows, first, sessions })
     }
 
+    if (searchParams.get('history')) {
+      // Every set she has ever logged, newest first. Grouped client-side so one
+      // request covers the whole history rather than one per session.
+      const rows = await sql`
+        SELECT local_date, day_key, exercise, set_index, weight, reps
+        FROM client_lifts WHERE client_token = ${token}
+        ORDER BY local_date DESC, exercise, set_index`
+      return Response.json({ rows })
+    }
+
     const date = searchParams.get('date')
     if (!date) return Response.json({ today: [], previous: [] })
 

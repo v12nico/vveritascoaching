@@ -9,10 +9,14 @@ import { useState, useEffect } from 'react'
 
 export default function Progress({ c }) {
   const [data, setData] = useState(null)
+  const [history, setHistory] = useState(null)
+  const [open, setOpen] = useState(null)
 
   useEffect(() => {
     fetch(`/api/lift?token=${encodeURIComponent(c.token)}&progress=1`)
       .then(r => r.json()).then(setData).catch(() => setData({ best: [], first: [], sessions: [] }))
+    fetch(`/api/lift?token=${encodeURIComponent(c.token)}&history=1`)
+      .then(r => r.json()).then(d => setHistory(d.rows ?? [])).catch(() => setHistory([]))
   }, [c.token])
 
   if (!data) return <div className="cp-label">loading…</div>
@@ -80,13 +84,40 @@ export default function Progress({ c }) {
       <section className="cp-section">
         <div className="cp-label">every session you’ve done</div>
         <div className="cp-sessions">
-          {sessions.map(s => (
-            <div className="cp-session" key={`${s.local_date}-${s.day_key}`}>
-              <span>{String(s.local_date).slice(0, 10)}</span>
-              <span className="cp-session-day">{s.day_key || '—'}</span>
-              <span className="cp-session-sets">{s.sets} sets</span>
-            </div>
-          ))}
+          {sessions.map(s => {
+            const day = String(s.local_date).slice(0, 10)
+            const isOpen = open === day
+            const sets = (history ?? []).filter(r => String(r.local_date).slice(0, 10) === day)
+            const byExercise = sets.reduce((acc, r) => {
+              (acc[r.exercise] ??= []).push(r); return acc
+            }, {})
+
+            return (
+              <div key={`${day}-${s.day_key}`}>
+                <button className="cp-session" onClick={() => setOpen(isOpen ? null : day)}>
+                  <span>{day}</span>
+                  <span className="cp-session-day">{s.day_key || '—'}</span>
+                  <span className="cp-session-sets">{s.sets} sets {isOpen ? '−' : '+'}</span>
+                </button>
+                {isOpen && (
+                  <div className="cp-history">
+                    {Object.entries(byExercise).map(([name, rows]) => (
+                      <div className="cp-history-ex" key={name}>
+                        <div className="cp-history-name">{name}</div>
+                        <div className="cp-history-sets">
+                          {rows.map(r => (
+                            <span className="cp-history-set" key={r.set_index}>
+                              {r.weight ?? '—'} × {r.reps ?? '—'}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </section>
     </>
