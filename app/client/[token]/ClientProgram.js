@@ -76,6 +76,24 @@ function Today({ c }) {
         <p className="cp-quote">{c.week1.note}</p>
       </Section>
 
+      {c.arc && (
+        <Section label={c.arc.label}>
+          <div className="cp-arc">
+            {c.arc.phases.map(p => (
+              <div className="cp-arc-row" key={p.weeks}>
+                <span className="cp-arc-wk">wk {p.weeks}</span>
+                <div className="cp-arc-body">
+                  <div className="cp-arc-name">{p.name}</div>
+                  <div className="cp-arc-goal">{p.goal}</div>
+                  <div className="cp-arc-marker">{p.marker}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="cp-note">{c.arc.note}</p>
+        </Section>
+      )}
+
       <Section label="every day">
         <ul className="cp-list numbered">
           {c.daily.map(d => <li key={d}>{d}</li>)}

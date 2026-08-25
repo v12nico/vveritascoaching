@@ -1,8 +1,6 @@
 import { getCoachingDb } from '@/lib/db'
-import olaf from '@/lib/clients/olaf'
-import fanta from '@/lib/clients/fanta'
+import { CLIENTS } from '@/lib/clients'
 
-const CLIENTS = { [olaf.token]: olaf, [fanta.token]: fanta }
 
 export async function POST(req) {
   const b = await req.json()
