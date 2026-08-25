@@ -547,10 +547,10 @@ export default function XaviorPitch() {
       {/* top bar */}
       <div style={{ padding: '1rem 1.5rem', borderBottom: '1px solid #0f0f0f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
         <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#3A3A3A' }}>
-          vveritas* — zack
+          vveritas* — xavior
         </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <a href="/pitch/zack/notes" target="_blank" rel="noreferrer"
+          <a href="/pitch/xavior/notes" target="_blank" rel="noreferrer"
             style={{ fontFamily: 'ui-monospace, monospace', fontSize: '0.42rem', letterSpacing: '0.1em', color: '#5A5A5A', textDecoration: 'none' }}>
             notes ↗
           </a>
