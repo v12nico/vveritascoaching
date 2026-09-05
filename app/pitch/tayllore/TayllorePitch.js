@@ -9,7 +9,7 @@ const SLIDES = [
   {
     type: 'hero',
     headline: 'built for tayllore.',
-    sub: 'sunday mornings. columbia. twelve weeks.',
+    sub: 'sunday mornings. columbia. eight weeks.',
     body: "you lost forty pounds on your own. this is the part that comes after — and it is a different job than the one you just finished.",
     notes: `...`,
   },
@@ -21,7 +21,7 @@ const SLIDES = [
       "i am going to ask questions first. you do most of the talking.",
       "you said you want to learn form and be sent on your way. i take that seriously — the goal is you not needing me.",
       "i will tell you what i actually think, even where it is not what you expect.",
-      "then i show you what the twelve weeks look like.",
+      "then i show you what the eight weeks look like.",
     ],
     notes: `...`,
   },
@@ -85,14 +85,14 @@ const SLIDES = [
   // 6
   {
     type: 'system',
-    headline: 'what twelve weeks looks like.',
+    headline: 'what eight weeks looks like.',
     items: [
       { icon: '01', text: 'sunday morning, anytime fitness columbia — one hour, hands on' },
       { icon: '02', text: 'we drill form until it is yours, not until i say so' },
       { icon: '03', text: 'you train two more times that week on your own' },
       { icon: '04', text: 'every set goes in the app — last week’s numbers next to today’s' },
       { icon: '05', text: 'i read it before sunday, so we never start from memory' },
-      { icon: '06', text: 'week twelve you can write your own program. that is the point.' },
+      { icon: '06', text: 'week eight you can write your own program. that is the point.' },
     ],
     footer: 'the sunday hour teaches it. the other six days are where it becomes yours.',
     notes: `...`,
@@ -108,7 +108,7 @@ const SLIDES = [
       { label: 'three sessions a week', sub: 'not six. you have a life and it has to survive this.' },
       { label: 'cardio comes down, not up', sub: 'you have done enough of it.' },
     ],
-    footer: 'twelve weeks of this and you will know how to program for yourself.',
+    footer: 'eight weeks of this and you will know how to program for yourself.',
     notes: `...`,
   },
   // 8
@@ -139,9 +139,9 @@ const SLIDES = [
     type: 'value',
     headline: "what's included.",
     items: [
-      '12 in-person sessions — one every sunday',
+      '8 in-person sessions — one every sunday',
       'your own dashboard, built from your intake',
-      'a 12-week program in three phases',
+      'an 8-week program in three phases',
       'set-by-set logging so you can see it move',
       'nightly check-ins i actually read',
       'nutrition structure + protein target',
@@ -149,7 +149,7 @@ const SLIDES = [
       'form video review any time you send one',
       'the program rewritten every week off your logs',
     ],
-    footer: 'you are paying to not need me in twelve weeks.',
+    footer: 'you are paying to not need me in eight weeks.',
     notes: `...`,
   },
   // 11
@@ -169,21 +169,21 @@ const SLIDES = [
   // 13
   {
     type: 'investment',
-    headline: '$250 a week. 12 weeks.',
+    headline: '$250 a week. 8 weeks.',
     items: [
       'personal training in baltimore runs $75\u2013150 a session on its own',
-      '12 sessions at the middle of that = $1,500 \u2014 just the hours',
-      'the program, app, check-ins and weekly rewrites = $1,500',
-      'together: $3,000. which is $250 a week.',
+      '8 sessions at the middle of that = $1,000 \u2014 just the hours',
+      'the program, app, check-ins and weekly rewrites = $1,000',
+      'together: $2,000. which is $250 a week.',
       'you pay nothing extra for the two being one thing',
     ],
-    body: "that is not a bundle discount, it is just what the pieces cost. the difference is that most trainers hand you an hour and a wave goodbye, and most apps hand you a program nobody watches you run. you are getting the hour AND the six days after it \u2014 and in twelve weeks you can program for yourself.",
+    body: "that is not a bundle discount, it is just what the pieces cost. the difference is that most trainers hand you an hour and a wave goodbye, and most apps hand you a program nobody watches you run. you are getting the hour AND the six days after it \u2014 and in eight weeks you can program for yourself.",
     notes: `...`,
   },
   // 14
   {
     type: 'close',
-    headline: 'twelve weeks to not need a trainer.',
+    headline: 'eight weeks to not need a trainer.',
     sub: 'you already did the hard part alone. this part you should not have to.',
     notes: `...`,
   },

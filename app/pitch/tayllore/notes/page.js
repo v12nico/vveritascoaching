@@ -6,7 +6,7 @@ const NOTES = [
     note: `On screen when she joins. Let her see her name. Open with: "Before anything — you lost forty pounds. On your own. Most people never get there, so I'm not going to skip past it." Then straight in: "But I want to understand what actually happened, because I think you're being sold the wrong next step by everyone including yourself." Don't explain that yet. Ask: "How did you lose it?"` },
 
   { n: 2, title: `this is an assessment.`,
-    note: `Set the frame in twenty seconds — it's a 30 minute call, don't burn it. "I'm going to ask questions, then tell you what I actually think, then show you the twelve weeks. Some of what I say won't be what you expect." Get a yes and move.` },
+    note: `Set the frame in twenty seconds — it's a 30 minute call, don't burn it. "I'm going to ask questions, then tell you what I actually think, then show you the eight weeks. Some of what I say won't be what you expect." Get a yes and move.` },
 
   { n: 3, title: `tell me what the forty pounds cost you.`,
     note: `THE MOST IMPORTANT SECTION. You are listening for one thing: how long has she been in a deficit and how little is she eating now. The questions that matter: "what does a normal day of eating look like NOW" and "when did the scale stop." If she says something like 1,200-1,400 calories, or "I barely eat and nothing happens" — that's your whole diagnosis and slide 5 lands like a truck. Also find out: has she ever lifted, or has it all been cardio? Write down her exact words for "still not there" — do NOT repeat "still fat" back to her.` },
@@ -17,8 +17,8 @@ const NOTES = [
   { n: 5, title: `the thing that got you here will not get you there.`,
     note: `THE PIVOT OF THE WHOLE CALL. Walk the chain one line at a time. Slowly. She will recognise herself around line four. Then land it: "Your metabolism is not broken. It did exactly what it's supposed to do when you eat less for a long time." Pause. "Everything you know how to do is subtraction. What you want now — glutes, shape, a body you like — is addition. That's why nothing's working. You're using the right tool for the wrong job." Then stop and let her react. This is where she either gets it or doesn't, and everything after depends on it.` },
 
-  { n: 6, title: `what twelve weeks looks like.`,
-    note: `Now the mechanics. "Sunday morning, Anytime Fitness in Columbia, one hour, hands on. You train twice more that week on your own. Everything goes in the app. I read it before Sunday." Then the line that matters to her specifically: "Week twelve, you can write your own program. That is the actual goal. You told me you want to be sent on your way — I'm building that in from day one, not pretending you'll stay forever."` },
+  { n: 6, title: `what eight weeks looks like.`,
+    note: `Now the mechanics. "Sunday morning, Anytime Fitness in Columbia, one hour, hands on. You train twice more that week on your own. Everything goes in the app. I read it before Sunday." Then the line that matters to her specifically: "Week eight, you can write your own program. That is the actual goal. You told me you want to be sent on your way — I'm building that in from day one, not pretending you'll stay forever."` },
 
   { n: 7, title: `glutes are built, not revealed.`,
     note: `She asked for glutes. Be direct: "You can't reveal a muscle that isn't there. Glutes are built, and building takes food and load — which is the opposite of what you've been doing for however long." Name the three lifts. Then: "You'll learn these properly. Not off a video — properly, with me watching, until you can feel the right thing working." That's the in-person value proposition in one sentence.` },
@@ -27,10 +27,10 @@ const NOTES = [
     note: `THE HARDEST SELL. Say it plainly and then be quiet. "You're probably going to eat more than you're eating now." Let her react — she may push back hard, and that's fine. Then: "The scale might not move for a few weeks. That is the plan, not a failure." And: "Recomposition doesn't show up on a scale. It shows up in a photo and in your clothes." If she's scared of regaining: "You kept forty pounds off. You know how to do that. This is not that." Do NOT skip past her fear here — it's real and it's earned.` },
 
   { n: 9, title: `the six days i am not there.`,
-    note: `Screen share the dashboard. Walk it fast, this is a 30 min call. START HERE — the week's mission and the 12-week arc. TRAINING — every session written with cues. LOG — "this is the one. You log every set, and last week's numbers sit next to today's. That's how you learn progressive overload — by doing it, not by me explaining it." PROGRESS — first vs best on every lift. CHECK IN — two lines a night, I read every one. Then: "Have you ever had anything like this?" Stop.` },
+    note: `Screen share the dashboard. Walk it fast, this is a 30 min call. START HERE — the week's mission and the 8-week arc. TRAINING — every session written with cues. LOG — "this is the one. You log every set, and last week's numbers sit next to today's. That's how you learn progressive overload — by doing it, not by me explaining it." PROGRESS — first vs best on every lift. CHECK IN — two lines a night, I read every one. Then: "Have you ever had anything like this?" Stop.` },
 
   { n: 10, title: `what's included.`,
-    note: `Read the list at pace. Land on the footer and let it sit: "You are paying to not need me in twelve weeks." That's the whole differentiator. Every other trainer she's talked to is selling forever.` },
+    note: `Read the list at pace. Land on the footer and let it sit: "You are paying to not need me in eight weeks." That's the whole differentiator. Every other trainer she's talked to is selling forever.` },
 
   { n: 11, title: `you already proved the hard part.`,
     note: `"You don't have a discipline problem — forty pounds proves that. You have a direction problem. Everything you know is subtraction and what you want requires building. That's a two-week learning curve, not a character change." Pause. This is the line she'll remember from the call.` },
@@ -38,10 +38,10 @@ const NOTES = [
   { n: 12, title: `does that sound like what has actually been happening?`,
     note: `Ask exactly as written. STOP TALKING. Count to ten. If yes — go to price. If she hesitates — "what part doesn't land?" and address only what she raises. Do not invent objections for her.` },
 
-  { n: 13, title: `$250 a week. 12 weeks.`,
-    note: `DO NOT say the number first. Walk the arithmetic and let her do the adding. "Personal training around here runs seventy-five to a hundred fifty a session. Twelve sessions at the middle of that is fifteen hundred — that's just the hours, no programming, no app, nobody checking on you." Pause. "The program, the app, the check-ins, the weekly rewrites — that's another fifteen hundred on its own." Pause. "Together it's three thousand. Which is two-fifty a week." THREE SECONDS OF SILENCE. Then: "That's not a bundle discount. That's just what the pieces cost. What you're actually getting that nobody else gives you is the hour AND the six days after it." Then: "Does that match what you said you needed?" STOP TALKING. — IF PRICE OBJECTION: ask "is it the number or the timing?" If timing, offer a start date, not a discount. If it's genuinely the number, the ONLY move is fewer in-person sessions: every other Sunday at $175/wk, app running all twelve weeks either way. NEVER cut the weekly rate for the same service — it sets your floor for every in-person client after her, and she is the first.` },
+  { n: 13, title: `$250 a week. 8 weeks.`,
+    note: `DO NOT say the number first. Walk the arithmetic and let her do the adding. "Personal training around here runs seventy-five to a hundred fifty a session. Eight sessions at the middle of that is a thousand — that's just the hours, no programming, no app, nobody checking on you." Pause. "The program, the app, the check-ins, the weekly rewrites — that's another thousand on its own." Pause. "Together it's two thousand. Which is two-fifty a week." THREE SECONDS OF SILENCE. Then: "That's not a bundle discount. That's just what the pieces cost. What you're actually getting that nobody else gives you is the hour AND the six days after it." Then: "Does that match what you said you needed?" STOP TALKING. — IF PRICE OBJECTION: ask "is it the number or the timing?" If timing, offer a start date, not a discount. If it's genuinely the number, the ONLY move is fewer in-person sessions: every other Sunday at $175/wk, app running all eight weeks either way. NEVER cut the weekly rate for the same service — it sets your floor for every in-person client after her, and she is the first.` },
 
-  { n: 14, title: `twelve weeks to not need a trainer.`,
+  { n: 14, title: `eight weeks to not need a trainer.`,
     note: `Deliver calm. "What questions do you have?" Go silent. IF YES: "I'm sending the intake now — fill it tonight, ten minutes. Your dashboard is live tomorrow and we start Sunday at [time]." GET THE SUNDAY TIME ON THE CALENDAR BEFORE YOU HANG UP. Send the intake link while she's still on. IF NOT NOW: "What would need to be true for this to be a yes?" Listen, set a follow-up.` },
 ];
 
