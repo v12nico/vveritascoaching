@@ -239,7 +239,10 @@ function Field({ f, value, onChange }) {
   );
 
   if (f.type === 'single' || f.type === 'yesno') {
-    const opts = f.type === 'yesno' ? ['yes', 'no'] : f.opts;
+    // Accept `options` as well as `opts`: a one-word spec typo used to throw
+    // inside .map and take the entire form down mid-submission, which is the
+    // worst possible moment for it. Tolerate the alias, never crash on empty.
+    const opts = f.type === 'yesno' ? ['yes', 'no'] : (f.opts ?? f.options ?? []);
     return (
       <div className="ik-field">
         {label}
