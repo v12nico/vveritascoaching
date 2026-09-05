@@ -169,12 +169,12 @@ const SLIDES = [
   // 13
   {
     type: 'investment',
-    headline: '$250 a week. 8 weeks.',
+    headline: '$200 a week. 8 weeks.',
     items: [
       'personal training in baltimore runs $75\u2013150 a session on its own',
-      '8 sessions at the middle of that = $1,000 \u2014 just the hours',
-      'the program, app, check-ins and weekly rewrites = $1,000',
-      'together: $2,000. which is $250 a week.',
+      '8 sessions at $100 \u2014 the middle of that \u2014 = $800, just the hours',
+      'the program, app, check-ins and weekly rewrites = $800',
+      'together: $1,600. which is $200 a week.',
       'you pay nothing extra for the two being one thing',
     ],
     body: "that is not a bundle discount, it is just what the pieces cost. the difference is that most trainers hand you an hour and a wave goodbye, and most apps hand you a program nobody watches you run. you are getting the hour AND the six days after it \u2014 and in eight weeks you can program for yourself.",
