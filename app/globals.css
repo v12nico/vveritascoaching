@@ -4568,3 +4568,9 @@ textarea {
   .cl-set-ex { min-width: 0; flex: 1; }
   .cl-stats { gap: 1.4rem; }
 }
+
+/* ─── food quality standard ─────────────────────────────────────────────── */
+.cp-std { border-top: 1px solid var(--ghost); margin: .2rem 0 1rem; }
+.cp-std-row { padding: .85rem 0; border-bottom: 1px solid var(--ghost); }
+.cp-std-item { font-size: .95rem; font-weight: 300; letter-spacing: -.01em; }
+.cp-std-why { font-size: .82rem; color: var(--dim); line-height: 1.6; margin-top: .3rem; }

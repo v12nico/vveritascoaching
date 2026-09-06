@@ -187,6 +187,21 @@ function Nutrition({ c }) {
         <p className="cp-note">{c.nutrition.proteinNote}</p>
       </Section>
 
+      {c.nutrition.quality && (
+        <Section label={c.nutrition.quality.label}>
+          <h2 className="cp-h2">{c.nutrition.quality.headline}</h2>
+          <div className="cp-std">
+            {c.nutrition.quality.rules.map(r => (
+              <div className="cp-std-row" key={r.item}>
+                <div className="cp-std-item">{r.item}</div>
+                <div className="cp-std-why">{r.why}</div>
+              </div>
+            ))}
+          </div>
+          <p className="cp-note">{c.nutrition.quality.note}</p>
+        </Section>
+      )}
+
       <DaySchedule d={c.nutrition.workDays} />
       <DaySchedule d={c.nutrition.offDays} />
 
