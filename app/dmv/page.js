@@ -70,7 +70,7 @@ export default function DmvPage() {
           <a className="dmv-door" href={stripeOnline} target="_blank" rel="noreferrer">
             <div className="dmv-door-top">
               <span className="dmv-door-t">start online tonight</span>
-              <span className="dmv-door-m">$1,000 · 8 weeks</span>
+              <span className="dmv-door-m">$125 / week</span>
             </div>
             <p>
               you already know what you want. pay, fill the intake, and your dashboard is
@@ -82,7 +82,7 @@ export default function DmvPage() {
           <Link className="dmv-door" href="/intake">
             <div className="dmv-door-top">
               <span className="dmv-door-t">start online</span>
-              <span className="dmv-door-m">$1,000 · 8 weeks</span>
+              <span className="dmv-door-m">$125 / week</span>
             </div>
             <p>
               fill the intake and i’ll send your payment link and build your dashboard from it.
@@ -104,12 +104,13 @@ export default function DmvPage() {
       {/* ── prices ── */}
       <section className="dmv-sec">
         <div className="dmv-label">what it costs</div>
-        <div className="dmv-price"><b>online coaching</b><span>$1,000 · 8 weeks</span></div>
-        <div className="dmv-price"><b>in person · baltimore</b><span>from $1,600 · 8 weeks</span></div>
+        <div className="dmv-price"><b>online coaching</b><span>$125 / week</span></div>
+        <div className="dmv-price"><b>in person · baltimore</b><span>from $200 / week</span></div>
         <div className="dmv-price"><b>in person · dc</b><span>by the day</span></div>
         <p className="dmv-note">
-          weekly, biweekly and monthly payment options. in-person pricing varies with how
-          far i travel — we settle it on the call, not before.
+          billed weekly, eight week minimum — eight weeks is how long it takes to be
+          worth anything. biweekly and monthly options if you’d rather. in-person pricing
+          varies with how far i travel; we settle that on the call, not before.
         </p>
         <p className="dmv-note">
           <b>dc runs as a day, not a drive.</b> i come down when the day fills — three spots
