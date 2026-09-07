@@ -4579,3 +4579,62 @@ textarea {
 .cp-weighin { border-top: 1px solid var(--ghost); padding-top: 1.2rem; margin-top: 1.4rem; }
 .cp-weighin-row { display: flex; align-items: center; gap: 1rem; margin-top: .6rem; flex-wrap: wrap; }
 .cp-weighin-row .cp-note { flex: 1; min-width: 12rem; margin: 0; }
+
+/* ─── /DMV — WHERE THE FLYER LANDS ──────────────────────────────────────── */
+.dmv { max-width: 620px; margin: 0 auto; padding: 0 0 5rem; }
+
+.dmv-hero { position: relative; min-height: 78vh; display: flex; align-items: flex-end;
+  overflow: hidden; }
+.dmv-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  object-position: 55% 12%; z-index: 0; }
+.dmv-hero::after { content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,.42) 0%, rgba(0,0,0,.14) 20%,
+    rgba(0,0,0,.62) 52%, rgba(0,0,0,.92) 76%, #000 94%); }
+.dmv-hero-in { position: relative; z-index: 2; padding: 0 1.25rem 2.2rem; width: 100%; }
+
+.dmv-kicker { font-family: ui-monospace,monospace; font-size: 9px; letter-spacing: .28em;
+  text-transform: uppercase; color: rgba(237,237,232,.5); margin-bottom: 1.1rem; }
+.dmv-kicker i, .dmv-foot i { font-style: normal; color: #E03131; }
+
+.dmv-hook { font-size: clamp(2.6rem, 12vw, 3.6rem); font-weight: 200; letter-spacing: -.035em;
+  line-height: .98; margin: 0 0 .9rem; text-shadow: 0 2px 12px rgba(0,0,0,.75); }
+.dmv-hook em { font-style: normal; color: #E03131; }
+.dmv-sub { color: rgba(237,237,232,.72); font-size: .95rem; line-height: 1.6; margin: 0;
+  max-width: 34ch; text-shadow: 0 1px 3px rgba(0,0,0,.9); }
+
+.dmv-sec { padding: 2.4rem 1.25rem 0; }
+.dmv-label { font-family: ui-monospace,monospace; font-size: 9px; letter-spacing: .22em;
+  text-transform: uppercase; color: rgba(237,237,232,.45); margin-bottom: 1rem; }
+
+.dmv-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(237,237,232,.14); }
+.dmv-list li { display: flex; gap: .9rem; align-items: baseline; padding: .8rem 0;
+  border-bottom: 1px solid rgba(237,237,232,.14); font-size: .92rem; }
+.dmv-list i { font-style: normal; font-family: ui-monospace,monospace; font-size: 8px;
+  color: rgba(237,237,232,.42); letter-spacing: .1em; flex-shrink: 0; }
+
+.dmv-door { display: block; border: 1px solid var(--ghost); padding: 1.15rem 1.15rem 1rem;
+  margin-bottom: .8rem; text-decoration: none; color: inherit; transition: border-color .18s; }
+.dmv-door:hover { border-color: rgba(237,237,232,.4); }
+.dmv-door.primary { border-color: rgba(224,49,49,.55); }
+.dmv-door.primary:hover { border-color: #E03131; }
+.dmv-door.quiet { border-style: dashed; }
+.dmv-door-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.dmv-door-t { font-size: 1.12rem; font-weight: 300; letter-spacing: -.02em; }
+.dmv-door-m { font-family: ui-monospace,monospace; font-size: 10px; letter-spacing: .1em;
+  color: rgba(237,237,232,.6); white-space: nowrap; }
+.dmv-door p { color: rgba(237,237,232,.68); font-size: .86rem; line-height: 1.6;
+  margin: .5rem 0 .7rem; }
+.dmv-go { font-family: ui-monospace,monospace; font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: #E03131; }
+.dmv-door.quiet .dmv-go { color: rgba(237,237,232,.6); text-transform: none; letter-spacing: .04em; }
+
+.dmv-price { display: flex; justify-content: space-between; align-items: baseline;
+  padding: .7rem 0; border-bottom: 1px solid rgba(237,237,232,.14); font-size: .95rem; }
+.dmv-price b { font-weight: 300; }
+.dmv-price span { font-family: ui-monospace,monospace; font-size: .85rem; }
+.dmv-note { color: rgba(237,237,232,.6); font-size: .82rem; line-height: 1.65; margin: 1rem 0 0; }
+.dmv-note b { color: rgba(237,237,232,.85); font-weight: 400; }
+
+.dmv-foot { display: flex; justify-content: space-between; padding: 3rem 1.25rem 0;
+  font-family: ui-monospace,monospace; font-size: 10px; letter-spacing: .16em;
+  color: rgba(237,237,232,.4); border-top: 1px solid rgba(237,237,232,.12); margin-top: 2.5rem; }
