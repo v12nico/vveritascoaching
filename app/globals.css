@@ -4574,3 +4574,8 @@ textarea {
 .cp-std-row { padding: .85rem 0; border-bottom: 1px solid var(--ghost); }
 .cp-std-item { font-size: .95rem; font-weight: 300; letter-spacing: -.01em; }
 .cp-std-why { font-size: .82rem; color: var(--dim); line-height: 1.6; margin-top: .3rem; }
+
+/* ─── weigh-in, inside the nightly check-in ─────────────────────────────── */
+.cp-weighin { border-top: 1px solid var(--ghost); padding-top: 1.2rem; margin-top: 1.4rem; }
+.cp-weighin-row { display: flex; align-items: center; gap: 1rem; margin-top: .6rem; flex-wrap: wrap; }
+.cp-weighin-row .cp-note { flex: 1; min-width: 12rem; margin: 0; }

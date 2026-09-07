@@ -42,6 +42,7 @@ const SLIDERS = [
 export default function CheckIn({ c }) {
   const [date] = useState(localDate)
   const [f, setF] = useState({ energy: 5, digestion: 5, note: '' })
+  const [lbs, setLbs] = useState('')
   const [state, setState] = useState('loading')  // loading | form | saving | done | error
   const [existing, setExisting] = useState(null)
 
@@ -80,6 +81,21 @@ export default function CheckIn({ c }) {
         body: JSON.stringify({ ...f, token: c.token, localDate: date }),
       })
       if (!res.ok) throw new Error()
+
+      // Weight rides along with the check-in rather than living in a tab he has
+      // to remember to visit. Deliberately NOT required — a check-in is worth
+      // more than a weigh-in, and blocking one to get the other loses both.
+      // Fired after the check-in has saved so a bad number cannot cost him the day.
+      const n = Number(lbs)
+      if (Number.isFinite(n) && n > 0) {
+        try {
+          await fetch('/api/weight', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token: c.token, localDate: date, lbs: n }),
+          })
+        } catch {}
+      }
       setState('done')
     } catch {
       setState('error')
@@ -159,6 +175,23 @@ export default function CheckIn({ c }) {
       {state === 'error' && (
         <p className="cp-note strong">that didn’t send. check your connection and hit it again — nothing was lost.</p>
       )}
+
+      <div className="cp-weighin">
+        <div className="cp-label">this morning’s weight</div>
+        <div className="cp-weighin-row">
+          <input
+            className="cp-set-in wide"
+            inputMode="decimal"
+            value={lbs}
+            onChange={e => setLbs(e.target.value)}
+            placeholder="lbs"
+            aria-label="bodyweight in pounds"
+          />
+          <span className="cp-note tight">
+            optional — but it’s the only number that says whether any of this is working.
+          </span>
+        </div>
+      </div>
 
       <button className="cp-submit" onClick={submit} disabled={!ready || state === 'saving'}>
         {state === 'saving' ? 'sending…' : existing ? 'update check-in' : 'send check-in'}
