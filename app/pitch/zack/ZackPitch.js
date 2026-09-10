@@ -193,7 +193,7 @@ const SLIDES = [
     headline: '$997 / 8 weeks.',
     items: [
       'personalized training + nutrition',
-      'client dashboard — always updated',
+      'your dashboard — always updated',
       'daily accountability check-ins',
       'weekly reviews + adjustments',
       'direct coach messaging',

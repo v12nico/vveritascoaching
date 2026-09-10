@@ -12,7 +12,7 @@ const items = [
   'personalized training plan',
   'nutrition structure + meal guide',
   'weekly grocery list',
-  'vveritas* client dashboard',
+  'vveritas* dashboard',
   'daily accountability check-ins',
   'weekly review + adjustments',
   'direct coach messaging',

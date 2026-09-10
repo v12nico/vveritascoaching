@@ -341,7 +341,7 @@ function Slide({ slide }) {
     return (
       <div className="ws-slide ws-demo-slide">
         <div style={{ display: 'inline-block' }}>
-          <div className="ws-demo-badge">client portal</div>
+          <div className="ws-demo-badge">your portal</div>
         </div>
         <h1 className="ws-headline ws-headline-sm" style={{ marginTop: '1rem' }}>your system.</h1>
         <p className="ws-body ws-body-spaced">everything in one place. walk through it now.</p>

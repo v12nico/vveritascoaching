@@ -686,7 +686,7 @@ function Slide({ slide }) {
       'work-accountability support',
       'presence goals for friends and family',
       'recovery guidance',
-      'personalized client dashboard',
+      'your own dashboard, built from your intake',
       'end-of-program continuation plan',
     ];
     return (
@@ -714,7 +714,7 @@ function Slide({ slide }) {
     return (
       <div className="ws-slide ws-demo-slide">
         <div style={{ display: 'inline-block' }}>
-          <div className="ws-demo-badge">client portal</div>
+          <div className="ws-demo-badge">your portal</div>
         </div>
         <h1 className="ws-headline ws-headline-sm" style={{ marginTop: '1rem' }}>your dashboard.</h1>
         <p className="ws-body ws-body-spaced">everything in one place. walk through it now.</p>

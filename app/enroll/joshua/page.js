@@ -11,7 +11,7 @@ const BORDER = '#141414';
 const items = [
   'personalized recomposition training plan',
   'daily nutrition structure + protein targets',
-  'vveritas* client dashboard',
+  'vveritas* dashboard',
   'proportion-focused exercise selection',
   'daily accountability check-ins',
   'weekly review and program adjustments',
