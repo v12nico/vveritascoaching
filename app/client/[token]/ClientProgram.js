@@ -68,7 +68,7 @@ export default function ClientProgram({ c }) {
 function Today({ c }) {
   return (
     <>
-      <Section label="week one">
+      <Section label={c.week1.label ?? 'week one'}>
         <h2 className="cp-h2">{c.week1.mission}</h2>
         <ul className="cp-list">
           {c.week1.targets.map(t => <li key={t}>{t}</li>)}
@@ -117,6 +117,16 @@ function Today({ c }) {
       <Section label="i need an answer on this">
         <p className="cp-note strong">{c.followUp}</p>
       </Section>
+
+      {c.sheet && (
+        <Section label="take it with you">
+          <a className="cp-dl" href={c.sheet.href} download>
+            {c.sheet.label} <span>&darr;</span>
+          </a>
+          <p className="cp-note">every number on this page, in one file. the gym does not
+            always have signal.</p>
+        </Section>
+      )}
     </>
   )
 }
@@ -186,6 +196,17 @@ function Nutrition({ c }) {
         <div className="cp-range">anywhere from {p.min} to {p.max}{p.unit} counts</div>
         <p className="cp-note">{c.nutrition.proteinNote}</p>
       </Section>
+
+      {c.nutrition.calories && (
+        <Section label="calories">
+          <div className="cp-protein">
+            <span className="cp-protein-n">{c.nutrition.calories.target.toLocaleString()}</span>
+            <span className="cp-protein-u">kcal / day</span>
+          </div>
+          <div className="cp-range">{c.nutrition.calories.range}</div>
+          <p className="cp-note">{c.nutrition.calories.note}</p>
+        </Section>
+      )}
 
       {c.nutrition.quality && (
         <Section label={c.nutrition.quality.label}>

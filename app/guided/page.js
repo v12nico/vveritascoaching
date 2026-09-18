@@ -89,14 +89,23 @@ export default function GuidedPage() {
     setStatus('loading');
 
     try {
-      await fetch('/api/submit/guided', {
+      // A failed submit used to fall into the catch below and still show the
+      // success screen, so a lost intake looked identical to a saved one.
+      // keepalive matters here. window.open(STRIPE) fires first (it has to —
+      // opening a popup after an await gets it blocked), and on mobile that
+      // frequently navigates THIS tab rather than opening a new one. Without
+      // keepalive the page unloads and the in-flight request is cancelled, so
+      // the intake never reaches the server at all.
+      const res = await fetch('/api/submit/guided', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
+        keepalive: true,
       });
+      if (!res.ok) throw new Error('submit failed');
       setStatus('done');
     } catch {
-      setStatus('done');
+      setStatus('error');
     }
   }
 
@@ -289,6 +298,13 @@ export default function GuidedPage() {
             >
               {status === 'loading' ? 'sending...' : 'get the system — $497 →'}
             </button>
+
+            {status === 'error' && (
+              <p style={{ ...mono('0.52rem', '#5C1A1A'), textAlign: 'center', lineHeight: 1.7, marginTop: '1rem' }}>
+                that did not send. your payment is unaffected — press the button again,
+                or email hello@vveritascoaching.com and i will take it from there.
+              </p>
+            )}
 
           </form>
         </div>

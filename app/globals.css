@@ -4350,6 +4350,12 @@ textarea {
 .cp-standard-quote { font-size: 0.95rem; font-weight: 300; color: var(--text);
   margin-top: 0.7rem; line-height: 1.6; }
 
+.cp-dl { display:inline-flex; align-items:center; gap:.9rem; text-decoration:none;
+  border:1px solid #242426; padding:.85rem 1.1rem; color:#EDEDE8; font-size:.9rem;
+  font-weight:300; letter-spacing:-.01em; transition:border-color .15s ease }
+.cp-dl:hover { border-color:#5C1A1A }
+.cp-dl span { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:.8rem; color:#5C1A1A }
+
 .cp-foot { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid #111;
   font-family: ui-monospace,monospace; font-size: 9px; letter-spacing: 0.16em;
   text-transform: uppercase; color: #2c2c2c; }
